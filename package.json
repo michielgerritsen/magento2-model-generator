@@ -16,7 +16,7 @@
     "@heroicons/vue": "^1.0.1",
     "@nuxtjs/pwa": "^3.3.5",
     "@tailwindcss/forms": "^0.3.2",
-    "core-js": "^3.9.1",
+    "core-js": "^3.11.1",
     "mustache": "^4.2.0",
     "nuxt": "^2.15.3",
     "raw-loader": "^4.0.2",
