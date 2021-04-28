@@ -40,11 +40,11 @@
 
     <div class="sm:col-span-1 relative">
       <svg
-        @click="addColumn"
         class="w-6 h-6 inline-block mt-1 cursor-pointer"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
+        @click="addColumn"
       >
         <path
           fill-rule="evenodd"
@@ -54,11 +54,11 @@
       </svg>
 
       <svg
-        @click="removeColumn(column)"
         class="w-6 h-6 inline-block mt-1 cursor-pointer"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
+        @click="removeColumn(column)"
       >
         <path
           fill-rule="evenodd"
@@ -76,10 +76,22 @@ import ColumnInterface from '~/interfaces/ColumnInterface'
 
 export default Vue.extend({
   props: {
-    index: Number,
-    column: Object as () => ColumnInterface,
-    addColumn: Function,
-    removeColumn: Function,
+    index: {
+      type: Number,
+      default: undefined,
+    },
+    column: {
+      type: Object as () => ColumnInterface,
+      default: undefined,
+    },
+    addColumn: {
+      type: Function,
+      default: undefined,
+    },
+    removeColumn: {
+      type: Function,
+      default: undefined,
+    },
   },
 
   computed: {

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h3 class="heading">
-      Model Columns
-    </h3>
+    <h3 class="heading">Model Columns</h3>
 
     <div class="mt-6 -mb-2 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
       <div class="sm:col-span-6 hidden sm:block">

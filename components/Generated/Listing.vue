@@ -5,9 +5,9 @@
     </a>
 
     <Modal v-if="showModal" @close="showModal = false">
-      <template v-slot:title>listing.xml</template>
+      <template #title>listing.xml</template>
 
-      <template v-slot:default>{{ xml }}</template>
+      <template #default>{{ xml }}</template>
     </Modal>
   </div>
 </template>
@@ -68,8 +68,7 @@ export default Vue.extend({
             <xsl:copy><xsl:apply-templates select="node()|@*"/></xsl:copy>
           </xsl:template>
           <xsl:output indent="yes"/>
-        </xsl:stylesheet>`
-        ,
+        </xsl:stylesheet>`,
         'application/xml'
       )
 

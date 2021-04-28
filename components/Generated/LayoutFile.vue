@@ -5,17 +5,17 @@
     </a>
 
     <Modal v-if="showModal" @close="showModal = false">
-      <template v-slot:title>view/adminhtml/layout/{{ baseName }}_index.xml</template>
+      <template #title>view/adminhtml/layout/{{ baseName }}_index.xml</template>
 
-      <template v-slot:default>{{ file }}</template>
+      <template #default>{{ file }}</template>
     </Modal>
   </div>
 </template>
 
 <script type="ts">
 import Vue from "vue"
-import txt from 'raw-loader!~/assets/stubs/view/adminhtml/layout/index.xml.stub'
 import Mustache from 'mustache'
+import txt from '~/assets/stubs/view/adminhtml/layout/index.xml.stub'
 import StateAware from "~/output/StateAware";
 
 export default Vue.extend({

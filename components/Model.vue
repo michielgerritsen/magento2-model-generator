@@ -13,10 +13,10 @@
             v-model="modelName"
             type="text"
             name="modelName"
-            @keypress="updateTableName()"
-            @change="updateTableName()"
             placeholder="Model name"
             class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
+            @keypress="updateTableName()"
+            @change="updateTableName()"
           />
         </div>
       </div>
@@ -85,9 +85,9 @@ export default Vue.extend({
 
   methods: {
     updateTableName() {
-      const vendorName = this.$store.state.module.vendorName.toLowerCase();
-      const moduleName = this.$store.state.module.moduleName.toLowerCase();
-      const modelName = this.modelName.toLowerCase();
+      const vendorName = this.$store.state.module.vendorName.toLowerCase()
+      const moduleName = this.$store.state.module.moduleName.toLowerCase()
+      const modelName = this.modelName.toLowerCase()
 
       if (!vendorName || !moduleName || !modelName) {
         return

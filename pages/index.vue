@@ -2,11 +2,19 @@
   <div class="min-h-screen bg-gray-100">
     <header class="pb-24 bg-indigo-600">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="relative py-5 flex items-center justify-center lg:justify-between">
+        <div
+          class="relative py-5 flex items-center justify-center lg:justify-between"
+        >
           <div class="absolute left-0 flex-shrink-0 lg:static">
             <a href="#">
-              <span class="sr-only">Control Alt Delete - Admin Grid Generator</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg" alt="Workflow">
+              <span class="sr-only"
+                >Control Alt Delete - Admin Grid Generator</span
+              >
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg"
+                alt="Workflow"
+              />
             </a>
           </div>
         </div>
@@ -20,7 +28,7 @@
           <!-- Left column -->
           <div class="grid grid-cols-1 gap-4 lg:col-span-2">
             <section aria-labelledby="section-1-title">
-              <h2 class="sr-only" id="section-1-title">Enter model details</h2>
+              <h2 id="section-1-title" class="sr-only">Enter model details</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
                   <div class="space-y-8 divide-y divide-gray-200">
@@ -40,7 +48,7 @@
           <!-- Right column -->
           <div class="grid grid-cols-1 gap-4">
             <section aria-labelledby="section-2-title">
-              <h2 class="sr-only" id="section-2-title">File list</h2>
+              <h2 id="section-2-title" class="sr-only">File list</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
                   <Sidebar />
@@ -53,11 +61,17 @@
     </main>
     <footer>
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-        <div class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"><span class="block sm:inline">&copy; {{ year }} Control Alt Delete.dev.</span> <span class="block sm:inline">All rights reserved.</span></div>
+        <div
+          class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"
+        >
+          <span class="block sm:inline"
+            >&copy; {{ year }} Control Alt Delete.dev.</span
+          >
+          <span class="block sm:inline">All rights reserved.</span>
+        </div>
       </div>
     </footer>
   </div>
-
 </template>
 
 <script lang="ts">
