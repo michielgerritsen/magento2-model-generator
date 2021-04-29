@@ -40,7 +40,7 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-vue": "7.9.0",
     "jest": "26.6.3",
-    "postcss": "7.0.35",
+    "postcss": "8.2.13",
     "prettier": "2.2.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "ts-jest": "26.5.5",
