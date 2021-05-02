@@ -30,7 +30,7 @@
 import Vue from "vue";
 import { mapState } from 'vuex'
 import JSZip from "jszip";
-import FileList from "~/output/FileLIst";
+import FileList from "~/output/FileList";
 
 export default Vue.extend({
   computed: {
