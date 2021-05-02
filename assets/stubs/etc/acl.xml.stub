@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}" title="{{ ModuleName }}" translate="title" sortOrder="900">
+                        <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}" title="{{ ModuleName }}s" translate="title">
+                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}_save" title="Save" translate="title"/>
+                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}_delete" title="Delete" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

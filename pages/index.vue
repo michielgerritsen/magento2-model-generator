@@ -51,7 +51,16 @@
               <h2 id="section-2-title" class="sr-only">File list</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
-                  <Sidebar />
+                  <TopSidebar />
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="section-2-title">
+              <h2 id="section-2-title" class="sr-only">File list</h2>
+              <div class="rounded-lg bg-white overflow-hidden shadow">
+                <div class="p-6">
+                  <BottomSidebar />
                 </div>
               </div>
             </section>

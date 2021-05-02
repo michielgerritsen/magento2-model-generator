@@ -62,8 +62,16 @@ export default class StateAware {
     return this.state.table.columns
   }
 
+  tableName(): string {
+    return this.state.model.tableName
+  }
+
   indexField(): string {
     return this.columns()[0].fieldName
+  }
+
+  isAdmingrid(): boolean {
+    return this.state.admingrid.enabled
   }
 
   isSticky(): boolean {
@@ -84,5 +92,15 @@ export default class StateAware {
 
   isMassActions(): boolean {
     return this.state.admingrid.massactions
+  }
+
+  fileContext() {
+    return {
+      ModuleName: this.moduleName(),
+      VendorName: this.vendorName(),
+      ModelName: this.modelName(),
+      TableName: this.tableName(),
+      IndexField: this.indexField(),
+    }
   }
 }

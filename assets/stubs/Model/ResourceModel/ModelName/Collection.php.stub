@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }};
+
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use {{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }};
+
+class Collection extends AbstractCollection
+{
+    protected function _construct()
+    {
+        $this->_init({{ ModelName }}::class, \{{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }}::class);
+    }
+}

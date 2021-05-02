@@ -1,0 +1,62 @@
+<?php declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Controller\Adminhtml\{{ ModelName }};
+
+use {{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }};
+use {{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}Factory;
+use {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }} as ModelResource;
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Backend\Model\View\Result\Redirect;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\Controller\ResultFactory;
+
+class Delete extends Action implements HttpGetActionInterface
+{
+    const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
+
+    /** @var ModelFactory */
+    protected $modelFactory;
+
+    /** @var ModelResource */
+    protected $modelResource;
+
+    /**
+     * Delete constructor.
+     * @param Context $context
+     * @param ModelFactory $modelFactory
+     * @param ModelResource $modelResource
+     */
+    public function __construct(
+        Context $context,
+        ModelFactory $modelFactory,
+        ModelResource $modelResource
+    ) {
+        $this->modelFactory = $modelFactory;
+        $this->modelResource = $modelResource;
+        parent::__construct($context);
+    }
+
+    public function execute(): Redirect
+    {
+        try {
+            $id = $this->getRequest()->getParam('id');
+            /** @var {{ ModelName }} $model */
+            $model = $this->modelFactory->create();
+            $this->modelResource->load($model, $id);
+            if ($model->getId()) {
+                $this->modelResource->delete($model);
+                $this->messageManager->addSuccessMessage(__('The record has been deleted.'));
+            } else {
+                $this->messageManager->addErrorMessage(__('The record does not exist.'));
+            }
+        } catch (\Exception $e) {
+            $this->messageManager->addErrorMessage($e->getMessage());
+        }
+
+        /** @var Redirect $redirect */
+        $redirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+
+        return $redirect->setPath('*/*');
+    }
+}
