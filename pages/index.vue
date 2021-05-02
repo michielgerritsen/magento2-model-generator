@@ -77,7 +77,9 @@
             &copy; {{ year }}
             <a href="https://www.controlaltdelete.nl/">Control Alt Delete</a>
             and
-            <a href="https://www.michiel-gerritsen.com/">Michiel Gerritsen.com</a>.
+            <a href="https://www.michiel-gerritsen.com/"
+              >Michiel Gerritsen.com</a
+            >.
           </span>
         </div>
       </div>

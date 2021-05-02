@@ -15,9 +15,9 @@
     </p>
 
     <p class="text mt-4">
-      Writing models can become cumbersome, as you need to write a
-      whole bunch of boilerplate code which is sort of the same for every model
-      you need to make.
+      Writing models can become cumbersome, as you need to write a whole bunch
+      of boilerplate code which is sort of the same for every model you need to
+      make.
     </p>
 
     <p class="text mt-4">
