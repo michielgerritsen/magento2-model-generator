@@ -6,13 +6,13 @@
           class="relative py-5 flex items-center justify-center lg:justify-between"
         >
           <div class="absolute left-0 flex-shrink-0 lg:static">
-            <a href="#">
+            <a href="https://www.controlaltdelete.nl" target="_blank">
               <span class="sr-only"
                 >Control Alt Delete - Admin Grid Generator</span
               >
               <img
                 class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-300.svg"
+                src="~/assets/control-alt-delete-logo.png"
                 alt="Workflow"
               />
             </a>

@@ -4,7 +4,7 @@
 
     <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
       <div class="sm:col-span-6">
-        <div class="mt-4 space-y-4">
+        <div class="space-y-4">
           <div class="relative flex items-start">
             <div class="flex items-center h-5">
               <input
