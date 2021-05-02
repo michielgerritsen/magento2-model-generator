@@ -60,9 +60,9 @@
                 <slot name="title"></slot>
               </h3>
               <div class="mt-2 w-full">
-                  <vue-code-highlight language="javascript">
-                    <pre><slot></slot></pre>
-                  </vue-code-highlight>
+                <vue-code-highlight language="javascript">
+                  <pre><slot></slot></pre>
+                </vue-code-highlight>
               </div>
             </div>
           </div>

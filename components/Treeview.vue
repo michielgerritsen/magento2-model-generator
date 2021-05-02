@@ -1,6 +1,10 @@
 <template>
   <ul>
-    <Treeitem v-for="Child in children" :item="Child" />
+    <Treeitem
+      v-for="Child in children"
+      :key="Child.CurrentPath"
+      :item="Child"
+    />
   </ul>
 </template>
 

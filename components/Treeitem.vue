@@ -6,7 +6,7 @@
       <template #default>{{ item.Contents }}</template>
     </ScriptModal>
 
-    <a href="#" v-if="isFile" @click.prevent="showModal = true">
+    <a v-if="isFile" href="#" @click.prevent="showModal = true">
       {{ item.Name }}
     </a>
 
@@ -15,7 +15,11 @@
     </span>
 
     <ul v-if="Object.values(children).length" class="ml-4">
-      <Treeitem v-for="Child in children" :item="Child" />
+      <Treeitem
+        v-for="Child in children"
+        :key="Child.CurrentPath"
+        :item="Child"
+      />
     </ul>
   </li>
 </template>

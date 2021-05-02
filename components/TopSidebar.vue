@@ -78,7 +78,7 @@ export default Vue.extend({
 
   methods: {
     download() {
-      let zip = new JSZip();
+      const zip = new JSZip();
 
       this.files.forEach((file) => {
         zip.file(file.getPath(), file.getContents());
