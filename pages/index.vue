@@ -73,10 +73,12 @@
         <div
           class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"
         >
-          <span class="block sm:inline"
-            >&copy; {{ year }} Control Alt Delete.dev.</span
-          >
-          <span class="block sm:inline">All rights reserved.</span>
+          <span class="block sm:inline">
+            &copy; {{ year }}
+            <a href="https://www.controlaltdelete.nl/">Control Alt Delete</a>
+            and
+            <a href="https://www.michiel-gerritsen.com/">Michiel Gerritsen.com</a>.
+          </span>
         </div>
       </div>
     </footer>

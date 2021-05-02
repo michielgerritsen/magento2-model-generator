@@ -3,25 +3,25 @@
     <h3 class="heading">What's this?</h3>
 
     <p class="text mt-2">
-      With this app you can create Model's for Magento 2 very fast. If you are
-      not sure what a Model in Magento 2 is, i can recommend you to read
+      With this app, you can create models for Magento 2 very fast. If you are
+      not sure what a model in Magento 2 is, I can recommend you to read
       <a
         class="underline"
         href="https://www.michiel-gerritsen.com/where-to-place-code-in-a-magento-2-module"
         target="_blank"
         >this article</a
       >
-      (tldr: It's everything that you to need to connect to your database).
+      (TLDR: It's everything that you need to connect to your database).
     </p>
 
     <p class="text mt-4">
-      Writing models can become cumberstone and dready, as you need to write a
+      Writing models can become cumbersome, as you need to write a
       whole bunch of boilerplate code which is sort of the same for every model
       you need to make.
     </p>
 
     <p class="text mt-4">
-      This app tries to take the cumberstone out of your hands and generate the
+      This app tries to take the cumbersome out of your hands and generate the
       code for you.
     </p>
 
@@ -32,13 +32,13 @@
 
     <p class="text mt-2">
       I've used Mage2gen many times myself and it does a great job, but when it
-      comes to creating models i still had to do too much manual work to get
+      comes to creating models I still had to do too much manual work to get
       everything right.
     </p>
 
-    <p class="text mt-2">
-      This app only focusses on creating the Model's and the admingrid's and do
-      that thing good.
+    <p class="text mt-4">
+      This app only focuses on creating the models and the admingrids and does
+      that thing well.
     </p>
   </div>
 </template>

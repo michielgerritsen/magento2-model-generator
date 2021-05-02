@@ -101,6 +101,7 @@ export default class StateAware {
       ModelName: this.modelName(),
       TableName: this.tableName(),
       IndexField: this.indexField(),
+      ListingName: this.listingName(),
     }
   }
 }

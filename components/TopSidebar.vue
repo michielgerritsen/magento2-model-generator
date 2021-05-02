@@ -20,7 +20,7 @@
       <ul class="list-disc ml-4 mt-4">
         <li>Vendor Name (eg Acme)</li>
         <li>Module Name (eg Blog, Faq, StockReport)</li>
-        <li>Model Name (eg Post, Item, StockItem</li>
+        <li>Model Name (eg Post, Item, StockItem)</li>
       </ul>
     </div>
   </div>
