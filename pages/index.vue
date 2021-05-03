@@ -10,11 +10,10 @@
               <span class="sr-only"
                 >Control Alt Delete - Admin Grid Generator</span
               >
-              <img
-                class="h-8 w-auto"
-                src="~/assets/control-alt-delete-logo.png"
-                alt="Workflow"
-              />
+
+              <span class="inline-block float-left text-white text-2xl font-bold">
+                Magento 2 Model Generator
+              </span>
             </a>
           </div>
         </div>
