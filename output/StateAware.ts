@@ -94,6 +94,10 @@ export default class StateAware {
     return this.state.admingrid.massactions
   }
 
+  getIndexField(): string {
+    return `${this.tableName()}_${this.indexField()}`.toUpperCase()
+  }
+
   fileContext() {
     return {
       ModuleName: this.moduleName(),

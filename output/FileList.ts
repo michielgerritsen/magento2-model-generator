@@ -2,6 +2,8 @@ import StateAware from '~/output/StateAware'
 import GeneratedFile from '~/output/GeneratedFile'
 import UiComponent from '~/output/listing/UiComponent'
 import GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
+import DbSchemaWhitelist from '~/output/listing/DbSchemaWhitelist'
+import DbSchema from '~/output/listing/DbSchema'
 
 export default class FileList extends StateAware {
   generate() {
@@ -13,6 +15,8 @@ export default class FileList extends StateAware {
       new GeneratedFile(this.state, 'Model/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName/Collection.php.stub'),
+      new DbSchemaWhitelist(this.state),
+      new DbSchema(this.state),
     ]
 
     if (this.isAdmingrid()) {

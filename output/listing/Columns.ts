@@ -13,6 +13,10 @@ export default class Columns extends StateAware implements GeneratesXmlInterface
     }
 
     this.columns().forEach((data: ColumnInterface) => {
+      if (!data.fieldName || !data.inputType) {
+        return
+      }
+
       columns.appendChild(new Column(this.state).getXml(xml, data))
     })
 
