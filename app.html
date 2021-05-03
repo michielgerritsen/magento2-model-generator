@@ -2,7 +2,9 @@
 <html {{ HTML_ATTRS }}>
 <head {{ HEAD_ATTRS }}>
   {{ HEAD }}
+  {% if (ENV.NODE_ENV === 'production') { %}
   <script src="https://locust.michiel-gerritsen.com/script.js" data-site="BKQYZZYA" data-spa="auto" defer></script>
+  {% } %}
 </head>
 <body {{ BODY_ATTRS }}>
 {{ APP }}
