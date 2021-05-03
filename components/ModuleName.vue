@@ -72,6 +72,7 @@ export default Vue.extend({
   methods: {
     reset() {
       this.$store.commit('admingrid/reset')
+      this.$store.commit('fathom/reset')
       this.$store.commit('model/reset')
       this.$store.commit('module/reset')
       this.$store.commit('table/reset')
