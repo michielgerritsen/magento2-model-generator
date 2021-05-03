@@ -91,10 +91,6 @@ export default Vue.extend({
         saveAs(blob, filename)
       });
 
-      console.log('this.$store.state.fathom.triggered', this.$store.state.fathom.triggered)
-      console.log('process.env.NODE_ENV === \'production\'', process.env.NODE_ENV === 'production')
-      console.log('window.fathom', window.fathom)
-
       if (!this.$store.state.fathom.triggered && process.env.NODE_ENV === 'production' && window.fathom) {
         window.fathom.trackGoal('2XQ4M1PI', 0)
         this.$store.commit('fathom/setTriggered')
