@@ -31,7 +31,6 @@
             v-model="tableName"
             type="text"
             name="tablename"
-            placeholder="vendor_module_faq"
             class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
           />
         </div>

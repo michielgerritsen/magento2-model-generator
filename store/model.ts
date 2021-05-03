@@ -3,10 +3,12 @@ interface Model {
   tableName: string
 }
 
-export const state = () => ({
+const defaultState = () => ({
   name: '',
   tableName: '',
 })
+
+export const state = defaultState()
 
 export const mutations = {
   setName(state: any, text: string) {
@@ -15,5 +17,9 @@ export const mutations = {
 
   setTableName(state: any, text: string) {
     state.tableName = text
+  },
+
+  reset(state: any) {
+    Object.assign(state, defaultState())
   },
 }

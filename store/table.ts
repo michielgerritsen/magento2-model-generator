@@ -1,6 +1,6 @@
 import ColumnInterface from '~/interfaces/ColumnInterface'
 
-export const state = () => ({
+const defaultState = () => ({
   columns: [
     {
       fieldName: 'entity_id',
@@ -13,6 +13,8 @@ export const state = () => ({
   ],
 })
 
+export const state = defaultState()
+
 export const mutations = {
   addColumn(state: any, column: ColumnInterface) {
     state.columns.push(column)
@@ -24,5 +26,9 @@ export const mutations = {
 
   removeColumn(state: any, column: ColumnInterface) {
     state.columns.splice(state.columns.indexOf(column), 1)
+  },
+
+  reset(state: any) {
+    Object.assign(state, defaultState())
   },
 }

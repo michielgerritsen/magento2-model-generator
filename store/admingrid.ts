@@ -1,5 +1,5 @@
-export const state = () => ({
-  enabled: false,
+const defaultState = () => ({
+  enabled: true,
   bookmarks: false,
   paging: true,
   sticky: true,
@@ -8,6 +8,8 @@ export const state = () => ({
   filters: false,
   newButton: true,
 })
+
+export const state = defaultState()
 
 export const mutations = {
   setEnabled(state: any, value: boolean) {
@@ -33,5 +35,8 @@ export const mutations = {
   },
   setNewButton(state: any, value: boolean) {
     state.newButton = value
+  },
+  reset(state: any) {
+    Object.assign(state, defaultState())
   },
 }
