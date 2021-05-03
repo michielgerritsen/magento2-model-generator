@@ -8,9 +8,9 @@
       </div>
 
       <button
-        @click="download"
         type="button"
         class="mt-4 w-full text-center px-5 py-4 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        @click="download"
       >
         Download
       </button>
@@ -31,8 +31,8 @@
 import Vue from "vue";
 import { mapState } from 'vuex'
 import JSZip from "jszip";
-import FileList from "~/output/FileList";
 import { saveAs } from 'file-saver';
+import FileList from "~/output/FileList";
 
 export default Vue.extend({
   computed: {

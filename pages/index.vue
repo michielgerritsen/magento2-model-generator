@@ -11,7 +11,9 @@
                 >Control Alt Delete - Admin Grid Generator</span
               >
 
-              <span class="inline-block float-left text-white text-2xl font-bold">
+              <span
+                class="inline-block float-left text-white text-2xl font-bold"
+              >
                 Magento 2 Model Generator
               </span>
             </a>
