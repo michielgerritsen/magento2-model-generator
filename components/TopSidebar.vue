@@ -90,6 +90,11 @@ export default Vue.extend({
         const filename = this.$store.state.module.vendorName + '_' + this.$store.state.module.moduleName + '.zip';
         saveAs(blob, filename)
       });
+
+      if (!this.$store.state.fathom.triggered && process.env.NODE_ENV === 'production' && window.fathom) {
+        window.fathom.trackGoal('2XQ4M1PI', 0)
+        this.$store.commit('fathom/setTriggered')
+      }
     }
   }
 })
