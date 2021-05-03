@@ -6,9 +6,7 @@
           class="relative py-5 flex items-center justify-center lg:justify-between"
         >
           <div class="absolute left-0 flex-shrink-0 lg:static">
-            <span
-              class="inline-block float-left text-white text-2xl font-bold"
-            >
+            <span class="inline-block float-left text-white text-2xl font-bold">
               Magento 2 Model Generator
             </span>
           </div>

@@ -37,8 +37,8 @@
     </p>
 
     <p class="text mt-4">
-      Mage2gen offers a lot of automatic generated code and is great in doing that, but i wanted a more specialized
-      tool on 2 parts that are key for me.
+      Mage2gen offers a lot of automatic generated code and is great in doing
+      that, but i wanted a more specialized tool on 2 parts that are key for me.
     </p>
 
     <p class="text mt-4">
