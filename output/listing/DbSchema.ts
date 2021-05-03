@@ -36,7 +36,7 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
   }
 
   private addColumns(xml: XMLDocument, table: HTMLTableElement) {
-    let indexField: ColumnInterface
+    let indexField: ColumnInterface | boolean = false
 
     this.columns().forEach((data: ColumnInterface) => {
       if (!data.fieldName || !data.inputType) {
@@ -53,12 +53,14 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
       column.setAttribute('name', data.fieldName)
       column.setAttribute('xsi:type', data.inputType)
       column.setAttribute('comment', data.fieldName)
-      column.setAttribute('nullable', true)
+      column.setAttribute('nullable', 'true')
 
       table.appendChild(column)
     })
 
-    this.addConstraint(xml, table, indexField)
+    if (indexField) {
+      this.addConstraint(xml, table, indexField)
+    }
   }
 
   private addConstraint(xml: XMLDocument, table: HTMLTableElement, data: ColumnInterface) {
