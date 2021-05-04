@@ -32,7 +32,7 @@
       >
         <option value="">Please select</option>
         <optgroup label="Int">
-          <option value="integer">Integer</option>
+          <option value="int">Integer</option>
           <option value="smallint">Smallint</option>
           <option value="bigint">Bigint</option>
         </optgroup>
