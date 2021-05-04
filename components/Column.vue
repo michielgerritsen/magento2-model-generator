@@ -31,10 +31,23 @@
         class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
       >
         <option value="">Please select</option>
-        <option value="datetime">Datetime</option>
-        <option value="integer">Integer</option>
-        <option value="text">Text</option>
-        <option value="varchar">Varchar</option>
+        <optgroup label="Int">
+          <option value="integer">Integer</option>
+          <option value="smallint">Smallint</option>
+          <option value="bigint">Bigint</option>
+        </optgroup>
+        <optgroup label="Number">
+          <option value="float">Float</option>
+          <option value="decimal">Decimal</option>
+        </optgroup>
+        <optgroup label="Text">
+          <option value="text">Text</option>
+          <option value="varchar">Varchar</option>
+        </optgroup>
+        <optgroup label="Time">
+          <option value="datetime">Datetime</option>
+          <option value="timestamp">Timestamp</option>
+        </optgroup>
       </select>
     </div>
 
