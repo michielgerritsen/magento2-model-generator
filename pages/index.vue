@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-100">
-    <header class="pb-24 bg-indigo-600">
+    <header class="pb-24 bg-green-400">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div
           class="relative py-5 flex items-center justify-center lg:justify-between"

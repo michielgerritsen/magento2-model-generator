@@ -14,7 +14,7 @@
             type="text"
             name="modelName"
             placeholder="Model name"
-            class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
+            class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
             @keypress="updateTableName()"
             @change="updateTableName()"
           />
@@ -31,7 +31,7 @@
             v-model="tableName"
             type="text"
             name="tablename"
-            class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
+            class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
           />
         </div>
       </div>

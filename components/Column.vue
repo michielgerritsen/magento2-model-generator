@@ -12,7 +12,7 @@
         v-model="fieldName"
         type="text"
         name="fieldname"
-        class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
+        class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
       />
     </div>
 
@@ -28,7 +28,7 @@
         v-model="inputType"
         name="input_type"
         autocomplete="input_type"
-        class="flex-1 block w-full focus:ring-indigo-500 focus:border-indigo-500 min-w-0 rounded sm:text-sm border-gray-300"
+        class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
       >
         <option value="">Please select</option>
         <option value="datetime">Datetime</option>
