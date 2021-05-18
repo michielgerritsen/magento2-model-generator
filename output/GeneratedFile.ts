@@ -13,7 +13,10 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
 
   getPath(): String {
     return this.path
-      .replace('ModelName', this.snakeToCamel(this.modelName()))
+      .replace(
+        'ModelName',
+        this.capitalizeFirstLetter(this.snakeToCamel(this.modelName()))
+      )
       .replace('BaseName', this.baseName())
       .replace('.stub', '')
   }
@@ -28,5 +31,9 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
     return input.replace(/([-_][a-z])/g, (group) =>
       group.toUpperCase().replace('-', '').replace('_', '')
     )
+  }
+
+  capitalizeFirstLetter(input: String) {
+    return input.charAt(0).toUpperCase() + input.slice(1)
   }
 }

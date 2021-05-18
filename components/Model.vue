@@ -5,7 +5,7 @@
     <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
       <div class="sm:col-span-3">
         <label for="modelName" class="block text-sm font-medium text-gray-700">
-          What's the name for your model?
+          What's the classname for your model?
         </label>
         <div class="max-w-lg flex rounded-md shadow-sm mt-1">
           <input
