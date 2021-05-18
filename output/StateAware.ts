@@ -16,7 +16,7 @@ export default class StateAware {
     return this.state.module.vendorName
   }
 
-  modelName() {
+  modelName(): String {
     return this.state.model.name
   }
 

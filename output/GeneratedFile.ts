@@ -13,7 +13,7 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
 
   getPath(): String {
     return this.path
-      .replace('ModelName', this.modelName())
+      .replace('ModelName', this.snakeToCamel(this.modelName()))
       .replace('BaseName', this.baseName())
       .replace('.stub', '')
   }
@@ -22,5 +22,11 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
     const contents = require('~/assets/stubs/' + this.path).default
 
     return Mustache.render(contents, this.fileContext())
+  }
+
+  snakeToCamel(input: String) {
+    return input.replace(/([-_][a-z])/g, (group) =>
+      group.toUpperCase().replace('-', '').replace('_', '')
+    )
   }
 }
