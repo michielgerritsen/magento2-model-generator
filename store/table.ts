@@ -4,7 +4,7 @@ const defaultState = () => ({
   columns: [
     {
       fieldName: 'entity_id',
-      inputType: 'integer',
+      inputType: 'int',
     },
     {
       fieldName: '',
