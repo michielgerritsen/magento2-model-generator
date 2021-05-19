@@ -6,7 +6,7 @@
       <template #default>{{ item.Contents }}</template>
     </ScriptModal>
 
-    <a v-if="isFile" href="#" @click.prevent="showModal = true">
+    <a v-if="isFile" href="#" @click.prevent="openModal()">
       {{ item.Name }}
     </a>
 
@@ -55,6 +55,17 @@ export default Vue.extend({
         },
         {}
       );
+    }
+  },
+
+  methods: {
+    openModal() {
+      this.showModal = true;
+
+      if (window.fathom && window.fathom.trackGoal) {
+        // Track that there was a file opened.
+        window.fathom.trackGoal('H7MUSACJ', 0);
+      }
     }
   }
 })
