@@ -17,7 +17,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@tailwindcss/forms": "0.3.3",
     "@types/file-saver": "^2.0.3",
-    "@types/mustache": "^4.1.1",
+    "@types/mustache": "^4.1.2",
     "autoprefixer": "^9",
     "core-js": "3.16.0",
     "file-saver": "^2.0.5",
