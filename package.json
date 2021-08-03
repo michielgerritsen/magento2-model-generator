@@ -21,7 +21,7 @@
     "autoprefixer": "^9",
     "core-js": "3.16.0",
     "file-saver": "^2.0.5",
-    "jszip": "^3.6.0",
+    "jszip": "^3.7.0",
     "mustache": "4.2.0",
     "nuxt": "2.15.7",
     "postcss": "^7",
