@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@headlessui/vue": "1.4.0",
-    "@heroicons/vue": "1.0.3",
+    "@heroicons/vue": "1.0.4",
     "@nuxtjs/pwa": "3.3.5",
     "@tailwindcss/forms": "0.3.3",
     "@types/file-saver": "^2.0.3",
