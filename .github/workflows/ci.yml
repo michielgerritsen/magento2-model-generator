@@ -50,7 +50,3 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
-
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
-        with:
-          github-token: ${{ secrets.dependabot_auto_merge }}
