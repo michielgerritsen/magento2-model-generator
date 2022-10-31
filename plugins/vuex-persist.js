@@ -1,7 +1,7 @@
-import VuexPersistence from 'vuex-persist'
+import VuexPersist from 'vuex-persist'
 
 export default ({ store }) => {
-  new VuexPersistence({
+  new VuexPersist({
     key: 'magento2-model-generator',
   }).plugin(store)
 }

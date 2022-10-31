@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <Column
+    <ModelColumn
       v-for="(column, index) in columns"
       :key="index"
       :index="index"
