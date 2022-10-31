@@ -24,7 +24,7 @@
     "jszip": "^3.9.1",
     "mustache": "4.2.0",
     "nuxt": "2.15.8",
-    "postcss": "^7",
+    "postcss": "^8",
     "raw-loader": "4.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "vue-code-highlight": "^0.7.8",
