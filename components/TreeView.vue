@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <Treeitem
+    <TreeItem
       v-for="Child in children"
       :key="Child.CurrentPath"
       :item="Child"
