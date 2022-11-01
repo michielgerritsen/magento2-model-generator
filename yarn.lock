@@ -1201,7 +1201,7 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
-"@jest/transform@^29.1.2":
+"@jest/transform@^29.2.2":
   version "29.2.2"
   resolved "https://registry.yarnpkg.com/@jest/transform/-/transform-29.2.2.tgz#dfc03fc092b31ffea0c55917728e75bfcf8b5de6"
   integrity sha512-aPe6rrletyuEIt2axxgdtxljmzH8O/nrov4byy6pDw9S8inIrTV+2PnjyP/oFHMSynzGxJ2s6OHowBNMXp/Jzg==
@@ -3017,15 +3017,15 @@ babel-eslint@10.1.0:
     eslint-visitor-keys "^1.0.0"
     resolve "^1.12.0"
 
-babel-jest@29.1.2:
-  version "29.1.2"
-  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-29.1.2.tgz#540d3241925c55240fb0c742e3ffc5f33a501978"
-  integrity sha512-IuG+F3HTHryJb7gacC7SQ59A9kO56BctUsT67uJHp1mMCHUOMXpDwOHWGifWqdWVknN2WNkCVQELPjXx0aLJ9Q==
+babel-jest@29.2.2:
+  version "29.2.2"
+  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-29.2.2.tgz#2c15abd8c2081293c9c3f4f80a4ed1d51542fee5"
+  integrity sha512-kkq2QSDIuvpgfoac3WZ1OOcHsQQDU5xYk2Ql7tLdJ8BVAYbefEXal+NfS45Y5LVZA7cxC8KYcQMObpCt1J025w==
   dependencies:
-    "@jest/transform" "^29.1.2"
+    "@jest/transform" "^29.2.2"
     "@types/babel__core" "^7.1.14"
     babel-plugin-istanbul "^6.1.1"
-    babel-preset-jest "^29.0.2"
+    babel-preset-jest "^29.2.0"
     chalk "^4.0.0"
     graceful-fs "^4.2.9"
     slash "^3.0.0"
@@ -3160,7 +3160,7 @@ babel-preset-jest@^26.6.2:
     babel-plugin-jest-hoist "^26.6.2"
     babel-preset-current-node-syntax "^1.0.0"
 
-babel-preset-jest@^29.0.2:
+babel-preset-jest@^29.2.0:
   version "29.2.0"
   resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-29.2.0.tgz#3048bea3a1af222e3505e4a767a974c95a7620dc"
   integrity sha512-z9JmMJppMxNv8N7fNRHvhMg9cvIkMxQBXgFkane3yKVEvEOP+kB50lk8DFRvF9PGqbyXxlmebKWhuDORO8RgdA==
