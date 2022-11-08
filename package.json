@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@headlessui/vue": "1.7.3",
+    "@headlessui/vue": "1.7.4",
     "@heroicons/vue": "2.0.13",
     "@nuxtjs/pwa": "3.3.5",
     "@tailwindcss/forms": "0.3.3",
