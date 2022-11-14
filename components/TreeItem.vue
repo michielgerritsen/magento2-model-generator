@@ -15,7 +15,7 @@
     </span>
 
     <ul v-if="Object.values(children).length" class="ml-4">
-      <Treeitem
+      <TreeItem
         v-for="Child in children"
         :key="Child.CurrentPath"
         :item="Child"
