@@ -4,7 +4,7 @@
 
     <div v-if="isValid">
       <div class="bg-gray-100 overflow-x-scroll p-2 mt-4">
-        <Treeview :children="children" />
+        <TreeView :children="children" />
       </div>
 
       <button
