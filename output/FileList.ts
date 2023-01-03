@@ -8,11 +8,17 @@ import DbSchema from '~/output/listing/DbSchema'
 export default class FileList extends StateAware {
   generate() {
     const files = [
+      new GeneratedFile(this.state, 'Api/ModelNameRepositoryInterface.php.stub'),
+      new GeneratedFile(this.state, 'Api/Data/ModelNameSearchResultsInterface.php.stub'),
+      new GeneratedFile(this.state, 'Api/Data/ModelNameInterface.php.stub'),
       new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Edit.php.stub'),
       new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Delete.php.stub'),
       new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Index.php.stub'),
+      new GeneratedFile(this.state, 'etc/di.xml.stub'),
       new GeneratedFile(this.state, 'etc/acl.xml.stub'),
       new GeneratedFile(this.state, 'Model/ModelName.php.stub'),
+      new GeneratedFile(this.state, 'Model/ModelNameRepository.php.stub'),
+      new GeneratedFile(this.state, 'Model/Data/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName/Collection.php.stub'),
       new DbSchemaWhitelist(this.state),
@@ -21,6 +27,11 @@ export default class FileList extends StateAware {
 
     if (this.isAdmingrid()) {
       this.addAdmingridFiles(files)
+    }
+
+    if (this.includeModuleRegistration()) {
+      files.push(new GeneratedFile(this.state, 'etc/module.xml.stub'))
+      files.push(new GeneratedFile(this.state, 'registration.php.stub'))
     }
 
     return files

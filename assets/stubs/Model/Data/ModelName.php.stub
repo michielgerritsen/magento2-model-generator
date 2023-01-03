@@ -1,0 +1,51 @@
+<?php declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Model\Data;
+
+use Magento\Framework\Api\AbstractExtensibleObject;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
+
+class {{ ModelName }} extends AbstractExtensibleObject implements {{ ModelName }}Interface
+{
+    {{#Columns}}
+    /**
+     * Get {{ fieldName }}
+     * @return {{ phpType }}|null
+     */
+    public function get{{ functionName }}()
+    {
+        return $this->_get(self::{{ fieldNameUppercase }});
+    }
+
+    /**
+     * Set {{ fieldName }}
+     * @param {{ phpType }} ${{ fieldName }}
+     * @return {{ ModelName }}Interface
+     */
+    public function set{{ functionName }}({{ phpType }} ${{ fieldName }})
+    {
+        return $this->setData(self::{{ fieldNameUppercase }}, ${{ fieldName }});
+    }
+
+    {{/Columns}}
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     * @return {{ ModelName }}ExtensionInterface|null
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * Set an extension attributes object.
+     * @param {{ ModelName }}ExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        {{ ModelName }}ExtensionInterface $extensionAttributes
+    ) {
+        return $this->_setExtensionAttributes($extensionAttributes);
+    }
+}

@@ -14,6 +14,10 @@ export const mutations = {
     state.moduleName = text
   },
 
+  setIncludeModuleRegistration(state: any, text: string) {
+    state.includeModuleRegistration = text
+  },
+
   reset(state: any) {
     Object.assign(state, defaultState())
   },

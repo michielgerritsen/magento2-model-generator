@@ -2,12 +2,56 @@
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model;
 
+use Magento\Framework\Api\DataObjectHelper;
+use Magento\Framework\Data\Collection\AbstractDb;
 use Magento\Framework\Model\AbstractModel;
+use Magento\Framework\Model\Context;
+use Magento\Framework\Model\ResourceModel\AbstractResource;
+use Magento\Framework\Registry;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}InterfaceFactory;
 
 class {{ ModelName }} extends AbstractModel
 {
-    protected function _construct()
+    /**
+     * @var DataObjectHelper
+     */
+    private $dataObjectHelper;
+
+    /**
+     * @var {{ ModelName }}InterfaceFactory
+     */
+    private ${{ VariableName }}DataFactory;
+
+    public function __construct(
+        Context $context,
+        Registry $registry,
+        DataObjectHelper $dataObjectHelper,
+        {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
+        ResourceModel\{{ ModelName }} $resource,
+        AbstractDb $resourceCollection = null,
+        array $data = []
+    ) {
+        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+
+        $this->dataObjectHelper = $dataObjectHelper;
+        $this->{{ VariableName }}DataFactory = ${{ VariableName }}DataFactory;
+    }
+
+    /**
+     * @return {{ ModelName }}Interface
+     */
+    public function getDataModel(): {{ ModelName }}Interface
     {
-        $this->_init(ResourceModel\{{ ModelName }}::class);
+        $data = $this->getData();
+
+        $dataObject = $this->{{ VariableName }}DataFactory->create();
+        $this->dataObjectHelper->populateWithArray(
+            $dataObject,
+            $data,
+            {{ ModelName }}InterfaceFactory::class
+        );
+
+        return $dataObject;
     }
 }

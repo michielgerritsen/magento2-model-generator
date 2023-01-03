@@ -1,0 +1,21 @@
+<?php declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Api\Data;
+
+use Magento\Framework\Api\SearchResultsInterface;
+
+interface {{ ModelName }}SearchResultsInterface extends SearchResultsInterface
+{
+    /**
+     * Get {{ ModelName }} list.
+     * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[]
+     */
+    public function getItems();
+
+    /**
+     * Set id list.
+     * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[] $items
+     * @return $this
+     */
+    public function setItems(array $items);
+}
