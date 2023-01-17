@@ -42,8 +42,8 @@
     </p>
 
     <p class="text mt-4">
-      This app only focuses on creating the models and the admingrids and does
-      that thing well.
+      This app only focuses on creating the models (and everything required for
+      that) and the admingrids and does that thing well.
     </p>
   </div>
 </template>
