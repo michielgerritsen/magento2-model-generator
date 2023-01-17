@@ -55,7 +55,10 @@
             />
           </div>
           <div class="ml-3 text-sm">
-            <label for="includeModuleRegistration" class="font-medium text-gray-700">
+            <label
+              for="includeModuleRegistration"
+              class="font-medium text-gray-700"
+            >
               Include module registration (module.xml and registration.php)
             </label>
           </div>
