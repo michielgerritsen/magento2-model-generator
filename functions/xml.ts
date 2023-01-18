@@ -1,3 +1,4 @@
+import { EOL } from 'os'
 import AttributeInterface from '~/interfaces/AttributeInterface'
 
 export function createItem(
@@ -24,24 +25,38 @@ export function createItem(
   return item
 }
 
-export function prettifyXml(xml: string): string {
-  const xmlDoc = new DOMParser().parseFromString(xml, 'application/xml')
-  const xsltDoc = new DOMParser().parseFromString(
-    `<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-          <xsl:strip-space elements="*"/>
-          <xsl:template match="para[content-style][not(text())]"> // change to just text() to strip space in text nodes
-            <xsl:value-of select="normalize-space(.)"/>
-          </xsl:template>
-          <xsl:template match="node()|@*">
-            <xsl:copy><xsl:apply-templates select="node()|@*"/></xsl:copy>
-          </xsl:template>
-          <xsl:output indent="yes"/>
-        </xsl:stylesheet>`,
-    'application/xml'
-  )
+const stringTimesN = (n: number, char: string) => Array(n + 1).join(char)
 
-  const xsltProcessor = new XSLTProcessor()
-  xsltProcessor.importStylesheet(xsltDoc)
-  const resultDoc = xsltProcessor.transformToDocument(xmlDoc)
-  return new XMLSerializer().serializeToString(resultDoc)
+// Adapted from https://gist.github.com/sente/1083506
+export function prettifyXml(xmlInput: string): string {
+  const indentString = stringTimesN(2, ' ')
+
+  let formatted = ''
+  const regex = /(>)(<)(\/*)/g
+  const xml = xmlInput.replace(regex, `$1${EOL}$2$3`)
+  let pad = 0
+  xml.split(/\r?\n/).forEach((l) => {
+    const line = l.trim()
+
+    let indent = 0
+    if (line.match(/.+<\/\w[^>]*>$/)) {
+      indent = 0
+    } else if (line.match(/^<\/\w/)) {
+      // Somehow istanbul doesn't see the else case as covered, although it is. Skip it.
+      /* istanbul ignore else  */
+      if (pad !== 0) {
+        pad -= 1
+      }
+    } else if (line.match(/^<\w([^>]*[^\/])?>.*$/)) {
+      indent = 1
+    } else {
+      indent = 0
+    }
+
+    const padding = stringTimesN(pad, indentString)
+    formatted += padding + line + EOL
+    pad += indent
+  })
+
+  return formatted.trim()
 }
