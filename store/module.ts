@@ -1,6 +1,7 @@
 const defaultState = () => ({
   vendorName: '',
   moduleName: '',
+  includeModuleRegistration: false,
 })
 
 export const state = () => defaultState()
@@ -14,8 +15,8 @@ export const mutations = {
     state.moduleName = text
   },
 
-  setIncludeModuleRegistration(state: any, text: string) {
-    state.includeModuleRegistration = text
+  setIncludeModuleRegistration(state: any, value: boolean) {
+    state.includeModuleRegistration = value
   },
 
   reset(state: any) {
