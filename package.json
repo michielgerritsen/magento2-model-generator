@@ -23,7 +23,7 @@
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "mustache": "4.2.0",
-    "nuxt": "2.15.8",
+    "nuxt": "3.1.0",
     "postcss": "^8",
     "raw-loader": "4.0.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
