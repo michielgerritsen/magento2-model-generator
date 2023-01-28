@@ -22,12 +22,8 @@ describe('Test the input fields', () => {
 
     cy.get('[name="includeModuleRegistration"]').check()
 
-    cy.get('[aria-labelledby=top-sidebar]').contains(
-      'registration.php'
-    )
+    cy.get('[aria-labelledby=top-sidebar]').contains('registration.php')
 
-    cy.get('[aria-labelledby=top-sidebar]').contains(
-      'module.xml'
-    )
+    cy.get('[aria-labelledby=top-sidebar]').contains('module.xml')
   })
 })
