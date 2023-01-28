@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php 
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Api;
 
@@ -8,33 +10,13 @@ use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInter
 
 interface {{ ModelName }}RepositoryInterface
 {
-    /**
-     * @param int $id
-     * @return {{ ModelName }}Interface
-     */
     public function get(int $id);
 
-    /**
-     * @param SearchCriteriaInterface $criteria
-     * @return {{ ModelName }}SearchResultsInterface
-     */
     public function getList(SearchCriteriaInterface $criteria);
 
-    /**
-     * @param {{ ModelName }}Interface $entity
-     * @return {{ ModelName }}Interface
-     */
     public function save({{ ModelName }}Interface $entity);
 
-    /**
-     * @param {{ ModelName }}Interface $entity
-     * @return {{ ModelName }}Interface
-     */
     public function delete({{ ModelName }}Interface $entity);
 
-    /**
-     * @param int $id
-     * @return {{ ModelName }}Interface
-     */
     public function deleteById(int $id);
 }

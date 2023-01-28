@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php 
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Controller\Adminhtml\{{ ModelName }};
 
@@ -13,30 +15,17 @@ use Magento\Framework\Controller\ResultFactory;
 
 class Delete extends Action implements HttpGetActionInterface
 {
-    const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
+    public const string ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
 
-    /** @var ModelFactory */
-    protected $modelFactory;
-
-    /** @var ModelResource */
-    protected $modelResource;
-
-    /**
-     * Delete constructor.
-     * @param Context $context
-     * @param ModelFactory $modelFactory
-     * @param ModelResource $modelResource
-     */
     public function __construct(
         Context $context,
-        ModelFactory $modelFactory,
-        ModelResource $modelResource
+        protected readonly ModelFactory $modelFactory,
+        protected readonly ModelResource $modelResource
     ) {
-        $this->modelFactory = $modelFactory;
-        $this->modelResource = $modelResource;
         parent::__construct($context);
     }
 
+    /** @thows \Exception */
     public function execute(): Redirect
     {
         try {
