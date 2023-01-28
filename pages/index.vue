@@ -67,11 +67,17 @@
           class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"
         >
           <span class="block sm:inline">
+            <a
+              href="https://github.com/michielgerritsen/magento2-model-generator"
+              target="_blank"
+            >
+              Source code available on GitHub.
+            </a>
             &copy; {{ year }}
             <a href="https://www.controlaltdelete.nl/">Control Alt Delete</a>
             and
             <a href="https://www.michiel-gerritsen.com/"
-              >Michiel Gerritsen.com</a
+              >Michiel-Gerritsen.com</a
             >.
           </span>
         </div>
