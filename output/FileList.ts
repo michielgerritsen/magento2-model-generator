@@ -11,9 +11,6 @@ export default class FileList extends StateAware {
       new GeneratedFile(this.state, 'Api/ModelNameRepositoryInterface.php.stub'),
       new GeneratedFile(this.state, 'Api/Data/ModelNameSearchResultsInterface.php.stub'),
       new GeneratedFile(this.state, 'Api/Data/ModelNameInterface.php.stub'),
-      new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Edit.php.stub'),
-      new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Delete.php.stub'),
-      new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Index.php.stub'),
       new GeneratedFile(this.state, 'etc/di.xml.stub'),
       new GeneratedFile(this.state, 'etc/acl.xml.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName.php.stub'),
@@ -45,6 +42,9 @@ export default class FileList extends StateAware {
 
   private addAdmingridFiles(files: GeneratesFileInterface[]) {
     files.push(new GeneratedFile(this.state, 'view/adminhtml/layout/BaseName_index.xml.stub'))
+    files.push(new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Edit.php.stub')),
+    files.push(new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Delete.php.stub')),
+    files.push(new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Index.php.stub')),
     files.push(new UiComponent(this.state))
 
     if (this.isMassActions()) {
