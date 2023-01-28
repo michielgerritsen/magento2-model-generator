@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -8,7 +8,13 @@ use Magento\Framework\Api\SearchResultsInterface;
 
 interface {{ ModelName }}SearchResultsInterface extends SearchResultsInterface
 {
-    public function getItems(): \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[];
+    /**
+     * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[]
+     */
+    public function getItems(): array;
 
+    /**
+     * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[] $items
+     */
     public function setItems(array $items): static;
 }

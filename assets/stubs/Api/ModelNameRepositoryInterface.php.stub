@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -10,13 +10,33 @@ use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInter
 
 interface {{ ModelName }}RepositoryInterface
 {
-    public function get(int $id);
+    /**
+     * @param int $id
+     * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface
+     */
+    public function get(int $id): \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 
-    public function getList(SearchCriteriaInterface $criteria);
+    /**
+      * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
+      * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface
+      */
+    public function getList(SearchCriteriaInterface $criteria): \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface;
 
-    public function save({{ ModelName }}Interface $entity);
+    /**
+     * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface $entity
+     * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface
+     */
+    public function save({{ ModelName }}Interface $entity): \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 
-    public function delete({{ ModelName }}Interface $entity);
+    /**
+      * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface $entity
+      * @return bool
+      */
+    public function delete({{ ModelName }}Interface $entity): bool;
 
-    public function deleteById(int $id);
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public function deleteById(int $id): bool;
 }

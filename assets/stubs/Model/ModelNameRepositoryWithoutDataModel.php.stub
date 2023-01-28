@@ -13,6 +13,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Reflection\DataObjectProcessor;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}InterfaceFactory;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterfaceFactory;
 use {{ VendorName }}\{{ ModuleName }}\Api\{{ ModelName }}RepositoryInterface;
 use {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }} as Resource{{ ModelName }};
@@ -97,7 +98,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function save({{ ModelName }}Interface ${{ VariableName }}Model)
+    public function save({{ ModelName }}Interface ${{ VariableName }}Model): {{ ModelName }}Interface
     {
         try {
             $this->resource->save(${{ VariableName }}Model);
@@ -113,7 +114,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function get(int $id)
+    public function get(int $id): {{ ModelName }}Interface
     {
         ${{ VariableName }} = $this->{{ VariableName }}Factory->create();
         $this->resource->load(${{ VariableName }}, $id);
@@ -126,7 +127,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function getList(SearchCriteriaInterface $criteria)
+    public function getList(SearchCriteriaInterface $criteria): {{ ModelName }}SearchResultsInterface
     {
         $collection = $this->{{ VariableName }}CollectionFactory->create();
 
@@ -153,7 +154,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function delete({{ ModelName }}Interface ${{ VariableName }})
+    public function delete({{ ModelName }}Interface ${{ VariableName }}): bool
     {
         try {
             ${{ VariableName }}Model = $this->{{ VariableName }}Factory->create();
@@ -171,7 +172,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function deleteById(int $id)
+    public function deleteById(int $id): bool
     {
         return $this->delete($this->get($id));
     }
