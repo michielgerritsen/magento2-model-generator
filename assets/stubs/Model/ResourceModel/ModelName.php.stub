@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -8,9 +8,9 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class {{ ModelName }} extends AbstractDb
 {
-    public const string MAIN_TABLE = '{{ TableName }}';
+    public const MAIN_TABLE = '{{ TableName }}';
 
-    public const string ID_FIELD_NAME = '{{ IndexField }}';
+    public const ID_FIELD_NAME = '{{ IndexField }}';
 
     protected function _construct()
     {

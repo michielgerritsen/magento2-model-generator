@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -9,7 +9,7 @@ use Magento\Framework\Api\ExtensibleDataInterface;
 interface {{ ModelName }}Interface extends ExtensibleDataInterface
 {
     {{#Columns}}
-    public const string {{fieldNameUppercase}} = '{{fieldName}}';
+    public const {{fieldNameUppercase}} = '{{fieldName}}';
     {{/Columns}}
 
     {{#Columns}}
