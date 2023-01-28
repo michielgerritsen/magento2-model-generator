@@ -32,5 +32,5 @@ describe('Test the input fields', () => {
     cy.enableAdminGrid()
 
     cy.get('[aria-labelledby=top-sidebar]').contains('Controller')
-  });
+  })
 })
