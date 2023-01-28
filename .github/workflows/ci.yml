@@ -42,3 +42,6 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Run Cypress 🌎
+        run: yarn cypress
