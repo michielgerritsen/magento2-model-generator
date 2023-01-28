@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model;
 
-use Magento\Framework\Api\DataObjectHelper;
 use Magento\Framework\Api\ExtensibleDataObjectConverter;
 use Magento\Framework\Api\ExtensionAttribute\JoinProcessorInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
@@ -12,7 +11,6 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Framework\Reflection\DataObjectProcessor;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}InterfaceFactory;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface;
@@ -24,26 +22,23 @@ use {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }}\Collec
 class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
 {
     public function __construct(
-        protected readonly Resource{{ ModelName }} $resource,
-        protected readonly {{ ModelName }}Factory ${{ VariableName }}Factory,
-        protected readonly {{ ModelName }}InterfaceFactory $data{{ ModelName }}Factory,
-        protected readonly {{ ModelName }}CollectionFactory ${{ VariableName }}CollectionFactory,
-        protected readonly {{ ModelName }}SearchResultsInterfaceFactory $searchResultsFactory,
-        protected readonly DataObjectHelper $dataObjectHelper,
-        protected readonly DataObjectProcessor $dataObjectProcessor,
+        private readonly Resource{{ ModelName }} $resource,
+        private readonly {{ ModelName }}Factory ${{ VariableName }}Factory,
+        private readonly {{ ModelName }}CollectionFactory ${{ VariableName }}CollectionFactory,
+        private readonly {{ ModelName }}SearchResultsInterfaceFactory $searchResultsFactory,
         private readonly CollectionProcessorInterface $collectionProcessor,
-        protected readonly JoinProcessorInterface $extensionAttributesJoinProcessor,
-        protected readonly ExtensibleDataObjectConverter $extensibleDataObjectConverter
+        private readonly JoinProcessorInterface $extensionAttributesJoinProcessor,
+        private readonly ExtensibleDataObjectConverter $extensibleDataObjectConverter
     ) {
     }
 
     /**
      * @throws \Exception
      */
-    public function save({{ ModelName }}Interface ${{ VariableName }}): {{ ModelName }}Interface
+    public function save({{ ModelName }}Interface $entity): {{ ModelName }}Interface
     {
         ${{ VariableName }}Data = $this->extensibleDataObjectConverter->toNestedArray(
-            ${{ VariableName }},
+            $entity,
             [],
             {{ ModelName }}Interface::class
         );

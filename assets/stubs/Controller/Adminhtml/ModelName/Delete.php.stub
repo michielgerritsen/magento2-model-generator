@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -15,12 +15,12 @@ use Magento\Framework\Controller\ResultFactory;
 
 class Delete extends Action implements HttpGetActionInterface
 {
-    public const string ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
+    public const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
 
     public function __construct(
         Context $context,
-        protected readonly ModelFactory $modelFactory,
-        protected readonly ModelResource $modelResource
+        private readonly ModelFactory $modelFactory,
+        private readonly ModelResource $modelResource
     ) {
         parent::__construct($context);
     }

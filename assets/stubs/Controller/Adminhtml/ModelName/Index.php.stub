@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -16,10 +16,9 @@ class Index extends Action implements HttpGetActionInterface
 
     public function __construct(
         Context $context,
-        protected readonly PageFactory $pageFactory
+        private readonly PageFactory $pageFactory
     ) {
         parent::__construct($context);
-        $this->pageFactory = $pageFactory;
     }
 
     public function execute(): Page

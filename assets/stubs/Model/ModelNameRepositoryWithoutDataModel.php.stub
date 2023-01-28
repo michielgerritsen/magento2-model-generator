@@ -2,15 +2,12 @@
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model;
 
-use Magento\Framework\Api\DataObjectHelper;
-use Magento\Framework\Api\ExtensibleDataObjectConverter;
 use Magento\Framework\Api\ExtensionAttribute\JoinProcessorInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\Framework\Reflection\DataObjectProcessor;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}InterfaceFactory;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface;
@@ -21,94 +18,30 @@ use {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }}\Collec
 
 class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
 {
-    /**
-     * @var Resource{{ ModelName }}
-     */
-    protected $resource;
-
-    /**
-     * @var {{ ModelName }}Factory
-     */
-    protected ${{ VariableName }}Factory;
-
-    /**
-     * @var {{ ModelName }}CollectionFactory
-     */
-    protected ${{ VariableName }}CollectionFactory;
-
-    /**
-     * @var {{ ModelName }}SearchResultsInterfaceFactory
-     */
-    protected $searchResultsFactory;
-
-    /**
-     * @var DataObjectHelper
-     */
-    protected $dataObjectHelper;
-
-    /**
-     * @var DataObjectProcessor
-     */
-    protected $dataObjectProcessor;
-
-    /**
-     * @var {{ ModelName }}InterfaceFactory
-     */
-    protected $data{{ ModelName }}Factory;
-
-    /**
-     * @var JoinProcessorInterface
-     */
-    protected $extensionAttributesJoinProcessor;
-
-    /**
-     * @var CollectionProcessorInterface
-     */
-    private $collectionProcessor;
-
-    /**
-     * @var ExtensibleDataObjectConverter
-     */
-    protected $extensibleDataObjectConverter;
-
     public function __construct(
-        Resource{{ ModelName }} $resource,
-        {{ ModelName }}Factory ${{ VariableName }}Factory,
-        {{ ModelName }}InterfaceFactory $data{{ ModelName }}Factory,
-        {{ ModelName }}CollectionFactory ${{ VariableName }}CollectionFactory,
-        {{ ModelName }}SearchResultsInterfaceFactory $searchResultsFactory,
-        DataObjectHelper $dataObjectHelper,
-        DataObjectProcessor $dataObjectProcessor,
-        CollectionProcessorInterface $collectionProcessor,
-        JoinProcessorInterface $extensionAttributesJoinProcessor,
-        ExtensibleDataObjectConverter $extensibleDataObjectConverter
+        private readonly Resource{{ ModelName }} $resource,
+        private readonly {{ ModelName }}Factory ${{ VariableName }}Factory,
+        private readonly {{ ModelName }}CollectionFactory ${{ VariableName }}CollectionFactory,
+        private readonly CollectionProcessorInterface $collectionProcessor,
+        private readonly {{ ModelName }}SearchResultsInterfaceFactory $searchResultsFactory,
+        private readonly JoinProcessorInterface $extensionAttributesJoinProcessor
     ) {
-        $this->resource = $resource;
-        $this->{{ VariableName }}Factory = ${{ VariableName }}Factory;
-        $this->{{ VariableName }}CollectionFactory = ${{ VariableName }}CollectionFactory;
-        $this->searchResultsFactory = $searchResultsFactory;
-        $this->dataObjectHelper = $dataObjectHelper;
-        $this->data{{ ModelName }}Factory = $data{{ ModelName }}Factory;
-        $this->dataObjectProcessor = $dataObjectProcessor;
-        $this->collectionProcessor = $collectionProcessor;
-        $this->extensionAttributesJoinProcessor = $extensionAttributesJoinProcessor;
-        $this->extensibleDataObjectConverter = $extensibleDataObjectConverter;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function save({{ ModelName }}Interface ${{ VariableName }}Model): {{ ModelName }}Interface
+    public function save({{ ModelName }}Interface $entity): {{ ModelName }}Interface
     {
         try {
-            $this->resource->save(${{ VariableName }}Model);
+            $this->resource->save($entity);
         } catch (\Exception $exception) {
             throw new CouldNotSaveException(__(
                 'Could not save the {{ VariableName }}: %1',
                 $exception->getMessage()
             ));
         }
-        return ${{ VariableName }}Model;
+        return $entity;
     }
 
     /**
@@ -154,11 +87,11 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function delete({{ ModelName }}Interface ${{ VariableName }}): bool
+    public function delete({{ ModelName }}Interface $entity): bool
     {
         try {
             ${{ VariableName }}Model = $this->{{ VariableName }}Factory->create();
-            $this->resource->load(${{ VariableName }}Model, ${{ VariableName }}->getEntityId());
+            $this->resource->load(${{ VariableName }}Model, $entity->getEntityId());
             $this->resource->delete(${{ VariableName }}Model);
         } catch (\Exception $exception) {
             throw new CouldNotDeleteException(__(

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -18,8 +18,8 @@ class MassDelete extends Action implements HttpPostActionInterface
 
     public function __construct(
         Context $context,
-        protected readonly CollectionFactory $collectionFactory,
-        protected readonly Filter $filter
+        private readonly CollectionFactory $collectionFactory,
+        private readonly Filter $filter
     ) {
         parent::__construct($context);
     }
