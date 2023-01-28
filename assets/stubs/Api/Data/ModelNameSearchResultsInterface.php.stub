@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Api\Data;
 
@@ -7,15 +9,12 @@ use Magento\Framework\Api\SearchResultsInterface;
 interface {{ ModelName }}SearchResultsInterface extends SearchResultsInterface
 {
     /**
-     * Get {{ ModelName }} list.
      * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[]
      */
-    public function getItems();
+    public function getItems(): array;
 
     /**
-     * Set id list.
      * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[] $items
-     * @return $this
      */
-    public function setItems(array $items);
+    public function setItems(array $items): static;
 }

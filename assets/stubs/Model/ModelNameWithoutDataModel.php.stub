@@ -21,7 +21,7 @@ class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}
      * Get {{ fieldName }}
      * @return {{ phpType }}|null
      */
-    public function get{{ functionName }}()
+    public function get{{ functionName }}(): ?{{ phpType }}
     {
         return $this->_get(self::{{ fieldNameUppercase }});
     }
@@ -31,7 +31,7 @@ class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}
      * @param {{ phpType }} ${{ fieldName }}
      * @return {{ ModelName }}Interface
      */
-    public function set{{ functionName }}({{ phpType }} ${{ fieldName }})
+    public function set{{ functionName }}({{ phpType }} ${{ fieldName }}): {{ ModelName }}Interface
     {
         return $this->setData(self::{{ fieldNameUppercase }}, ${{ fieldName }});
     }
@@ -41,7 +41,7 @@ class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}
      * Retrieve existing extension attributes object or create a new one.
      * @return {{ ModelName }}ExtensionInterface|null
      */
-    public function getExtensionAttributes()
+    public function getExtensionAttributes(): ?{{ ModelName }}ExtensionInterface
     {
         return $this->_getExtensionAttributes();
     }
@@ -53,7 +53,7 @@ class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}
      */
     public function setExtensionAttributes(
         {{ ModelName }}ExtensionInterface $extensionAttributes
-    ) {
+    ): static {
         return $this->_setExtensionAttributes($extensionAttributes);
     }
 }

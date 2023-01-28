@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Api\Data;
 
@@ -7,34 +9,32 @@ use Magento\Framework\Api\ExtensibleDataInterface;
 interface {{ ModelName }}Interface extends ExtensibleDataInterface
 {
     {{#Columns}}
-    const {{fieldNameUppercase}} = '{{fieldName}}';
+    public const {{fieldNameUppercase}} = '{{fieldName}}';
     {{/Columns}}
 
     {{#Columns}}
     /**
      * @return {{ phpType }}|null
      */
-    public function get{{ functionName }}();
+    public function get{{ functionName }}(): ?{{ phpType }};
 
     /**
      * @param {{ phpType }} ${{ fieldName }}
      * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface
      */
-    public function set{{ functionName }}({{ phpType }} ${{ fieldName }});
+    public function set{{ functionName }}({{ phpType }} ${{ fieldName }}): \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 
     {{/Columns}}
     /**
-     * Retrieve existing extension attributes object or create a new one.
      * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface|null
      */
-    public function getExtensionAttributes();
+    public function getExtensionAttributes(): ?\{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface;
 
     /**
-     * Set an extension attributes object.
      * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface $extensionAttributes
-     * @return $this
+     * @return static
      */
     public function setExtensionAttributes(
         \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface $extensionAttributes
-    );
+    ): static;
 }

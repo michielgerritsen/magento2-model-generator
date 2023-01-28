@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php 
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model;
 
@@ -12,34 +14,18 @@ use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}InterfaceFactory;
 
 class {{ ModelName }} extends AbstractModel
 {
-    /**
-     * @var DataObjectHelper
-     */
-    private $dataObjectHelper;
-
-    /**
-     * @var {{ ModelName }}InterfaceFactory
-     */
-    private ${{ VariableName }}DataFactory;
-
     public function __construct(
         Context $context,
         Registry $registry,
-        DataObjectHelper $dataObjectHelper,
-        {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
+        private readonly DataObjectHelper $dataObjectHelper,
+        private readonly  {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
         ResourceModel\{{ ModelName }} $resource,
         AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
-
-        $this->dataObjectHelper = $dataObjectHelper;
-        $this->{{ VariableName }}DataFactory = ${{ VariableName }}DataFactory;
     }
 
-    /**
-     * @return {{ ModelName }}Interface
-     */
     public function getDataModel(): {{ ModelName }}Interface
     {
         $data = $this->getData();
