@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php 
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Controller\Adminhtml\{{ ModelName }};
 
@@ -14,26 +16,12 @@ class MassDelete extends Action implements HttpPostActionInterface
 {
     const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
 
-    /** @var CollectionFactory */
-    protected $collectionFactory;
-
-    /** @var Filter */
-    protected $filter;
-
-    /**
-     * MassDelete constructor.
-     * @param Context $context
-     * @param CollectionFactory $collectionFactory
-     * @param Filter $filter
-     */
     public function __construct(
         Context $context,
-        CollectionFactory $collectionFactory,
-        Filter $filter
+        protected readonly CollectionFactory $collectionFactory,
+        protected readonly Filter $filter
     ) {
         parent::__construct($context);
-        $this->collectionFactory = $collectionFactory;
-        $this->filter = $filter;
     }
 
     public function execute(): Redirect

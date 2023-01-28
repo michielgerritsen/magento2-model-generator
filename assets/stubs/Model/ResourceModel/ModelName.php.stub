@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php 
+
+declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel;
 
@@ -6,11 +8,9 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 class {{ ModelName }} extends AbstractDb
 {
-    /** @var string Main table name */
-    const MAIN_TABLE = '{{ TableName }}';
+    public const string MAIN_TABLE = '{{ TableName }}';
 
-    /** @var string Main table primary key field name */
-    const ID_FIELD_NAME = '{{ IndexField }}';
+    public const string ID_FIELD_NAME = '{{ IndexField }}';
 
     protected function _construct()
     {
