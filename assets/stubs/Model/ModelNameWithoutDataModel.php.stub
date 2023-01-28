@@ -1,0 +1,59 @@
+<?php declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Model;
+
+use Magento\Framework\Model\AbstractExtensibleModel;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface;
+use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
+
+class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}Interface
+{
+    /**
+     * @inheritdoc
+     */
+    protected function _construct(): void
+    {
+        $this->_init(ResourceModel\{{ ModelName }}::class);
+    }
+
+    {{#Columns}}
+    /**
+     * Get {{ fieldName }}
+     * @return {{ phpType }}|null
+     */
+    public function get{{ functionName }}()
+    {
+        return $this->_get(self::{{ fieldNameUppercase }});
+    }
+
+    /**
+     * Set {{ fieldName }}
+     * @param {{ phpType }} ${{ fieldName }}
+     * @return {{ ModelName }}Interface
+     */
+    public function set{{ functionName }}({{ phpType }} ${{ fieldName }})
+    {
+        return $this->setData(self::{{ fieldNameUppercase }}, ${{ fieldName }});
+    }
+
+    {{/Columns}}
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     * @return {{ ModelName }}ExtensionInterface|null
+     */
+    public function getExtensionAttributes()
+    {
+        return $this->_getExtensionAttributes();
+    }
+
+    /**
+     * Set an extension attributes object.
+     * @param {{ ModelName }}ExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(
+        {{ ModelName }}ExtensionInterface $extensionAttributes
+    ) {
+        return $this->_setExtensionAttributes($extensionAttributes);
+    }
+}

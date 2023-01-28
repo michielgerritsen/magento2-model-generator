@@ -64,6 +64,25 @@
           </div>
         </div>
       </div>
+
+      <div class="mt-1 sm:mt-0 sm:col-span-6">
+        <div class="relative flex items-start">
+          <div class="flex items-center h-5">
+            <input
+              id="includeDataModels"
+              v-model="includeDataModels"
+              name="includeDataModels"
+              type="checkbox"
+              class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+            />
+          </div>
+          <div class="ml-3 text-sm">
+            <label for="includeDataModels" class="font-medium text-gray-700">
+              Use data models
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -96,6 +115,15 @@ export default Vue.extend({
       },
       set(value) {
         this.$store.commit('module/setIncludeModuleRegistration', value)
+      },
+    },
+
+    includeDataModels: {
+      get() {
+        return this.$store.state.module.includeDataModels
+      },
+      set(value) {
+        this.$store.commit('module/setIncludeDataModels', value)
       },
     },
   },

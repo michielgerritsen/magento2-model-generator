@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li :class="['is-' + (isFile ? 'file' : 'dir') + '-' + item.Name.toLowerCase().replace('.', '-')]">
     <ScriptModal v-if="showModal" @close="showModal = false">
       <template #title>{{ item.CurrentPath.replace(/\/$/, '') }}</template>
 

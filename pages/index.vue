@@ -20,8 +20,8 @@
         <div class="grid grid-cols-1 gap-4 items-start lg:grid-cols-3 lg:gap-8">
           <!-- Left column -->
           <div class="grid grid-cols-1 gap-4 lg:col-span-2">
-            <section aria-labelledby="section-1-title">
-              <h2 id="section-1-title" class="sr-only">Enter model details</h2>
+            <section aria-labelledby="module-details">
+              <h2 id="module-details" class="sr-only">Enter model details</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
                   <div class="space-y-8 divide-y divide-gray-200">
@@ -40,8 +40,8 @@
 
           <!-- Right column -->
           <div class="grid grid-cols-1 gap-4">
-            <section aria-labelledby="section-2-title">
-              <h2 id="section-2-title" class="sr-only">File list</h2>
+            <section aria-labelledby="top-sidebar">
+              <h2 id="top-sidebar" class="sr-only">File list</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
                   <TopSidebar />
@@ -49,8 +49,8 @@
               </div>
             </section>
 
-            <section aria-labelledby="section-2-title">
-              <h2 id="section-2-title" class="sr-only">File list</h2>
+            <section aria-labelledby="bottom-sidebar">
+              <h2 id="bottom-sidebar" class="sr-only">File list</h2>
               <div class="rounded-lg bg-white overflow-hidden shadow">
                 <div class="p-6">
                   <BottomSidebar />

@@ -2,6 +2,7 @@ const defaultState = () => ({
   vendorName: '',
   moduleName: '',
   includeModuleRegistration: false,
+  includeDataModels: true,
 })
 
 export const state = () => defaultState()
@@ -17,6 +18,10 @@ export const mutations = {
 
   setIncludeModuleRegistration(state: any, value: boolean) {
     state.includeModuleRegistration = value
+  },
+
+  setIncludeDataModels(state: any, value: boolean) {
+    state.includeDataModels = value
   },
 
   reset(state: any) {

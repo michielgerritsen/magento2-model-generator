@@ -64,7 +64,7 @@ export default class StateAware {
   }
 
   formattedColumns(): Array<Object> {
-    return this.columns().map((column) => {
+    const columns = this.columns().map((column) => {
       return {
         fieldName: column.fieldName,
         inputType: column.inputType,
@@ -73,6 +73,12 @@ export default class StateAware {
         phpType: this.inputTypeToPhpType(column.inputType),
       }
     })
+
+    if (!this.includeDataModels()) {
+      return columns.filter((column) => column.fieldName !== 'entity_id')
+    }
+
+    return columns
   }
 
   inputTypeToPhpType(inputType: string): string {
@@ -151,6 +157,10 @@ export default class StateAware {
     return this.state.module.includeModuleRegistration
   }
 
+  includeDataModels() {
+    return this.state.module.includeDataModels
+  }
+
   fileContext() {
     return {
       ModuleName: this.moduleName(),
@@ -161,6 +171,7 @@ export default class StateAware {
       ListingName: this.listingName(),
       VariableName: this.variableName(),
       Columns: this.formattedColumns(),
+      ModelPath: this.includeDataModels() ? 'Model\\Data' : 'Model',
     }
   }
 }

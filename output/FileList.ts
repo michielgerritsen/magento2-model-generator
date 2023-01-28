@@ -16,9 +16,6 @@ export default class FileList extends StateAware {
       new GeneratedFile(this.state, 'Controller/Adminhtml/ModelName/Index.php.stub'),
       new GeneratedFile(this.state, 'etc/di.xml.stub'),
       new GeneratedFile(this.state, 'etc/acl.xml.stub'),
-      new GeneratedFile(this.state, 'Model/ModelName.php.stub'),
-      new GeneratedFile(this.state, 'Model/ModelNameRepository.php.stub'),
-      new GeneratedFile(this.state, 'Model/Data/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName/Collection.php.stub'),
       new DbSchemaWhitelist(this.state),
@@ -32,6 +29,15 @@ export default class FileList extends StateAware {
     if (this.includeModuleRegistration()) {
       files.push(new GeneratedFile(this.state, 'etc/module.xml.stub'))
       files.push(new GeneratedFile(this.state, 'registration.php.stub'))
+    }
+
+    if (this.includeDataModels()) {
+      files.push(new GeneratedFile(this.state, 'Model/ModelNameRepository.php.stub', 'Model/ModelNameRepositoryWithDataModel.php.stub'))
+      files.push(new GeneratedFile(this.state, 'Model/ModelName.php.stub', 'Model/ModelNameWithDataModel.php.stub'))
+      files.push(new GeneratedFile(this.state, 'Model/Data/ModelName.php.stub'))
+    } else {
+      files.push(new GeneratedFile(this.state, 'Model/ModelNameRepository.php.stub', 'Model/ModelNameRepositoryWithoutDataModel.php.stub'))
+      files.push(new GeneratedFile(this.state, 'Model/ModelName.php.stub', 'Model/ModelNameWithoutDataModel.php.stub'))
     }
 
     return files

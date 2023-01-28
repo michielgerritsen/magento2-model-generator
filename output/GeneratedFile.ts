@@ -5,10 +5,17 @@ import GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
 export default class GeneratedFile extends StateAware implements GeneratesFileInterface {
   private path: String
 
-  constructor(state: any, path: String) {
+  private source: String | null
+
+  constructor(state: any, path: String, source: String | null = null) {
     super(state)
 
     this.path = path
+    this.source = source
+
+    if (!source) {
+      this.source = path
+    }
   }
 
   getPath(): String {
@@ -22,7 +29,7 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
   }
 
   getContents(): String {
-    const contents = require('~/assets/stubs/' + this.path).default
+    const contents = require('~/assets/stubs/' + this.source).default
 
     return Mustache.render(contents, this.fileContext())
   }
