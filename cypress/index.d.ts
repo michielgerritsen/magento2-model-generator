@@ -5,5 +5,7 @@ declare namespace Cypress {
     setValidData(): Chainable<any>;
     enableDataModels(): Chainable<any>;
     disableDataModels(): Chainable<any>;
+    enableAdminGrid(): Chainable<any>;
+    disableAdminGrid(): Chainable<any>;
   }
 }

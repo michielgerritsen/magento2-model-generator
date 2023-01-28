@@ -26,4 +26,11 @@ describe('Test the input fields', () => {
 
     cy.get('[aria-labelledby=top-sidebar]').contains('module.xml')
   })
+
+  it('Should show the controllers when admingrid is enabled', () => {
+    cy.setValidData()
+    cy.enableAdminGrid()
+
+    cy.get('[aria-labelledby=top-sidebar]').contains('Controller')
+  });
 })

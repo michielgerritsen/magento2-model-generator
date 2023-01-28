@@ -49,5 +49,15 @@ Cypress.Commands.add('enableDataModels', () => {
 })
 
 Cypress.Commands.add('disableDataModels', () => {
-  cy.get('[aria-labelledby=module-details] [name="includeDataModels"]').uncheck()
+  cy.get(
+    '[aria-labelledby=module-details] [name="includeDataModels"]'
+  ).uncheck()
+})
+
+Cypress.Commands.add('enableAdminGrid', () => {
+  cy.get('[aria-labelledby=module-details] [name="enabled"]').check()
+})
+
+Cypress.Commands.add('disableAdminGrid', () => {
+  cy.get('[aria-labelledby=module-details] [name="enabled"]').uncheck()
 })
