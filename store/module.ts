@@ -2,7 +2,7 @@ const defaultState = () => ({
   vendorName: '',
   moduleName: '',
   includeModuleRegistration: false,
-  includeDataModels: true,
+  includeDataModels: false,
 })
 
 export const state = () => defaultState()
