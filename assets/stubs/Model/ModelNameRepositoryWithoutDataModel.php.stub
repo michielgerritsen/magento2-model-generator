@@ -76,7 +76,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
 
         $items = [];
         foreach ($collection as $model) {
-            $items[] = $model->getDataModel();
+            $items[] = $model;
         }
 
         $searchResults->setItems($items);
