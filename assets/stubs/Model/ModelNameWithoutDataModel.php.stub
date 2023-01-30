@@ -23,7 +23,7 @@ class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}
      */
     public function get{{ functionName }}(): ?{{ phpType }}
     {
-        return $this->_get(self::{{ fieldNameUppercase }});
+        return $this->getData(self::{{ fieldNameUppercase }});
     }
 
     /**
