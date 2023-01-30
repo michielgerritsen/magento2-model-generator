@@ -7,7 +7,11 @@
         item.Name.toLowerCase().replace('.', '-'),
     ]"
   >
-    <ScriptModal v-if="showModal" @close="showModal = false">
+    <ScriptModal
+      v-if="showModal"
+      :filename="item.Name"
+      @close="showModal = false"
+    >
       <template #title>{{ item.CurrentPath.replace(/\/$/, '') }}</template>
 
       <template #default>{{ item.Contents }}</template>

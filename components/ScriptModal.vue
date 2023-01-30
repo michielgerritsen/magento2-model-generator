@@ -60,8 +60,8 @@
                 <slot name="title"></slot>
               </h3>
               <div class="mt-2 w-full">
-                <vue-code-highlight language="javascript">
-                  <pre><slot></slot></pre>
+                <vue-code-highlight :language="extension">
+                  <slot></slot>
                 </vue-code-highlight>
               </div>
             </div>
@@ -84,10 +84,37 @@
 <script lang="ts">
 import Vue from 'vue'
 import { component as VueCodeHighlight } from 'vue-code-highlight'
+import 'prism-es6/components/prism-markup-templating'
+import 'prism-es6/components/prism-php'
+import 'prism-es6/components/prism-markup'
+import 'prism-es6/components/prism-json'
 
 export default Vue.extend({
   components: {
     VueCodeHighlight,
+  },
+
+  props: {
+    filename: {
+      type: String,
+      required: true,
+    },
+  },
+
+  computed: {
+    extension() {
+      const extension = this.filename.split('.').pop()
+
+      if (extension === 'xml') {
+        return 'markup'
+      }
+
+      if (extension === 'json') {
+        return 'json'
+      }
+
+      return 'php'
+    },
   },
 })
 </script>
