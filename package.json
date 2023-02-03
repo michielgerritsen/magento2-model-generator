@@ -42,7 +42,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "29.4.1",
-    "cypress": "^12.5.0",
+    "cypress": "^12.5.1",
     "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-nuxt": "4.0.0",
