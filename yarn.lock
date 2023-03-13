@@ -2133,10 +2133,10 @@
     eslint-plugin-vue "^9.7.0"
     local-pkg "^0.4.2"
 
-"@nuxtjs/eslint-module@4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-module/-/eslint-module-4.0.1.tgz#bdacd545eed89b4d94261c4696a0af6d5f43ef42"
-  integrity sha512-s0Pdqhr7YEVuf4J5Nm7/EU2plF5TCgolX9c6GTOt+HUkN3DJzwZpDk6JfuCKhDtC4iP2borRZcjJU6av7xMugA==
+"@nuxtjs/eslint-module@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-module/-/eslint-module-4.0.2.tgz#5d4d83d39e8d34a0b3adfef175e0adddaed35c7b"
+  integrity sha512-Lss37KjO9EZwlrxHcvXWiLZnd/kvw40htqhwKJiA8/IwuVWAFJ6Tu5Hl8iz2V0BN4RU1DIaS1ULQOQycndu3dw==
   dependencies:
     "@nuxt/kit" "^3.2.3"
     eslint-webpack-plugin "^4.0.0"
