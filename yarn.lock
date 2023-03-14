@@ -1859,7 +1859,7 @@
     node-html-parser "^6.1.5"
     ufo "^1.1.1"
 
-"@nuxt/kit@^3.2.0", "@nuxt/kit@^3.2.3":
+"@nuxt/kit@^3.2.3":
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.2.3.tgz#97d8b4a4bedda4452ea18629c73c6301a964d492"
   integrity sha512-wcsVlQLwGkh1cRhAFWHc3uYHdIxFTRNdRUzNyfqoX9DL0Fuga3K75q/PBY0xg1viA9R6F5BMPhc7KDLSWbXtWg==
@@ -2169,14 +2169,14 @@
     serve-static "^1.14.1"
     workbox-cdn "^5.1.4"
 
-"@nuxtjs/tailwindcss@6.4.1":
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-6.4.1.tgz#e4018312afd087b7f040b63174547918e81b1c42"
-  integrity sha512-b8c6h+iiHJJ/rw/IirmYlF0RaIGVIVFmZXdHYPuDW/Mf6WAEz8IkAicyO5gRL3jYKp98kld067XPGsumDhaVVg==
+"@nuxtjs/tailwindcss@6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/tailwindcss/-/tailwindcss-6.5.0.tgz#e456b930ca932f15b4823a124dc64ba31b8da375"
+  integrity sha512-Ilkph6jH+eQxuSaZ7DDx3eIHLaGz+9Nbs5qOKpwgGBFKnilqMpvxE9V5ji4V0aH2vZBN3HSlpxbrIr07t6uy8Q==
   dependencies:
-    "@nuxt/kit" "^3.2.0"
+    "@nuxt/kit" "^3.2.3"
     "@nuxt/postcss8" "^1.1.3"
-    autoprefixer "^10.4.13"
+    autoprefixer "^10.4.14"
     chalk "^5.2.0"
     chokidar "^3.5.3"
     clear-module "^4.1.2"
@@ -2184,11 +2184,11 @@
     defu "^6.1.2"
     pathe "^1.1.0"
     postcss "^8.4.21"
-    postcss-custom-properties "^13.1.3"
+    postcss-custom-properties "^13.1.4"
     postcss-nesting "^11.2.1"
     tailwind-config-viewer "^1.7.2"
     tailwindcss "^3.2.7"
-    ufo "^1.1.0"
+    ufo "^1.1.1"
 
 "@nuxtjs/youch@^4.2.3":
   version "4.2.3"
@@ -9837,10 +9837,10 @@ postcss-custom-media@^9.1.0:
     "@csstools/css-tokenizer" "^2.0.0"
     "@csstools/media-query-list-parser" "^2.0.0"
 
-postcss-custom-properties@^13.1.0, postcss-custom-properties@^13.1.3:
-  version "13.1.3"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-13.1.3.tgz#bee287086290cb03958c223576dc8fe81d0aa253"
-  integrity sha512-15equAsfqtnr7jyzes6vyaGdAiNmKd+50FZ35/E/huBNBt7PgGMSNL/4o765nnNoP2dmaMJklb3FwJf3fdRcpA==
+postcss-custom-properties@^13.1.0, postcss-custom-properties@^13.1.4:
+  version "13.1.4"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-13.1.4.tgz#590e5770137011001602806da51243b6c82c1cde"
+  integrity sha512-iSAdaZrM3KMec8cOSzeTUNXPYDlhqsMJHpt62yrjwG6nAnMtRHPk5JdMzGosBJtqEahDolvD5LNbcq+EZ78o5g==
   dependencies:
     "@csstools/cascade-layer-name-parser" "^1.0.0"
     "@csstools/css-parser-algorithms" "^2.0.0"
@@ -12203,12 +12203,7 @@ ua-parser-js@^1.0.33:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.33.tgz#f21f01233e90e7ed0f059ceab46eb190ff17f8f4"
   integrity sha512-RqshF7TPTE0XLYAqmjlu5cLLuGdKrNu9O1KLA/qp39QtbZwuzwv1dT46DZSopoUMsYgXpB3Cv8a03FI8b74oFQ==
 
-ufo@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.1.0.tgz#a5c4c814b0a98f7e0ca42c478688663fd3e3c037"
-  integrity sha512-LQc2s/ZDMaCN3QLpa+uzHUOQ7SdV0qgv3VBXOolQGXTaaZpIur6PwUclF5nN2hNkiTRcUugXd1zFOW3FLJ135Q==
-
-ufo@^1.1.1:
+ufo@^1.1.0, ufo@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ufo/-/ufo-1.1.1.tgz#e70265e7152f3aba425bd013d150b2cdf4056d7c"
   integrity sha512-MvlCc4GHrmZdAllBc0iUDowff36Q9Ndw/UzqmEKyrfSzokTd9ZCy1i+IIk5hrYKkjoYVQyNbrw7/F8XJ2rEwTg==
