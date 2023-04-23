@@ -64,22 +64,33 @@
     <footer>
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div
-          class="border-t border-gray-200 py-8 text-sm text-gray-500 text-center sm:text-left"
+          class="text-center border-t border-gray-200 py-8 text-sm text-gray-500 text-center"
         >
-          <span class="block sm:inline">
+          <p>
             <a
+              class="underline"
               href="https://github.com/michielgerritsen/magento2-model-generator"
               target="_blank"
             >
               Source code available on GitHub.
             </a>
             &copy; {{ year }}
-            <a href="https://www.controlaltdelete.nl/">Control Alt Delete</a>
+            <a class="underline" href="https://www.controlaltdelete.nl/"
+              >Control Alt Delete</a
+            >
             and
-            <a href="https://www.michiel-gerritsen.com/"
+            <a class="underline" href="https://www.michiel-gerritsen.com/"
               >Michiel-Gerritsen.com</a
             >.
-          </span>
+          </p>
+
+          <p class="mt-4 font-bold">
+            Want to get your team up and running with testing in Magento 2?
+            Check out
+            <a class="underline" href="https://www.magetested.com/"
+              >MageTested.com</a
+            >.
+          </p>
         </div>
       </div>
     </footer>
