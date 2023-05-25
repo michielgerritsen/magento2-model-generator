@@ -35,4 +35,8 @@ export default class DbSchemaWhitelist extends StateAware implements GeneratesFi
   getPath(): String {
     return 'etc/db_schema_whitelist.json'
   }
+
+  isMergeable(): Boolean {
+    return false
+  }
 }

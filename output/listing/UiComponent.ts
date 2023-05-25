@@ -32,4 +32,8 @@ export default class UiComponent extends StateAware implements GeneratesFileInte
   getPath(): String {
     return 'view/adminhtml/ui_component/' + this.listingName() + '.xml'
   }
+
+  isMergeable(): Boolean {
+    return true
+  }
 }

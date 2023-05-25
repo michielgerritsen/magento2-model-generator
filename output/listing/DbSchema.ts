@@ -35,6 +35,10 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
     return 'etc/db_schema.xml'
   }
 
+  isMergeable(): Boolean {
+    return false
+  }
+
   private addColumns(xml: XMLDocument, table: HTMLTableElement) {
     let indexField: ColumnInterface | boolean = false
 

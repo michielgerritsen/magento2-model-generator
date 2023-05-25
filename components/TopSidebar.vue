@@ -28,6 +28,36 @@
         <TreeView :children="children" />
       </div>
 
+      <div class="mt-4">
+        <input
+          id="includeNonMergable"
+          v-model="includeNonMergable"
+          type="checkbox"
+        />
+        <label for="includeNonMergable" class="ml-2 text-gray-700">
+          Include non-mergable files
+          <span
+            title="This will include files that are not mergable when having multiple models, like the db_schema.xml or di.xml."
+          >
+            <svg
+              class="w-5 h-5 inline-block"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+
       <button
         type="button"
         class="mt-4 w-full text-center px-5 py-4 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-green-400 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
@@ -93,6 +123,15 @@ export default Vue.extend({
       return Object.values(output.Children)
     },
 
+    includeNonMergable: {
+      get() {
+        return this.$store.state.download.includeNonMergable
+      },
+      set(value) {
+        this.$store.commit('download/setIncludeNonMergable', value)
+      }
+    },
+
     ...mapState('admingrid', [
       'newButton',
       'massactions'
@@ -103,7 +142,12 @@ export default Vue.extend({
     download() {
       const zip = new JSZip();
 
-      this.files.forEach((file) => {
+      let files = this.files;
+      if (!this.includeNonMergable) {
+        files = files.filter((file) => file.isMergeable())
+      }
+
+      files.forEach((file) => {
         zip.file(file.getPath(), file.getContents());
       })
 

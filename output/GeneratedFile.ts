@@ -43,4 +43,13 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
   capitalizeFirstLetter(input: String) {
     return input.charAt(0).toUpperCase() + input.slice(1)
   }
+
+  isMergeable(): Boolean {
+    return ![
+      'registration.php',
+      'etc/acl.xml',
+      'etc/di.xml',
+      'etc/module.xml',
+    ].includes(this.getPath())
+  }
 }
