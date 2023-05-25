@@ -59,7 +59,7 @@
               >
                 <slot name="title"></slot>
               </h3>
-              <div class="mt-2 w-full">
+              <div class="mt-2 w-full code-contents">
                 <vue-code-highlight :language="extension">
                   <slot></slot>
                 </vue-code-highlight>

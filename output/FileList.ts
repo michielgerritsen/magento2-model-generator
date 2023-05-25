@@ -12,6 +12,7 @@ export default class FileList extends StateAware {
       new GeneratedFile(this.state, 'Api/Data/ModelNameSearchResultsInterface.php.stub'),
       new GeneratedFile(this.state, 'Api/Data/ModelNameInterface.php.stub'),
       new GeneratedFile(this.state, 'etc/di.xml.stub'),
+      new GeneratedFile(this.state, 'Model/ModelNameSearchResults.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName.php.stub'),
       new GeneratedFile(this.state, 'Model/ResourceModel/ModelName/Collection.php.stub'),
       new DbSchemaWhitelist(this.state),

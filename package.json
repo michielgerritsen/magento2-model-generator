@@ -10,7 +10,8 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "test": "jest",
-    "cypress": "/bin/sh run-cypress.sh"
+    "cypress": "/bin/sh run-cypress.sh",
+    "cypress-dev": "cypress open --config baseUrl=http://localhost:3000"
   },
   "dependencies": {
     "@headlessui/vue": "1.7.13",

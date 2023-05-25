@@ -61,3 +61,23 @@ Cypress.Commands.add('enableAdminGrid', () => {
 Cypress.Commands.add('disableAdminGrid', () => {
   cy.get('[aria-labelledby=module-details] [name="enabled"]').uncheck()
 })
+
+Cypress.Commands.add('openFileByPath', (fileName: string) => {
+  let selector = ''
+  const parts = fileName.split('/')
+  parts.forEach((part) => {
+    const filename = part.replace('.', '-')
+
+    selector +=
+      ' ' +
+      (part.includes('.') ? `> .is-file-${filename} a` : `.is-dir-${part} > ul`)
+  })
+
+  selector = selector.toLowerCase();
+
+  cy.log('Path', fileName)
+  cy.log('Selector', selector)
+
+  cy.get(selector).should('be.visible').click()
+  cy.get('#modal-title').should('contain', fileName).should('be.visible')
+})

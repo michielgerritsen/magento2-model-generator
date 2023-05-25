@@ -18,7 +18,7 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
     }
   }
 
-  getPath(): String {
+  getPath(): string {
     return this.path
       .replace(
         'ModelName',

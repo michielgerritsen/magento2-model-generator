@@ -36,7 +36,7 @@ describe('Test that we get the right output when using the data models options',
     )
   })
 
-  it.only('generates a class with the right contets when data models are enabled', () => {
+  it.only('generates a class with the right contents when data models are enabled', () => {
     cy.setValidData()
     cy.enableDataModels()
 

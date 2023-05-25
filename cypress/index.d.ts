@@ -7,5 +7,6 @@ declare namespace Cypress {
     disableDataModels(): Chainable<any>;
     enableAdminGrid(): Chainable<any>;
     disableAdminGrid(): Chainable<any>;
+    openFileByPath(filename: string): Chainable<any>;
   }
 }

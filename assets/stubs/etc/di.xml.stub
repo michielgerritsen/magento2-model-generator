@@ -2,5 +2,5 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="{{ VendorName }}\{{ ModuleName }}\Api\{{ ModelName }}RepositoryInterface" type="{{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}Repository" />
     <preference for="{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface" type="{{ VendorName }}\{{ ModuleName }}\{{ModelPath}}\{{ ModelName }}"/>
-    <preference for="{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface" type="{{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}SearchResults"/>
 </config>
