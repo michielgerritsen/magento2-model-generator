@@ -14,7 +14,7 @@
     "cypress-dev": "cypress open --config baseUrl=http://localhost:3000"
   },
   "dependencies": {
-    "@headlessui/vue": "1.7.15",
+    "@headlessui/vue": "1.7.16",
     "@heroicons/vue": "2.0.18",
     "@nuxt/postcss8": "^1.1.3",
     "@nuxtjs/pwa": "3.3.5",
