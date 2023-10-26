@@ -1,5 +1,7 @@
 <?php
 
+namespace {{ VendorName }}\{{ ModuleName }}\Model;
+
 use Magento\Framework\Api\SearchResults;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface;
 
