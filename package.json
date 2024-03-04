@@ -21,7 +21,7 @@
     "@tailwindcss/forms": "^0.5.7",
     "@types/file-saver": "^2.0.7",
     "@types/mustache": "^4.2.5",
-    "autoprefixer": "^10.4.16",
+    "autoprefixer": "^10.4.18",
     "core-js": "3.36.0",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
