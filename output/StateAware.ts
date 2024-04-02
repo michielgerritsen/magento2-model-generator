@@ -23,9 +23,9 @@ export default class StateAware {
 
   baseName() {
     return (
-      this.moduleName().toLowerCase() +
-      '_' +
       this.vendorName().toLowerCase() +
+      '_' +
+      this.moduleName().toLowerCase() +
       '_' +
       this.modelName().toLowerCase()
     )
