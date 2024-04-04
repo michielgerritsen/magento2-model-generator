@@ -21,6 +21,8 @@
       :key="index"
       :index="index"
       :column="column"
+      :move-column-up="moveColumnUp"
+      :move-column-down="moveColumnDown"
       :add-column="addColumn"
       :remove-column="removeColumn"
     />
@@ -46,6 +48,14 @@ export default Vue.extend({
   },
 
   methods: {
+    moveColumnUp(column: ColumnInterface) {
+      this.$store.commit('table/moveColumnUp', column)
+    },
+
+    moveColumnDown(column: ColumnInterface) {
+      this.$store.commit('table/moveColumnDown', column)
+    },
+
     addColumn() {
       this.$store.commit('table/addColumn', {
         fieldName: '',

@@ -1,6 +1,44 @@
 <template>
-  <div class="mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-8">
-    <div class="sm:col-span-4">
+  <div class="mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
+    <div class="flex flex-col sm:col-span-1">
+      <svg
+        class="w-4 h-4 cursor-pointer"
+        data-slot="icon"
+        fill="none"
+        stroke-width="1.5"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        @click="moveColumnUp(column)"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m4.5 15.75 7.5-7.5 7.5 7.5"
+        ></path>
+      </svg>
+
+      <svg
+        class="w-4 h-4 cursor-pointer"
+        data-slot="icon"
+        fill="none"
+        stroke-width="1.5"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        @click="moveColumnDown(column)"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        ></path>
+      </svg>
+    </div>
+
+    <div class="sm:col-span-6">
       <label
         for="fieldname"
         class="block text-sm font-medium text-gray-700 sm:hidden"
@@ -51,7 +89,7 @@
       </select>
     </div>
 
-    <div class="sm:col-span-1 relative">
+    <div class="sm:col-span-2 relative">
       <svg
         class="w-6 h-6 inline-block mt-1 cursor-pointer"
         fill="currentColor"
@@ -95,6 +133,14 @@ export default Vue.extend({
     },
     column: {
       type: Object as () => ColumnInterface,
+      default: undefined,
+    },
+    moveColumnUp: {
+      type: Function,
+      default: undefined,
+    },
+    moveColumnDown: {
+      type: Function,
       default: undefined,
     },
     addColumn: {

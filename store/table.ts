@@ -16,6 +16,22 @@ const defaultState = () => ({
 export const state = defaultState()
 
 export const mutations = {
+  moveColumnUp(state: any, column: ColumnInterface) {
+    const index = state.columns.indexOf(column)
+    if (index > 0) {
+      const [removedColumn] = state.columns.splice(index, 1)
+      state.columns.splice(index - 1, 0, removedColumn)
+    }
+  },
+
+  moveColumnDown(state: any, column: ColumnInterface) {
+    const index = state.columns.indexOf(column)
+    if (index < state.columns.length - 1) {
+      const [removedColumn] = state.columns.splice(index, 1)
+      state.columns.splice(index + 1, 0, removedColumn)
+    }
+  },
+
   addColumn(state: any, column: ColumnInterface) {
     state.columns.push(column)
   },
