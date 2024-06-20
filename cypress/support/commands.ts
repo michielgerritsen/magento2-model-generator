@@ -62,6 +62,16 @@ Cypress.Commands.add('disableAdminGrid', () => {
   cy.get('[aria-labelledby=module-details] [name="enabled"]').uncheck()
 })
 
+Cypress.Commands.add('enableSearch', () => {
+  cy.get('[aria-labelledby=module-details] [name="search"]').check()
+})
+
+Cypress.Commands.add('addField', (fieldName: string, inputType: string) => {
+  cy.get('[data-action="addRow"]').last().click()
+  cy.get('[name="fieldname"]').last().type(fieldName)
+  cy.get('[name="input_type"]').last().select(inputType)
+})
+
 Cypress.Commands.add('openFileByPath', (fileName: string) => {
   let selector = ''
   const parts = fileName.split('/')
@@ -73,7 +83,7 @@ Cypress.Commands.add('openFileByPath', (fileName: string) => {
       (part.includes('.') ? `> .is-file-${filename} a` : `.is-dir-${part} > ul`)
   })
 
-  selector = selector.toLowerCase();
+  selector = selector.toLowerCase()
 
   cy.log('Path', fileName)
   cy.log('Selector', selector)

@@ -91,6 +91,7 @@
 
     <div class="sm:col-span-2 relative">
       <svg
+        data-action="addRow"
         class="w-6 h-6 inline-block mt-1 cursor-pointer"
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -105,6 +106,7 @@
       </svg>
 
       <svg
+        data-action="deleteRow"
         class="w-6 h-6 inline-block mt-1 cursor-pointer"
         fill="currentColor"
         viewBox="0 0 20 20"

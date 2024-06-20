@@ -98,13 +98,23 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
   }
 
   private addSearchField(xml: XMLDocument, table: HTMLTableElement) {
+    let textColumns = this.columns().filter((data: ColumnInterface) => {
+      return data.inputType === 'varchar' || data.inputType === 'text';
+    });
+
+    if (textColumns.length === 0) {
+      return;
+    }
+
     const index = xml.createElement('index')
     index.setAttribute('referenceId', this.getIndexField())
     index.setAttribute('indexType', 'fulltext')
     table.appendChild(index)
 
-    const column = xml.createElement('column')
-    column.setAttribute('name', this.indexField())
-    index.appendChild(column)
+    textColumns.forEach((data: ColumnInterface) => {
+      const column = xml.createElement('column')
+      column.setAttribute('name', data.fieldName)
+      index.appendChild(column)
+    })
   }
 }
