@@ -97,14 +97,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  data() {
-    return {
-      year: new Date().getFullYear(),
-    }
-  },
-})
+<script setup lang="ts">
+const year = new Date().getFullYear()
 </script>

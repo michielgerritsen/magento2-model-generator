@@ -1,7 +1,7 @@
 import { createItem } from '~/functions/xml'
 import StateAware from '~/output/StateAware'
 import NewButton from '~/output/listing/NewButton'
-import GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
+import type GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
 
 export default class DataArgument extends StateAware implements GeneratesXmlInterface {
   getXml(xml: XMLDocument): HTMLElement {

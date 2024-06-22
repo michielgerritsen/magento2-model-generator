@@ -8,16 +8,11 @@
   </ul>
 </template>
 
-<script type="ts">
-import Vue from "vue";
-import TreeItemInterface from '~/interfaces/TreeItemInterface'
+<script setup lang="ts">
+import { defineProps } from 'vue'
+import type TreeItemInterface from '@/interfaces/TreeItemInterface'
 
-export default Vue.extend({
-  props: {
-    children: {
-      type: TreeItemInterface,
-      default: undefined
-    }
-  }
-})
+defineProps<{
+  children?: TreeItemInterface
+}>()
 </script>

@@ -13,7 +13,7 @@
                 name="enabled"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="enabled" class="font-medium text-gray-700"
@@ -34,7 +34,7 @@
                 name="bookmarks"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="bookmarks" class="font-medium text-gray-700"
@@ -58,7 +58,7 @@
                 name="paging"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="paging" class="font-medium text-gray-700"
@@ -82,7 +82,7 @@
                 name="sticky"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="sticky" class="font-medium text-gray-700"
@@ -104,7 +104,7 @@
                 name="search"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="search" class="font-medium text-gray-700"
@@ -126,7 +126,7 @@
                 name="massactions"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="massactions" class="font-medium text-gray-700"
@@ -150,7 +150,7 @@
                 name="filters"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="filters" class="font-medium text-gray-700"
@@ -174,7 +174,7 @@
                 name="newButton"
                 type="checkbox"
                 class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
-              />
+              >
             </div>
             <div class="ml-3 text-sm">
               <label for="newButton" class="font-medium text-gray-700"
@@ -191,75 +191,49 @@
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useAdminGridStore } from '~/stores/admingridStore'
 
-export default Vue.extend({
-  computed: {
-    enabled: {
-      get() {
-        return this.$store.state.admingrid.enabled
-      },
-      set(value) {
-        this.$store.commit('admingrid/setEnabled', value)
-      },
-    },
-    bookmarks: {
-      get() {
-        return this.$store.state.admingrid.bookmarks
-      },
-      set(value) {
-        this.$store.commit('admingrid/setBookmarks', value)
-      },
-    },
-    paging: {
-      get() {
-        return this.$store.state.admingrid.paging
-      },
-      set(value) {
-        this.$store.commit('admingrid/setPaging', value)
-      },
-    },
-    sticky: {
-      get() {
-        return this.$store.state.admingrid.sticky
-      },
-      set(value) {
-        this.$store.commit('admingrid/setSticky', value)
-      },
-    },
-    search: {
-      get() {
-        return this.$store.state.admingrid.search
-      },
-      set(value) {
-        this.$store.commit('admingrid/setSearch', value)
-      },
-    },
-    massactions: {
-      get() {
-        return this.$store.state.admingrid.massactions
-      },
-      set(value) {
-        this.$store.commit('admingrid/setMassactions', value)
-      },
-    },
-    filters: {
-      get() {
-        return this.$store.state.admingrid.filters
-      },
-      set(value) {
-        this.$store.commit('admingrid/setFilters', value)
-      },
-    },
-    newButton: {
-      get() {
-        return this.$store.state.admingrid.newButton
-      },
-      set(value) {
-        this.$store.commit('admingrid/setNewButton', value)
-      },
-    },
-  },
+const useAdminGrid = useAdminGridStore()
+
+const enabled = computed({
+  get: () => useAdminGrid.enabled,
+  set: (value) => useAdminGrid.setEnabled(value),
+})
+
+const bookmarks = computed({
+  get: () => useAdminGrid.bookmarks,
+  set: (value) => useAdminGrid.setBookmarks(value),
+})
+
+const paging = computed({
+  get: () => useAdminGrid.paging,
+  set: (value) => useAdminGrid.setPaging(value),
+})
+
+const sticky = computed({
+  get: () => useAdminGrid.sticky,
+  set: (value) => useAdminGrid.setSticky(value),
+})
+
+const search = computed({
+  get: () => useAdminGrid.search,
+  set: (value) => useAdminGrid.setSearch(value),
+})
+
+const massactions = computed({
+  get: () => useAdminGrid.massactions,
+  set: (value) => useAdminGrid.setMassactions(value),
+})
+
+const filters = computed({
+  get: () => useAdminGrid.filters,
+  set: (value) => useAdminGrid.setFilters(value),
+})
+
+const newButton = computed({
+  get: () => useAdminGrid.newButton,
+  set: (value) => useAdminGrid.setNewButton(value),
 })
 </script>

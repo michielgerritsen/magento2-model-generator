@@ -1,6 +1,6 @@
 export default interface TreeItemInterface {
-  Name: String
-  Contents: String | null
+  Name: string
+  Contents: string | null
   Children: TreeItemInterface | null
-  CurrentPath: String
+  CurrentPath: string
 }

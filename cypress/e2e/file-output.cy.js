@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe('Check that the generated output files are correct', () => {
   beforeEach(() => {
     cy.visit('/')

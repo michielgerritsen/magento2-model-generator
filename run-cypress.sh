@@ -1,8 +1,8 @@
 echo "Running nuxt generate"
 nuxt generate
 
-echo "Running yarn start"
-nohup yarn start &
+echo "Running yarn preview"
+nohup yarn preview &
 
 echo "Running cypress install"
 cypress install

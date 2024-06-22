@@ -1,10 +1,10 @@
 import StateAware from '~/output/StateAware'
-import GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
+import type GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
 import { prettifyXml } from '~/functions/xml'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+import type ColumnInterface from '~/interfaces/ColumnInterface'
 
 export default class DbSchema extends StateAware implements GeneratesFileInterface {
-  getContents(): String {
+  getContents(): string {
     const xml = document.implementation.createDocument(null, null, null)
     const schema = xml.createElement('schema')
     schema.setAttributeNS(
@@ -31,11 +31,11 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
     return '<?xml version="1.0"?>' + '\n' + prettifyXml(output)
   }
 
-  getPath(): String {
+  getPath(): string {
     return 'etc/db_schema.xml'
   }
 
-  isMergeable(): Boolean {
+  isMergeable(): boolean {
     return false
   }
 
@@ -98,7 +98,7 @@ export default class DbSchema extends StateAware implements GeneratesFileInterfa
   }
 
   private addSearchField(xml: XMLDocument, table: HTMLTableElement) {
-    let textColumns = this.columns().filter((data: ColumnInterface) => {
+    const textColumns = this.columns().filter((data: ColumnInterface) => {
       return data.inputType === 'varchar' || data.inputType === 'text';
     });
 

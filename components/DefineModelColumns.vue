@@ -29,45 +29,32 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+<script setup lang="ts">
+import type ColumnInterface from '~/interfaces/ColumnInterface'
+import { useTableStore } from '@/stores/tableStore';
 
-export default Vue.extend({
-  data() {
-    return {
-      fieldName: '',
-      inputType: '',
-    }
-  },
+const tableStore = useTableStore()
 
-  computed: {
-    columns() {
-      return this.$store.state.table.columns
-    },
-  },
+const addColumn = () => {
+  tableStore.addColumn({
+    fieldName: '',
+    inputType: '',
+  })
+}
 
-  methods: {
-    moveColumnUp(column: ColumnInterface) {
-      this.$store.commit('table/moveColumnUp', column)
-    },
+const removeColumn = (column: ColumnInterface) => {
+  if (tableStore.columns.length > 1) {
+    tableStore.removeColumn(column)
+  }
+}
 
-    moveColumnDown(column: ColumnInterface) {
-      this.$store.commit('table/moveColumnDown', column)
-    },
+const moveColumnUp = (column: ColumnInterface) => {
+  tableStore.moveColumnUp(column)
+}
 
-    addColumn() {
-      this.$store.commit('table/addColumn', {
-        fieldName: '',
-        inputType: '',
-      })
-    },
+const moveColumnDown = (column: ColumnInterface) => {
+  tableStore.moveColumnDown(column)
+}
 
-    removeColumn(column: ColumnInterface) {
-      if (this.columns.length > 1) {
-        this.$store.commit('table/removeColumn', column)
-      }
-    },
-  },
-})
+const columns = tableStore.columns
 </script>

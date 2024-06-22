@@ -1,5 +1,4 @@
-import { EOL } from 'os'
-import AttributeInterface from '~/interfaces/AttributeInterface'
+import type AttributeInterface from '~/interfaces/AttributeInterface'
 
 export function createItem(
   xml: XMLDocument,
@@ -29,6 +28,7 @@ const stringTimesN = (n: number, char: string) => Array(n + 1).join(char)
 
 // Adapted from https://gist.github.com/sente/1083506
 export function prettifyXml(xmlInput: string): string {
+  const EOL = '\n'
   const indentString = stringTimesN(2, ' ')
 
   let formatted = ''
@@ -47,7 +47,7 @@ export function prettifyXml(xmlInput: string): string {
       if (pad !== 0) {
         pad -= 1
       }
-    } else if (line.match(/^<\w([^>]*[^\/])?>.*$/)) {
+    } else if (line.match(/^<\w([^>]*[^/])?>.*$/)) {
       indent = 1
     } else {
       indent = 0

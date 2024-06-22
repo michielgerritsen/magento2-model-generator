@@ -1,9 +1,9 @@
 import { defineConfig } from "cypress";
-const fs = require('fs');
+import fs from 'fs';
 
 export default defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on) {
       // Disable videos for successful tests
       on('after:spec', (spec, results) => {
         // If a retry failed, save the video, otherwise delete it to save time by not compressing it.
