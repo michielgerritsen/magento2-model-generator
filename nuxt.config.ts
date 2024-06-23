@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    "@nuxt/eslint"
+    "@nuxt/eslint",
+    ...(process.env.NODE_ENV === 'production' ? ['nuxt-fathom'] : [])
   ],
+
+  fathom: {
+    siteId: "BKQYZZYA",
+  },
 })

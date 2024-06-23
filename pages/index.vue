@@ -99,4 +99,8 @@
 
 <script setup lang="ts">
 const year = new Date().getFullYear()
+
+useHead({
+  title: 'Magento 2 Model Generator',
+})
 </script>
