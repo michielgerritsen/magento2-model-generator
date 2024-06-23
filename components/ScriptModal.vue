@@ -13,7 +13,7 @@
         class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         aria-hidden="true"
         @click="$emit('close')"
-      ></div>
+      />
 
       <span
         class="hidden sm:inline-block sm:align-middle sm:h-screen"
@@ -57,12 +57,10 @@
                 id="modal-title"
                 class="text-lg leading-6 font-medium text-gray-900"
               >
-                <slot name="title"></slot>
+                <slot name="title"/>
               </h3>
               <div class="mt-2 w-full code-contents">
-                <vue-code-highlight :language="extension">
-                  <slot></slot>
-                </vue-code-highlight>
+                <pre><code :class="[`lang-${extension}`]"><slot/></code></pre>
               </div>
             </div>
           </div>
@@ -81,40 +79,36 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { component as VueCodeHighlight } from 'vue-code-highlight'
+<script setup lang="ts">
+import { onMounted, computed, defineProps, defineEmits } from 'vue'
+import Prism from 'prismjs'
 import 'prism-es6/components/prism-markup-templating'
 import 'prism-es6/components/prism-php'
 import 'prism-es6/components/prism-markup'
 import 'prism-es6/components/prism-json'
+import 'prismjs/themes/prism.min.css'
 
-export default Vue.extend({
-  components: {
-    VueCodeHighlight,
-  },
+defineEmits(['close'])
 
-  props: {
-    filename: {
-      type: String,
-      required: true,
-    },
-  },
+const props = defineProps<{
+  filename: string
+}>()
 
-  computed: {
-    extension() {
-      const extension = this.filename.split('.').pop()
+onMounted(() => {
+  Prism.highlightAll()
+})
 
-      if (extension === 'xml') {
-        return 'markup'
-      }
+const extension = computed(() => {
+  const extension = props.filename.split('.').pop()
 
-      if (extension === 'json') {
-        return 'json'
-      }
+  if (extension === 'xml') {
+    return 'markup'
+  }
 
-      return 'php'
-    },
-  },
+  if (extension === 'json') {
+    return 'json'
+  }
+
+  return 'php'
 })
 </script>

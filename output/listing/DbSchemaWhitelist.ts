@@ -1,10 +1,18 @@
 import StateAware from '~/output/StateAware'
-import GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+import type GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
+import type ColumnInterface from '~/interfaces/ColumnInterface'
 
 export default class DbSchemaWhitelist extends StateAware implements GeneratesFileInterface {
-  getContents(): String {
-    const output: any = {
+  getContents(): string {
+    interface Output {
+      column: Record<string, boolean>;
+      constaint: {
+        PRIMARY: boolean;
+      };
+      search?: Record<string, boolean>;
+    }
+
+    const output: Output = {
       column: {},
       constaint: {
         PRIMARY: true,
@@ -26,17 +34,17 @@ export default class DbSchemaWhitelist extends StateAware implements GeneratesFi
     }
 
     const tableName = this.tableName()
-    const result: any = {}
+    const result: Record<string, Output> = {};
     result[tableName] = output
 
     return JSON.stringify(result, null, 4)
   }
 
-  getPath(): String {
+  getPath(): string {
     return 'etc/db_schema_whitelist.json'
   }
 
-  isMergeable(): Boolean {
+  isMergeable(): boolean {
     return false
   }
 }

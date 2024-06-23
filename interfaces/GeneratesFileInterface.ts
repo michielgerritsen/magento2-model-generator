@@ -1,7 +1,7 @@
 export default interface GeneratesFileInterface {
-  getPath(): String
+  getPath(): string
 
-  getContents(): String
+  getContents(): string
 
-  isMergeable(): Boolean
+  isMergeable(): boolean
 }

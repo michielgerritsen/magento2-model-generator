@@ -16,7 +16,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m4.5 15.75 7.5-7.5 7.5 7.5"
-        ></path>
+        />
       </svg>
 
       <svg
@@ -34,7 +34,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m19.5 8.25-7.5 7.5-7.5-7.5"
-        ></path>
+        />
       </svg>
     </div>
 
@@ -50,8 +50,8 @@
         v-model="fieldName"
         type="text"
         name="fieldname"
-        class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
-      />
+        class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid appearance-none cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
+      >
     </div>
 
     <div class="sm:col-span-3">
@@ -66,7 +66,7 @@
         v-model="inputType"
         name="input_type"
         autocomplete="input_type"
-        class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
+        class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid appearance-none cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
       >
         <option value="">Please select</option>
         <optgroup label="Int">
@@ -102,7 +102,7 @@
           fill-rule="evenodd"
           d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
           clip-rule="evenodd"
-        ></path>
+        />
       </svg>
 
       <svg
@@ -117,73 +117,56 @@
           fill-rule="evenodd"
           d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
           clip-rule="evenodd"
-        ></path>
+        />
       </svg>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+<script setup lang="ts">
+import { computed , defineProps } from 'vue'
+import type ColumnInterface from '@/interfaces/ColumnInterface'
+import { useTableStore } from '@/stores/tableStore'
 
-export default Vue.extend({
-  props: {
-    index: {
-      type: Number,
-      default: undefined,
-    },
-    column: {
-      type: Object as () => ColumnInterface,
-      default: undefined,
-    },
-    moveColumnUp: {
-      type: Function,
-      default: undefined,
-    },
-    moveColumnDown: {
-      type: Function,
-      default: undefined,
-    },
-    addColumn: {
-      type: Function,
-      default: undefined,
-    },
-    removeColumn: {
-      type: Function,
-      default: undefined,
-    },
+type MoveColumnUp = () => void;
+type MoveColumnDown = () => void;
+type AddColumn = () => void;
+type RemoveColumn = () => void;
+
+const props = defineProps<{
+  index?: number,
+  column?: ColumnInterface,
+  moveColumnUp?: MoveColumnUp,
+  moveColumnDown?: MoveColumnDown,
+  addColumn?: AddColumn,
+  removeColumn?: RemoveColumn,
+}>()
+
+const tableStore = useTableStore()
+
+const fieldName = computed({
+  get: () => props.column?.fieldName,
+  set: (value: string) => {
+    tableStore.updateColumn({
+      index: props.index,
+      column: {
+        fieldName: value,
+        inputType: props.column?.inputType,
+      },
+    })
   },
+})
 
-  computed: {
-    fieldName: {
-      get(): any {
-        return this.column.fieldName
+const inputType = computed({
+  get: () => props.column?.inputType,
+  set: (value: string) => {
+    tableStore.updateColumn({
+      index: props.index,
+      column: {
+        inputType: value,
+        fieldName: props.column?.fieldName,
       },
-      set(value: string): any {
-        this.$store.commit('table/updateColumn', {
-          index: this.$props.index,
-          column: {
-            fieldName: value,
-            inputType: this.column.inputType,
-          },
-        })
-      },
-    },
-    inputType: {
-      get(): any {
-        return this.column.inputType
-      },
-      set(value: string): any {
-        this.$store.commit('table/updateColumn', {
-          index: this.$props.index,
-          column: {
-            inputType: value,
-            fieldName: this.column.fieldName,
-          },
-        })
-      },
-    },
+    })
   },
 })
 </script>

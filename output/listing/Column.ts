@@ -1,5 +1,5 @@
 import StateAware from '~/output/StateAware'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+import type ColumnInterface from '~/interfaces/ColumnInterface'
 
 export default class Column extends StateAware {
   getXml(xml: XMLDocument, data: ColumnInterface): HTMLElement {

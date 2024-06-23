@@ -1,5 +1,5 @@
 import StateAware from '~/output/StateAware'
-import GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
+import type GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
 
 export default class Settings extends StateAware implements GeneratesXmlInterface {
   getXml(xml: XMLDocument): HTMLElement {

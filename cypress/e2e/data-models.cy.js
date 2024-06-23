@@ -1,3 +1,4 @@
+/* eslint-disable */
 describe('Test that we get the right output when using the data models options', () => {
   beforeEach(() => {
     cy.visit('/')

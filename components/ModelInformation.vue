@@ -14,10 +14,10 @@
             type="text"
             name="modelName"
             placeholder="Model name"
-            class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
+            class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid appearance-none cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
             @keypress="updateTableName()"
             @change="updateTableName()"
-          />
+          >
         </div>
       </div>
 
@@ -31,69 +31,58 @@
             v-model="tableName"
             type="text"
             name="tablename"
-            class="flex-1 block w-full focus:ring-green-500 focus:border-green-500 min-w-0 rounded sm:text-sm border-gray-300"
-          />
+            class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid appearance-none cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
+          >
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-import Vue from 'vue'
+<script setup>
+import { computed, watch } from 'vue'
+import { useModuleStore } from '@/stores/moduleStore'
+import { useModelStore } from '@/stores/modelStore'
 
-export default Vue.extend({
-  computed: {
-    moduleName() {
-      return this.$store.state.module.moduleName
-    },
-    vendorName() {
-      return this.$store.state.module.vendorName
-    },
+const moduleStore = useModuleStore()
+const modelStore = useModelStore()
 
-    modelName: {
-      get() {
-        return this.$store.state.model.name
-      },
-      set(value) {
-        this.$store.commit('model/setName', value)
-      },
-    },
-    tableName: {
-      get() {
-        return this.$store.state.model.tableName
-      },
-      set(value) {
-        this.$store.commit('model/setTableName', value)
-      },
-    },
-  },
+const moduleName = computed({
+  get: () => moduleStore.moduleName,
+  set: (value) => moduleStore.setModuleName(value),
+})
 
-  watch: {
-    moduleName() {
-      this.updateTableName()
-    },
-    vendorName() {
-      this.updateTableName()
-    },
-  },
+const modelName = computed({
+  get: () => modelStore.name,
+  set: (value) => modelStore.setName(value),
+})
 
-  mounted() {
-    this.updateTableName()
-  },
+const tableName = computed({
+  get: () => modelStore.tableName,
+  set: (value) => modelStore.setTableName(value),
+})
 
-  methods: {
-    updateTableName() {
-      const vendorName = this.$store.state.module.vendorName.toLowerCase()
-      const moduleName = this.$store.state.module.moduleName.toLowerCase()
-      const modelName = this.modelName.toLowerCase()
+const vendorName = computed({
+  get: () => moduleStore.vendorName,
+  set: (value) => moduleStore.setVendorName(value),
+})
 
-      if (!vendorName || !moduleName || !modelName) {
-        return
-      }
+const updateTableName = () => {
+  const vendorName = moduleStore.vendorName.toLowerCase()
+  const moduleName = moduleStore.moduleName.toLowerCase()
+  const modelName = modelStore.name.toLowerCase()
 
-      this.tableName = vendorName + '_' + moduleName + '_' + modelName
-    },
-  },
+  if (!vendorName || !moduleName || !modelName) {
+    return
+  }
+
+  tableName.value = `${vendorName}_${moduleName}_${modelName}`
+}
+
+watch(moduleName, updateTableName)
+watch(vendorName, updateTableName)
+
+onMounted(() => {
+  updateTableName()
 })
 </script>

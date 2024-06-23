@@ -1,24 +1,36 @@
-import {state} from "~/store/model";
-import ColumnInterface from "~/interfaces/ColumnInterface";
-import {AnyNode} from "postcss";
+import type ColumnInterface from "~/interfaces/ColumnInterface";
+import { useModuleStore } from '@/stores/moduleStore'
+import type { ModuleStore } from '@/stores/moduleStore'
+import { useModelStore } from '@/stores/modelStore'
+import type { ModelStore } from '@/stores/modelStore'
+import { useAdminGridStore} from "@/stores/admingridStore";
+import type { AdminGridStore} from "@/stores/admingridStore";
+import { useTableStore} from "@/stores/tableStore";
+import type { TableStore} from "@/stores/tableStore";
 
 export default class StateAware {
-  protected state: any
+  protected moduleStore: ModuleStore
+  protected adminGridStore: AdminGridStore
+  protected modelStore: ModelStore
+  protected tableStore: TableStore
 
-  constructor(state: any) {
-    this.state = state
+  constructor() {
+    this.moduleStore = useModuleStore();
+    this.adminGridStore = useAdminGridStore();
+    this.modelStore = useModelStore();
+    this.tableStore = useTableStore();
   }
 
   moduleName() {
-    return this.state.module.moduleName
+    return this.moduleStore.moduleName
   }
 
   vendorName() {
-    return this.state.module.vendorName
+    return this.moduleStore.vendorName
   }
 
-  modelName(): String {
-    return this.state.model.name
+  modelName(): string {
+    return this.modelStore.name
   }
 
   baseName() {
@@ -48,22 +60,22 @@ export default class StateAware {
   }
 
   isNewButtonsEnabled() {
-    return this.state.admingrid.newButton
+    return this.adminGridStore.newButton
   }
 
   baseRoute() {
-    const moduleName = this.state.module.moduleName.toLowerCase()
-    const vendorName = this.state.module.vendorName.toLowerCase()
-    const modelName = this.state.model.name
+    const moduleName = this.moduleStore.moduleName.toLowerCase()
+    const vendorName = this.moduleStore.vendorName.toLowerCase()
+    const modelName = this.modelStore.name
 
     return `${moduleName}_${vendorName}/${modelName.toLowerCase()}/`
   }
 
   columns(): Array<ColumnInterface> {
-    return this.state.table.columns.filter((column: ColumnInterface) => column.fieldName !== '')
+    return this.tableStore.columns.filter((column: ColumnInterface) => column.fieldName !== '')
   }
 
-  formattedColumns(): Array<Object> {
+  formattedColumns(): Array<ColumnInterface> {
     const columns = this.columns().map((column) => {
       return {
         fieldName: column.fieldName,
@@ -111,7 +123,7 @@ export default class StateAware {
   }
 
   tableName(): string {
-    return this.state.model.tableName
+    return this.modelStore.tableName
   }
 
   indexField(): string {
@@ -119,27 +131,27 @@ export default class StateAware {
   }
 
   isAdmingrid(): boolean {
-    return this.state.admingrid.enabled
+    return this.adminGridStore.enabled;
   }
 
   isSticky(): boolean {
-    return this.state.admingrid.sticky
+    return this.adminGridStore.sticky
   }
 
   isPaging(): boolean {
-    return this.state.admingrid.paging
+    return this.adminGridStore.paging
   }
 
   isBookmarks(): boolean {
-    return this.state.admingrid.bookmarks
+    return this.adminGridStore.bookmarks
   }
 
   isSearch(): boolean {
-    return this.state.admingrid.search
+    return this.adminGridStore.search
   }
 
   isMassActions(): boolean {
-    return this.state.admingrid.massactions
+    return this.adminGridStore.massactions
   }
 
   getIndexField(): string {
@@ -154,11 +166,11 @@ export default class StateAware {
   }
 
   includeModuleRegistration() {
-    return this.state.module.includeModuleRegistration
+    return this.moduleStore.includeModuleRegistration
   }
 
   includeDataModels() {
-    return this.state.module.includeDataModels
+    return this.moduleStore.includeDataModels
   }
 
   fileContext() {

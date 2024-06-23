@@ -5,10 +5,10 @@ import ListingTop from '~/output/listing/ListingTop'
 import Columns from '~/output/listing/Columns'
 import StateAware from '~/output/StateAware'
 import { prettifyXml } from '~/functions/xml'
-import GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
+import type GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
 
 export default class UiComponent extends StateAware implements GeneratesFileInterface{
-  getContents(): String {
+  getContents(): string {
     const xml = document.implementation.createDocument(null, null, null)
     const listing = xml.createElement('listing')
     listing.setAttributeNS(
@@ -29,11 +29,11 @@ export default class UiComponent extends StateAware implements GeneratesFileInte
     return '<?xml version="1.0"?>' + '\n' + prettifyXml(output)
   }
 
-  getPath(): String {
+  getPath(): string {
     return 'view/adminhtml/ui_component/' + this.listingName() + '.xml'
   }
 
-  isMergeable(): Boolean {
+  isMergeable(): boolean {
     return true
   }
 }

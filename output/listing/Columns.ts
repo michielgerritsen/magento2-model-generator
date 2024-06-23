@@ -1,6 +1,6 @@
 import StateAware from '~/output/StateAware'
-import GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
-import ColumnInterface from '~/interfaces/ColumnInterface'
+import type GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
+import type ColumnInterface from '~/interfaces/ColumnInterface'
 import Column from '~/output/listing/Column'
 
 export default class Columns extends StateAware implements GeneratesXmlInterface {

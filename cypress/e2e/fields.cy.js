@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe('Test the input fields', () => {
   beforeEach(() => {
     cy.visit('/')
