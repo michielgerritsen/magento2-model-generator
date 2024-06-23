@@ -11,10 +11,10 @@ interface {{ ModelName }}SearchResultsInterface extends SearchResultsInterface
     /**
      * @return \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[]
      */
-    public function getItems(): array;
+    public function getItems();
 
     /**
      * @param \{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface[] $items
      */
-    public function setItems(array $items): static;
+    public function setItems(array $items);
 }
