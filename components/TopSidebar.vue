@@ -127,14 +127,19 @@ const children = computed(() => {
   })
 
   const order = Object.keys(output.Children).sort();
-  // Registration.php should be the last file
-  const index = order.indexOf('registration.php');
-  if (index !== -1) {
-    order.push(order.splice(index, 1)[0]);
-  }
+  // Registration.php and composer.json should be the last files
+  moveFileDown(order, 'composer.json');
+  moveFileDown(order, 'registration.php');
 
   return order.map(key => output.Children[key])
 })
+
+const moveFileDown = (order, fileName) => {
+  const index = order.indexOf(fileName);
+  if (index !== -1) {
+    order.push(order.splice(index, 1)[0]);
+  }
+}
 
 const includeNonMergable = computed({
   get: () => downloadStore.includeNonMergable,

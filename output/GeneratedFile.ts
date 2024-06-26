@@ -16,6 +16,7 @@ import ModelResourceModelModelNamePhpStub from '@/assets/stubs/Model/ResourceMod
 import ModelResourceModelModelNameCollectionPhpStub from '@/assets/stubs/Model/ResourceModel/ModelName/Collection.php.stub?raw'
 import etcmoduleXmlStub from '@/assets/stubs/etc/module.xml.stub?raw'
 import registrationPhpStub from '@/assets/stubs/registration.php.stub?raw'
+import composerjsonstub from '@/assets/stubs/composer.json.stub?raw'
 import ModelModelNameRepositoryWithDataModelPhpStub from '@/assets/stubs/Model/ModelNameRepositoryWithDataModel.php.stub?raw'
 import ModelModelNameWithDataModelPhpStub from '@/assets/stubs/Model/ModelNameWithDataModel.php.stub?raw'
 import ModelModelNameRepositoryWithoutDataModelPhpStub from '@/assets/stubs/Model/ModelNameRepositoryWithoutDataModel.php.stub?raw'
@@ -82,6 +83,7 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
       'Model/ResourceModel/ModelName/Collection.php.stub': ModelResourceModelModelNameCollectionPhpStub,
       'etc/module.xml.stub': etcmoduleXmlStub,
       'registration.php.stub': registrationPhpStub,
+      'composer.json.stub': composerjsonstub,
       'Model/ModelNameRepositoryWithDataModel.php.stub': ModelModelNameRepositoryWithDataModelPhpStub,
       'Model/ModelNameWithDataModel.php.stub': ModelModelNameWithDataModelPhpStub,
       'Model/ModelNameRepositoryWithoutDataModel.php.stub': ModelModelNameRepositoryWithoutDataModelPhpStub,
@@ -125,6 +127,7 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
 
   isMergeable(): boolean {
     return ![
+      'composer.json.stub',
       'registration.php',
       'etc/acl.xml',
       'etc/di.xml',

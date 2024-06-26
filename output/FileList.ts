@@ -27,6 +27,7 @@ export default class FileList extends StateAware {
     if (this.includeModuleRegistration()) {
       files.push(new GeneratedFile('etc/module.xml.stub'))
       files.push(new GeneratedFile('registration.php.stub'))
+      files.push(new GeneratedFile('composer.json.stub'))
     }
 
     if (this.includeDataModels()) {
