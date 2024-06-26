@@ -54,7 +54,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
         if (!${{ VariableName }}->getId()) {
             throw new NoSuchEntityException(__('{{ ModelName }} with id "%1" does not exist.', $id));
         }
-        return ${{ VariableName }}->getDataModel();
+        return ${{ VariableName }};
     }
 
     /**

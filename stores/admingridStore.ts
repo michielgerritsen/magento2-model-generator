@@ -10,6 +10,8 @@ export const useAdminGridStore = defineStore('admingrid', {
     massactions: false,
     filters: false,
     newButton: true,
+    addToMenu: false,
+    menuParent: '',
   }),
 
   actions: {
@@ -37,6 +39,12 @@ export const useAdminGridStore = defineStore('admingrid', {
     setNewButton(value: boolean) {
       this.newButton = value
     },
+    setAddToMenu(value: boolean) {
+      this.addToMenu = value
+    },
+    setMenuParent(value: string) {
+      this.menuParent = value
+    },
     reset() {
       this.enabled = true
       this.bookmarks = false
@@ -46,6 +54,8 @@ export const useAdminGridStore = defineStore('admingrid', {
       this.massactions = false
       this.filters = false
       this.newButton = true
+      this.addToMenu = false
+      this.menuParent = ''
     },
   },
 

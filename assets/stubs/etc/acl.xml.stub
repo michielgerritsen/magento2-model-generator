@@ -4,10 +4,10 @@
         <resources>
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::content">
-                    <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}" title="{{ ModuleName }}" translate="title" sortOrder="900">
-                        <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}s" title="{{ ModuleName }}s" translate="title">
-                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}_save" title="Save" translate="title"/>
-                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModuleName }}_delete" title="Delete" translate="title"/>
+                    <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}" title="{{ ModuleName }}" translate="title" sortOrder="900">
+                        <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}s" title="{{ ModuleName }}s" translate="title">
+                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_save" title="Save" translate="title"/>
+                            <resource id="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete" title="Delete" translate="title"/>
                         </resource>
                     </resource>
                 </resource>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}" title="{{ VendorName }} {{ ModuleName }} {{ ModelName }}" translate="title" module="{{ VendorName }}_{{ ModuleName }}" sortOrder="9999" parent="{{ MenuParent }}" resource="{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}" action="{{ BaseRoute }}/index" />
+    </menu>
+</config>

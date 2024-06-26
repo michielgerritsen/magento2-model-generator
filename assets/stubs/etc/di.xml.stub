@@ -3,4 +3,21 @@
     <preference for="{{ VendorName }}\{{ ModuleName }}\Api\{{ ModelName }}RepositoryInterface" type="{{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}Repository" />
     <preference for="{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface" type="{{ VendorName }}\{{ ModuleName }}\{{ModelPath}}\{{ ModelName }}"/>
     <preference for="{{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}SearchResultsInterface" type="{{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}SearchResults"/>
+    {{#IncludeAdminGrid}}
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="{{ DataSource }}" xsi:type="string">{{ VirtualCollectionName }}</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="{{ VirtualCollectionName }}" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">{{ TableName }}</argument>
+            <argument name="resourceModel" xsi:type="string">{{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }}</argument>
+        </arguments>
+    </virtualType>
+    {{/IncludeAdminGrid}}
 </config>

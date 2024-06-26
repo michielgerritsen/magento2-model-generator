@@ -19,11 +19,11 @@ export default class UiComponent extends StateAware implements GeneratesFileInte
 
     xml.appendChild(listing)
 
-    listing.appendChild(new DataArgument(this.state).getXml(xml))
-    listing.appendChild(new Settings(this.state).getXml(xml))
-    listing.appendChild(new DataSource(this.state).getXml(xml))
-    listing.appendChild(new ListingTop(this.state).getXml(xml))
-    listing.appendChild(new Columns(this.state).getXml(xml))
+    listing.appendChild(new DataArgument().getXml(xml))
+    listing.appendChild(new Settings().getXml(xml))
+    listing.appendChild(new DataSource().getXml(xml))
+    listing.appendChild(new ListingTop().getXml(xml))
+    listing.appendChild(new Columns().getXml(xml))
 
     const output = new XMLSerializer().serializeToString(xml)
     return '<?xml version="1.0"?>' + '\n' + prettifyXml(output)

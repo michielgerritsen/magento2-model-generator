@@ -51,16 +51,38 @@ export default class StateAware {
     return `${this.baseName()}_listing`
   }
 
+  formName() {
+    return `${this.baseName()}_form`
+  }
+
   columnsName() {
     return `${this.baseName()}_columns`
   }
 
-  dataSource() {
+  listingDataSource() {
     return `${this.listingName()}_data_source`
+  }
+
+  formDataSource() {
+    return `${this.formName()}_data_source`
   }
 
   isNewButtonsEnabled() {
     return this.adminGridStore.newButton
+  }
+
+  routePath() {
+    const moduleName = this.moduleStore.moduleName.toLowerCase()
+    const vendorName = this.moduleStore.vendorName.toLowerCase()
+
+    return `${vendorName}_${moduleName}`
+  }
+
+  routeFrontName() {
+    const moduleName = this.moduleStore.moduleName.toLowerCase()
+    const vendorName = this.moduleStore.vendorName.toLowerCase()
+
+    return `${vendorName}-${moduleName}`
   }
 
   baseRoute() {
@@ -68,7 +90,7 @@ export default class StateAware {
     const vendorName = this.moduleStore.vendorName.toLowerCase()
     const modelName = this.modelStore.name
 
-    return `${moduleName}_${vendorName}/${modelName.toLowerCase()}/`
+    return `${vendorName}_${moduleName}/${modelName.toLowerCase()}/`
   }
 
   columns(): Array<ColumnInterface> {
@@ -173,6 +195,22 @@ export default class StateAware {
     return this.moduleStore.includeDataModels
   }
 
+  addToMenu() {
+    return this.adminGridStore.addToMenu
+  }
+
+  menuParent() {
+    return this.adminGridStore.menuParent
+  }
+
+  virtualCollectionName() {
+    return `${this.vendorName()}${this.moduleName()}${this.modelName()}Collection`
+  }
+
+  friendlyName(column: ColumnInterface) {
+    return column.fieldName.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
+
   fileContext() {
     return {
       ModuleName: this.moduleName(),
@@ -181,9 +219,18 @@ export default class StateAware {
       TableName: this.tableName(),
       IndexField: this.indexField(),
       ListingName: this.listingName(),
+      FormName: this.formName(),
       VariableName: this.variableName(),
       Columns: this.formattedColumns(),
+      BaseRoute: this.baseRoute(),
+      RoutePath: this.routePath(),
+      RouteFrontName: this.routeFrontName(),
+      MenuParent: this.menuParent(),
       ModelPath: this.includeDataModels() ? 'Model\\Data' : 'Model',
+      IncludeAdminGrid: this.isAdmingrid(),
+      DataSource: this.listingDataSource(),
+      FormDataSource: this.formDataSource(),
+      VirtualCollectionName: this.virtualCollectionName(),
     }
   }
 }

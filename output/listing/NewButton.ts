@@ -15,7 +15,9 @@ export default class NewButton extends StateAware implements GeneratesXmlInterfa
       ])
     )
     add.appendChild(createItem(xml, 'url', 'string', this.baseRoute() + 'new'))
-    add.appendChild(createItem(xml, 'class', 'primary'))
+    const classNode = createItem(xml, 'class', 'string');
+    classNode.innerHTML = 'primary';
+    add.appendChild(classNode)
 
     return buttons
   }

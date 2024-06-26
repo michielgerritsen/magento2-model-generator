@@ -1,0 +1,57 @@
+<?php
+namespace {{VendorName}}\{{ModuleName}}\Block\Adminhtml\{{ModelName}}\Edit;
+
+use Magento\Backend\Block\Widget\Context;
+use {{VendorName}}\{{ModuleName}}\Api\{{ModelName}}RepositoryInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
+
+class GenericButton
+{
+    /**
+     * @var Context
+     */
+    protected $context;
+
+    /**
+     * @var {{ModelName}}RepositoryInterface
+     */
+    protected $repository;
+
+    /**
+     * @param Context $context
+     * @param {{ModelName}}RepositoryInterface $repository
+     */
+    public function __construct(
+        Context $context,
+        {{ModelName}}RepositoryInterface $repository
+    ) {
+        $this->context = $context;
+        $this->repository = $repository;
+    }
+
+    public function getId(): ?int
+    {
+        $id = $this->context->getRequest()->getParam('{{ IndexField }}');
+        if (!$id) {
+            return null;
+        }
+
+        try {
+            return $this->repository->get($id)->getId();
+        } catch (NoSuchEntityException $e) {
+        }
+        return null;
+    }
+
+    /**
+     * Generate url by route and parameters
+     *
+     * @param   string $route
+     * @param   array $params
+     * @return  string
+     */
+    public function getUrl($route = '', $params = [])
+    {
+        return $this->context->getUrlBuilder()->getUrl($route, $params);
+    }
+}

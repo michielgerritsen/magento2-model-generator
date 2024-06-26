@@ -4,7 +4,7 @@ import type GeneratesXmlInterface from '~/interfaces/GeneratesXmlInterface'
 export default class DataSource extends StateAware implements GeneratesXmlInterface {
   getXml(xml: XMLDocument): HTMLElement {
     const dataSource = xml.createElement('dataSource')
-    dataSource.setAttribute('name', this.dataSource())
+    dataSource.setAttribute('name', this.listingDataSource())
     dataSource.setAttribute('component', 'Magento_Ui/js/grid/provider')
 
     this.addSettings(xml, dataSource)
@@ -31,7 +31,7 @@ export default class DataSource extends StateAware implements GeneratesXmlInterf
    */
   private addDataProvider(xml: XMLDocument, dataSource: HTMLElement) {
     const dataProvider = xml.createElement('dataProvider')
-    dataProvider.setAttribute('name', this.dataSource())
+    dataProvider.setAttribute('name', this.listingDataSource())
     dataProvider.setAttribute('class', 'Magento\\Framework\\View\\Element\\UiComponent\\DataProvider\\DataProvider')
     dataSource.appendChild(dataProvider)
 

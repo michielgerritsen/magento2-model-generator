@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">{{ FormName }}.{{ FormDataSource }}</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="{{ VendorName }}\{{ ModuleName }}\Block\Adminhtml\{{ ModelName }}\Edit\SaveButton"/>
+            <button name="delete" class="{{ VendorName }}\{{ ModuleName }}\Block\Adminhtml\{{ ModelName }}\Edit\DeleteButton"/>
+            <button name="back" class="{{ VendorName }}\{{ ModuleName }}\Block\Adminhtml\{{ ModelName }}\Edit\BackButton"/>
+        </buttons>
+        <namespace>{{ FormName }}</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>{{ FormName }}.{{ FormDataSource }}</dep>
+        </deps>
+    </settings>
+    <dataSource name="{{ FormDataSource }}">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="{{{ BaseRoute }}}save"/>
+        </settings>
+        <dataProvider class="{{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}\DataProvider" name="{{ FormDataSource }}">
+            <settings>
+                <requestFieldName>{{ IndexField }}</requestFieldName>
+                <primaryFieldName>{{ IndexField }}</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        {{{ UiColumns }}}
+    </fieldset>
+</form>

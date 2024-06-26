@@ -6,7 +6,7 @@ export default class Settings extends StateAware implements GeneratesXmlInterfac
     const settings = xml.createElement('settings')
     const deps = xml.createElement('deps')
     const dep = xml.createElement('dep')
-    dep.innerHTML = this.dataSource()
+    dep.innerHTML = `${this.listingName()}.${this.listingDataSource()}`
     deps.appendChild(dep)
     settings.appendChild(deps)
 

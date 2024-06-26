@@ -4,7 +4,8 @@
       'is-' +
         (isFile ? 'file' : 'dir') +
         '-' +
-        item.Name.toLowerCase().replace('.', '-'),
+        item.Name.toLowerCase().replace('.', '-') +
+        (isFile ? '' : ' mb-2'),
     ]"
   >
     <ScriptModal

@@ -17,8 +17,10 @@ export default class Columns extends StateAware implements GeneratesXmlInterface
         return
       }
 
-      columns.appendChild(new Column(this.state).getXml(xml, data))
+      columns.appendChild(new Column().getXml(xml, data))
     })
+
+    this.addActions(xml, columns)
 
     return columns
   }
@@ -35,5 +37,31 @@ export default class Columns extends StateAware implements GeneratesXmlInterface
     settings.appendChild(indexField)
 
     columns.appendChild(selectionsColumn)
+  }
+
+  private addActions(xml: XMLDocument, columns: HTMLElement) {
+    /**
+     * <actionsColumn name="actions" class="Magento\Cms\Ui\Component\Listing\Column\BlockActions">
+     *   <settings>
+     *     <indexField>block_id</indexField>
+     *   </settings>
+     * </actionsColumn>
+     */
+
+    const actionsColumn = xml.createElement('actionsColumn')
+    actionsColumn.setAttribute('name', 'actions')
+    actionsColumn.setAttribute(
+        'class',
+        `${this.vendorName()}\\${this.moduleName()}\\Ui\\Component\\Listing\\Column\\Actions`
+  )
+
+    const settings = xml.createElement('settings')
+    actionsColumn.appendChild(settings)
+
+    const indexField = xml.createElement('indexField')
+    indexField.innerHTML = this.indexField()
+    settings.appendChild(indexField)
+
+    columns.appendChild(actionsColumn)
   }
 }

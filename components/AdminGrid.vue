@@ -187,6 +187,44 @@
           </div>
         </div>
       </div>
+
+      <div v-if="enabled" class="sm:col-span-3">
+        <div class="space-y-4">
+          <div class="relative flex items-start">
+            <div class="flex items-center h-5">
+              <input
+                id="addToMenu"
+                v-model="addToMenu"
+                name="addToMenu"
+                type="checkbox"
+                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+              >
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="addToMenu" class="font-medium text-gray-700"
+                >Add to admin menu</label
+              >
+              <p class="text-gray-500">
+                Add a menu item to the admin menu for this model
+              </p>
+
+              <select v-if="addToMenu" v-model="menuParent"
+                      class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
+              >
+                <option value="">Select a parent item</option>
+                <option value="Magento_Sales::sales_operation">Sales</option>
+                <option value="Magento_Catalog::catalog">Catalog</option>
+                <option value="Magento_Customer::customer">Customers</option>
+                <option value="Magento_Backend::marketing">Marketing</option>
+                <option value="Magento_Backend::content">Content</option>
+                <option value="Magento_Reports::report">Reports</option>
+                <option value="Magento_Backend::stores">Stores</option>
+                <option value="Magento_Backend::system">System</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -235,5 +273,15 @@ const filters = computed({
 const newButton = computed({
   get: () => useAdminGrid.newButton,
   set: (value) => useAdminGrid.setNewButton(value),
+})
+
+const addToMenu = computed({
+  get: () => useAdminGrid.addToMenu,
+  set: (value) => useAdminGrid.setAddToMenu(value),
+})
+
+const menuParent = computed({
+  get: () => useAdminGrid.menuParent,
+  set: (value) => useAdminGrid.setMenuParent(value),
 })
 </script>

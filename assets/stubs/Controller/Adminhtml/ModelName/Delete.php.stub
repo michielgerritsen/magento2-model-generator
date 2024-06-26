@@ -10,26 +10,32 @@ use {{ VendorName }}\{{ ModuleName }}\Model\ResourceModel\{{ ModelName }} as Mod
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Redirect;
-use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 
-class Delete extends Action implements HttpGetActionInterface
+class Delete extends Action implements HttpPostActionInterface
 {
     public const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_delete';
 
+    private {{ ModelName }}Factory $modelFactory;
+    private ModelResource $modelResource;
+
     public function __construct(
         Context $context,
-        private readonly ModelFactory $modelFactory,
-        private readonly ModelResource $modelResource
+        {{ ModelName }}Factory $modelFactory,
+        ModelResource $modelResource
     ) {
         parent::__construct($context);
+
+        $this->modelFactory = $modelFactory;
+        $this->modelResource = $modelResource;
     }
 
     /** @thows \Exception */
     public function execute(): Redirect
     {
         try {
-            $id = $this->getRequest()->getParam('id');
+            $id = $this->getRequest()->getParam('{{ IndexField }}');
             /** @var {{ ModelName }} $model */
             $model = $this->modelFactory->create();
             $this->modelResource->load($model, $id);

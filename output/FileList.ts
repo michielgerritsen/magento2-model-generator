@@ -4,6 +4,7 @@ import UiComponent from '~/output/listing/UiComponent'
 import type GeneratesFileInterface from '~/interfaces/GeneratesFileInterface'
 import DbSchemaWhitelist from '~/output/listing/DbSchemaWhitelist'
 import DbSchema from '~/output/listing/DbSchema'
+import UiComponentForm from "~/output/listing/UiComponentForm";
 
 export default class FileList extends StateAware {
   generate() {
@@ -42,11 +43,14 @@ export default class FileList extends StateAware {
 
   private addAdmingridFiles(files: GeneratesFileInterface[]) {
     files.push(new GeneratedFile('etc/acl.xml.stub'));
+    files.push(new GeneratedFile('etc/adminhtml/routes.xml.stub'));
     files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Edit.php.stub'));
     files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Delete.php.stub'));
     files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Index.php.stub'));
 
-    files.push(new GeneratedFile('view/adminhtml/layout/BaseName_index.xml.stub'))
+    files.push(new GeneratedFile('view/adminhtml/layout/BaseName_edit.xml.stub'))
+    files.push(new GeneratedFile('view/adminhtml/layout/BaseName_new.xml.stub'))
+    files.push(new GeneratedFile('Ui/Component/Listing/Column/Actions.php.stub'))
     files.push(new UiComponent())
 
     if (this.isMassActions()) {
@@ -54,7 +58,19 @@ export default class FileList extends StateAware {
     }
 
     if (this.isNewButtonsEnabled()) {
+      files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Save.php.stub'))
+      files.push(new GeneratedFile('view/adminhtml/layout/BaseName_index.xml.stub'))
       files.push(new GeneratedFile('Controller/Adminhtml/ModelName/NewAction.php.stub'))
+      files.push(new GeneratedFile('Model/ModelName/DataProvider.php.stub'))
+      files.push(new GeneratedFile('Block/Adminhtml/ModelName/Edit/SaveButton.php.stub'))
+      files.push(new GeneratedFile('Block/Adminhtml/ModelName/Edit/DeleteButton.php.stub'))
+      files.push(new GeneratedFile('Block/Adminhtml/ModelName/Edit/BackButton.php.stub'))
+      files.push(new GeneratedFile('Block/Adminhtml/ModelName/Edit/GenericButton.php.stub'))
+      files.push(new UiComponentForm('view/adminhtml/ui_component/FormName.xml.stub'))
+    }
+
+    if (this.addToMenu()) {
+      files.push(new GeneratedFile('etc/adminhtml/menu.xml.stub'))
     }
   }
 }

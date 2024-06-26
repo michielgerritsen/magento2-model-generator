@@ -11,7 +11,7 @@ export default class Column extends StateAware {
 
     const label = xml.createElement('label')
     label.setAttribute('translate', 'true')
-    label.innerHTML = data.fieldName
+    label.innerHTML = this.friendlyName(data)
     settings.appendChild(label)
 
     return column

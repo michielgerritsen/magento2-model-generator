@@ -81,13 +81,13 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import {computed} from 'vue'
 import JSZip from 'jszip'
-import { saveAs } from 'file-saver'
-import { useModuleStore } from '@/stores/moduleStore'
-import { useModelStore } from '@/stores/modelStore'
-import { useDownloadStore } from '@/stores/downloadStore'
-import { useFathomStore } from '@/stores/fathomStore'
+import {saveAs} from 'file-saver'
+import {useModuleStore} from '@/stores/moduleStore'
+import {useModelStore} from '@/stores/modelStore'
+import {useDownloadStore} from '@/stores/downloadStore'
+import {useFathomStore} from '@/stores/fathomStore'
 import FileList from "~/output/FileList";
 
 // Initialize stores
@@ -126,7 +126,14 @@ const children = computed(() => {
     current.Contents = file.getContents()
   })
 
-  return Object.values(output.Children)
+  const order = Object.keys(output.Children).sort();
+  // Registration.php should be the last file
+  const index = order.indexOf('registration.php');
+  if (index !== -1) {
+    order.push(order.splice(index, 1)[0]);
+  }
+
+  return order.map(key => output.Children[key])
 })
 
 const includeNonMergable = computed({

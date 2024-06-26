@@ -1,0 +1,48 @@
+<?php
+declare(strict_types=1);
+
+namespace {{ VendorName }}\{{ ModuleName }}\Controller\Adminhtml\{{ ModelName }};
+
+use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\App\RequestInterface;
+use Magento\Framework\Controller\Result\RedirectFactory;
+use Magento\Framework\Message\ManagerInterface;
+use {{ VendorName }}\{{ ModuleName }}\Api\{{ ModelName }}RepositoryInterface;
+use {{ VendorName }}\{{ ModuleName }}\Model\{{ ModelName }}Factory;
+
+class Save implements HttpPostActionInterface
+{
+    const ADMIN_RESOURCE = '{{ VendorName }}_{{ ModuleName }}::{{ ModelName }}_save';
+
+    public function __construct(
+        private readonly RequestInterface $request,
+        private readonly ManagerInterface $messageManager,
+        private readonly RedirectFactory $resultRedirectFactory,
+        private readonly {{ ModelName }}RepositoryInterface $repository,
+        private readonly {{ ModelName }}Factory $modelFactory,
+    ) {}
+
+    public function execute()
+    {
+        $id = $this->request->getParam('{{ IndexField }}');
+        $data = $this->request->getPostValue();
+
+        $model = $this->modelFactory->create();
+        if ($id) {
+            $model = $this->repository->get((int)$id);
+        }
+
+        $model->setData($data);
+
+        try {
+            $model = $this->repository->save($model);
+            $this->messageManager->addSuccessMessage(__('You saved the item.'));
+        } catch (\Exception $e) {
+            $this->messageManager->addErrorMessage($e->getMessage());
+            return $this->resultRedirectFactory->create()->setPath('*');
+        }
+
+        return $this->resultRedirectFactory->create()
+            ->setPath('*/*/edit', ['entity_id' => $model->getId()]);
+    }
+}
