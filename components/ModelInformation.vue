@@ -15,8 +15,7 @@
             name="modelName"
             placeholder="Model name"
             class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid appearance-none cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
-            @keypress="updateTableName()"
-            @change="updateTableName()"
+            @input="updateTableName()"
           >
         </div>
       </div>
