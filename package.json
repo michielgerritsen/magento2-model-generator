@@ -26,7 +26,7 @@
     "prism-es6": "^1.2.0",
     "prismjs": "^1.29.0",
     "serve": "^14.2.3",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vue": "^3.4.33",
     "vue-router": "^4.4.0"
   },
