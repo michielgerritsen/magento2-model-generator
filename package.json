@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
-    "@pinia/nuxt": "^0.5.3",
+    "@pinia/nuxt": "^0.5.4",
     "nuxt-fathom": "^0.0.2"
   }
 }
