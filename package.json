@@ -28,7 +28,7 @@
     "serve": "^14.2.3",
     "typescript": "^5.5.4",
     "vue": "^3.4.38",
-    "vue-router": "^4.4.3"
+    "vue-router": "^4.4.4"
   },
   "devDependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
