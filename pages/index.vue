@@ -85,9 +85,9 @@
           </p>
 
           <p class="mt-4 font-bold">
-            Want to stay up to date on the latest in the Magento community? Subscribe to our bi-weekly newsletter on MageDispatch.com.
+            Want to stay up to date on the latest in the Magento community? Subscribe to our bi-weekly newsletter on 
             <a class="underline" href="https://www.magedispatch.com/?utm_source=model-generator.com&utm_medium=tool&utm_campaign=footer-link"
-              >MageDispatch.com.</a
+            >MageDispatch.com.</a
             >.
           </p>
         </div>
