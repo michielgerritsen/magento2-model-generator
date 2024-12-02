@@ -85,11 +85,10 @@
           </p>
 
           <p class="mt-4 font-bold">
-            Want to get your team up and running with testing in Magento 2?
-            Check out
-            <a class="underline" href="https://www.magetested.com/"
-              >MageTested.com</a
-            >.
+            Want to stay up to date on the latest in the Magento community? Subscribe to our bi-weekly newsletter on
+            <a class="underline" href="https://www.magedispatch.com/?utm_source=model-generator.com&utm_medium=tool&utm_campaign=footer-link"
+            >MageDispatch.com.</a
+            >
           </p>
         </div>
       </div>
