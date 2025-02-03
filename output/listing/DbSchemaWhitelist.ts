@@ -6,7 +6,7 @@ export default class DbSchemaWhitelist extends StateAware implements GeneratesFi
   getContents(): string {
     interface Output {
       column: Record<string, boolean>;
-      constaint: {
+      constraint: {
         PRIMARY: boolean;
       };
       search?: Record<string, boolean>;
@@ -14,7 +14,7 @@ export default class DbSchemaWhitelist extends StateAware implements GeneratesFi
 
     const output: Output = {
       column: {},
-      constaint: {
+      constraint: {
         PRIMARY: true,
       },
     }
