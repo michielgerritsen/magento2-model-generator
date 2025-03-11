@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^0.4.0",
-    "@nuxtjs/tailwindcss": "^6.13.1",
+    "@nuxtjs/tailwindcss": "^6.13.2",
     "@types/prismjs": "^1.26.5",
     "cypress": "^14.0.3",
     "eslint": "^9.21.0",
