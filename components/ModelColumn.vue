@@ -86,6 +86,9 @@
           <option value="datetime">Datetime</option>
           <option value="timestamp">Timestamp</option>
         </optgroup>
+        <optgroup label="Other">
+          <option value="boolean">Boolean</option>
+        </optgroup>
       </select>
     </div>
 

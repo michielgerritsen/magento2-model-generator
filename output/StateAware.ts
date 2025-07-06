@@ -121,7 +121,6 @@ export default class StateAware {
       case 'textarea':
       case 'select':
       case 'multiselect':
-      case 'boolean':
       case 'date':
       case 'datetime':
       case 'time':
@@ -131,6 +130,8 @@ export default class StateAware {
         return 'int'
       case 'decimal':
         return 'float'
+      case 'boolean':
+        return 'bool'
       default:
         return 'string'
     }
