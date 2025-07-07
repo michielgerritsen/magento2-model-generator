@@ -20,7 +20,7 @@ class {{ ModelName }} extends AbstractModel
         private readonly DataObjectHelper $dataObjectHelper,
         private readonly  {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
         ResourceModel\{{ ModelName }} $resource,
-        AbstractDb $resourceCollection = null,
+        ?AbstractDb $resourceCollection = null,
         array $data = []
     ) {
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
