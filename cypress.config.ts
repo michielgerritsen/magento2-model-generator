@@ -16,8 +16,8 @@ export default defineConfig({
           });
 
           // Delete the video if the spec passed on all attempts
-          if (!failures) {
-            fs.existsSync(results.video) && fs.unlinkSync(results.video)
+          if (!failures && fs.existsSync(results.video)) {
+            fs.unlinkSync(results.video)
           }
         }
       })
