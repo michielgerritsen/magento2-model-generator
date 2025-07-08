@@ -1,22 +1,23 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
 namespace {{ VendorName }}\{{ ModuleName }}\Model\Data;
 
-use Magento\Framework\Api\AbstractExtensibleObject;
+use Magento\Framework\Model\AbstractExtensibleModel;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}ExtensionInterface;
 use {{ VendorName }}\{{ ModuleName }}\Api\Data\{{ ModelName }}Interface;
 
-class {{ ModelName }} extends AbstractExtensibleObject implements {{ ModelName }}Interface
+class {{ ModelName }} extends AbstractExtensibleModel implements {{ ModelName }}Interface
 {
     {{#Columns}}
-    public function get{{ functionName }}(): ?{{ phpType }}
+    public function get{{ functionName }}(): ?{{ phpOutputType }}
     {
-        return $this->_get(self::{{ fieldNameUppercase }});
+        $data = $this->getData(self::{{ fieldNameUppercase }});
+        return $data ? ({{ phpOutputType }})$data : null;
     }
 
-    public function set{{ functionName }}({{ phpType }} ${{ fieldName }}): {{ ModelName }}Interface
+    public function set{{ functionName }}({{ phpInputType }}${{ fieldName }}): {{ ModelName }}Interface
     {
         return $this->setData(self::{{ fieldNameUppercase }}, ${{ fieldName }});
     }

@@ -27,7 +27,8 @@ import etcaclXmlStub from '@/assets/stubs/etc/acl.xml.stub?raw'
 import ControllerAdminhtmlModelNameEditPhpStub from '@/assets/stubs/Controller/Adminhtml/ModelName/Edit.php.stub?raw'
 import ControllerAdminhtmlModelNameDeletePhpStub from '@/assets/stubs/Controller/Adminhtml/ModelName/Delete.php.stub?raw'
 import ControllerAdminhtmlModelNameIndexPhpStub from '@/assets/stubs/Controller/Adminhtml/ModelName/Index.php.stub?raw'
-import ControllerAdminhtmlModelNameSavephpstub from '@/assets/stubs/Controller/Adminhtml/ModelName/Save.php.stub?raw'
+import ControllerAdminhtmlModelNameWithDataModelSavePhpStub from '@/assets/stubs/Controller/Adminhtml/ModelName/SaveWithDataModel.php.stub?raw'
+import ControllerAdminhtmlModelNameWithoutDataModelSavePhpStub from '@/assets/stubs/Controller/Adminhtml/ModelName/SaveWithoutDataModel.php.stub?raw'
 import viewadminhtmllayoutBaseName_indexXmlStub from '@/assets/stubs/view/adminhtml/layout/BaseName_index.xml.stub?raw'
 import viewadminhtmllayoutBaseName_editXmlStub from '@/assets/stubs/view/adminhtml/layout/BaseName_edit.xml.stub?raw'
 import viewadminhtmllayoutBaseName_newXmlStub from '@/assets/stubs/view/adminhtml/layout/BaseName_new.xml.stub?raw'
@@ -100,7 +101,8 @@ export default class GeneratedFile extends StateAware implements GeneratesFileIn
       'view/adminhtml/ui_component/FormName.xml.stub': viewadminhtmlui_componentFormNamexmlstub,
       'Controller/Adminhtml/ModelName/MassDelete.php.stub': ControllerAdminhtmlModelNameMassDeletePhpStub,
       'Controller/Adminhtml/ModelName/NewAction.php.stub': ControllerAdminhtmlModelNameNewActionPhpStub,
-      'Controller/Adminhtml/ModelName/Save.php.stub': ControllerAdminhtmlModelNameSavephpstub,
+      'Controller/Adminhtml/ModelName/SaveWithDataModel.php.stub': ControllerAdminhtmlModelNameWithDataModelSavePhpStub,
+      'Controller/Adminhtml/ModelName/SaveWithoutDataModel.php.stub': ControllerAdminhtmlModelNameWithoutDataModelSavePhpStub,
       'Ui/Component/Listing/Column/Actions.php.stub': UiComponentListingColumnActionsphpstub,
     }
 

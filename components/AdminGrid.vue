@@ -211,6 +211,7 @@
               <select
 v-if="addToMenu" v-model="menuParent"
                       class="block flex-1 py-2 px-3 m-0 w-full min-w-0 text-base leading-6 bg-white rounded border border-gray-300 border-solid cursor-text sm:text-sm sm:leading-5 focus:border-blue-600 focus:outline-offset-2"
+                 data-action="selectMenuParent"
               >
                 <option value="">Select a parent item</option>
                 <option value="Magento_Sales::sales_operation">Sales</option>

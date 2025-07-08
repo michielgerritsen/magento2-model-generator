@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -18,7 +18,7 @@ class {{ ModelName }} extends AbstractModel
         Context $context,
         Registry $registry,
         private readonly DataObjectHelper $dataObjectHelper,
-        private readonly  {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
+        private readonly {{ ModelName }}InterfaceFactory ${{ VariableName }}DataFactory,
         ResourceModel\{{ ModelName }} $resource,
         ?AbstractDb $resourceCollection = null,
         array $data = []
@@ -34,7 +34,7 @@ class {{ ModelName }} extends AbstractModel
         $this->dataObjectHelper->populateWithArray(
             $dataObject,
             $data,
-            {{ ModelName }}InterfaceFactory::class
+            {{ ModelName }}Interface::class
         );
 
         return $dataObject;

@@ -7,6 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Start Docker container first
+        run: |
+          docker run -d \
+              --name=magento \
+              -p 8080:80 \
+              -e URL=http://localhost:8080/ \
+              michielgerritsen/magento-project-community-edition:php83-fpm-magento2.4.8-p1 &
+
       - name: Checkout 🛎
         uses: actions/checkout@v4
 
@@ -21,10 +29,30 @@ jobs:
       - name: Generate output ⚙️
         run: yarn generate
 
-      - name: Run Playwright 🌎
+      - name: Install Playwright 🧪
+        run: npx playwright install
+
+      - name: Run Playwright for the frontend tests 🌎
         run: |
-          npx playwright install
-          BASE_URL=https://magento2-model-generator.test/ npx playwright test
+          npx playwright test --project=frontend
+
+      - name: Unzip files
+        run: |
+          unzip -o tests/tmp/MageTested_DataModels_Blog.zip -d tests/tmp/DataModels
+          unzip -o tests/tmp/MageTested_RegularModels_Blog.zip -d tests/tmp/RegularModels
+
+      - name: Upload modules to Docker container
+        run: |
+          docker exec magento mkdir -p app/code/MageTested/
+          docker cp tests/tmp/DataModels/ magento:/data/app/code/MageTested/DataModels
+          docker cp tests/tmp/RegularModels/ magento:/data/app/code/MageTested/RegularModels
+          docker exec magento php bin/magento module:enable MageTested_DataModels MageTested_RegularModels
+          docker exec magento ./disable-2fa
+          docker exec magento php bin/magento setup:upgrade
+
+      - name: Run Playwright for the Magento tests 🌎
+        run: |
+          MAGENTO_BASE_URL=http://localhost:8080/ npx playwright test --project=magento
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

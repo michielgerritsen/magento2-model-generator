@@ -104,7 +104,9 @@ export default class StateAware {
         inputType: column.inputType,
         fieldNameUppercase: column.fieldName.toUpperCase(),
         functionName: this.toPascalCase(column.fieldName),
-        phpType: this.inputTypeToPhpType(column.inputType),
+        phpType: this.inputTypeToPhpType('both', column.inputType),
+        phpInputType: this.inputTypeToPhpType('input', column.inputType, column.fieldName),
+        phpOutputType: this.inputTypeToPhpType('output', column.inputType, column.fieldName),
       }
     })
 
@@ -115,7 +117,11 @@ export default class StateAware {
     return columns
   }
 
-  inputTypeToPhpType(inputType: string): string {
+  inputTypeToPhpType(type: string, inputType: string, fieldName: string|null = null): string {
+    if ((type == 'input' || type == 'ouptut') && fieldName == this.indexField()) {
+      return '';
+    }
+
     switch (inputType) {
       case 'text':
       case 'textarea':
@@ -125,15 +131,15 @@ export default class StateAware {
       case 'datetime':
       case 'time':
       case 'file':
-        return 'string'
+        return `string${type == 'input' ? ' ' : ''}`
       case 'int':
-        return 'int'
+        return `int${type == 'input' ? ' ' : ''}`
       case 'decimal':
-        return 'float'
+        return `float${type == 'input' ? ' ' : ''}`
       case 'boolean':
-        return 'bool'
+        return `bool${type == 'input' ? ' ' : ''}`
       default:
-        return 'string'
+        return `string${type == 'input' ? ' ' : ''}`
     }
   }
 
@@ -151,6 +157,26 @@ export default class StateAware {
 
   indexField(): string {
     return this.columns()[0].fieldName
+  }
+
+  getId(): string {
+    if (!this.includeDataModels()) {
+      return 'getId';
+    }
+
+    // Snake case to camel case conversion
+    const fieldName = this.indexField()
+      .toLowerCase()
+      .replace(/([-_][a-z])/g, group =>
+        group
+          .toUpperCase()
+          .replace('-', '')
+          .replace('_', '')
+      );
+
+    const fieldNameUppercase = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
+
+    return `get${fieldNameUppercase}`;
   }
 
   isAdmingrid(): boolean {
@@ -219,6 +245,7 @@ export default class StateAware {
       ModelName: this.modelName(),
       TableName: this.tableName(),
       IndexField: this.indexField(),
+      GetId: this.getId(),
       ListingName: this.listingName(),
       FormName: this.formName(),
       VariableName: this.variableName(),

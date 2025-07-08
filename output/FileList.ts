@@ -34,9 +34,17 @@ export default class FileList extends StateAware {
       files.push(new GeneratedFile('Model/ModelNameRepository.php.stub', 'Model/ModelNameRepositoryWithDataModel.php.stub'))
       files.push(new GeneratedFile('Model/ModelName.php.stub', 'Model/ModelNameWithDataModel.php.stub'))
       files.push(new GeneratedFile('Model/Data/ModelName.php.stub'))
+
+      if (this.isNewButtonsEnabled()) {
+        files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Save.php', 'Controller/Adminhtml/ModelName/SaveWithDataModel.php.stub'))
+      }
     } else {
       files.push(new GeneratedFile('Model/ModelNameRepository.php.stub', 'Model/ModelNameRepositoryWithoutDataModel.php.stub'))
       files.push(new GeneratedFile('Model/ModelName.php.stub', 'Model/ModelNameWithoutDataModel.php.stub'))
+
+      if (this.isNewButtonsEnabled()) {
+        files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Save.php', 'Controller/Adminhtml/ModelName/SaveWithoutDataModel.php.stub'))
+      }
     }
 
     return files
@@ -59,7 +67,6 @@ export default class FileList extends StateAware {
     }
 
     if (this.isNewButtonsEnabled()) {
-      files.push(new GeneratedFile('Controller/Adminhtml/ModelName/Save.php.stub'))
       files.push(new GeneratedFile('view/adminhtml/layout/BaseName_index.xml.stub'))
       files.push(new GeneratedFile('Controller/Adminhtml/ModelName/NewAction.php.stub'))
       files.push(new GeneratedFile('Model/ModelName/DataProvider.php.stub'))

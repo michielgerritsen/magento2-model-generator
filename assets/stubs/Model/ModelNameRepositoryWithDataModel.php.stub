@@ -63,7 +63,7 @@ class {{ ModelName }}Repository implements {{ ModelName }}RepositoryInterface
     {
         ${{ VariableName }} = $this->{{ VariableName }}Factory->create();
         $this->resource->load(${{ VariableName }}, $id);
-        if (!${{ VariableName }}->getId()) {
+        if (!${{ VariableName }}->{{ GetId }}()) {
             throw new NoSuchEntityException(__('{{ ModelName }} with id "%1" does not exist.', $id));
         }
         return ${{ VariableName }}->getDataModel();

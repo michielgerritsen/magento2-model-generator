@@ -22,10 +22,11 @@ logs
 .env
 .env.*
 !.env.example
-cypress/videos
 
 # Playwright
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+tests/tmp/
+tests/.auth/

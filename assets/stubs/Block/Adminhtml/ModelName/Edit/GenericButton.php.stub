@@ -37,7 +37,7 @@ class GenericButton
         }
 
         try {
-            return $this->repository->get($id)->getId();
+            return $this->repository->get($id)->{{ GetId }}();
         } catch (NoSuchEntityException $e) {
         }
         return null;

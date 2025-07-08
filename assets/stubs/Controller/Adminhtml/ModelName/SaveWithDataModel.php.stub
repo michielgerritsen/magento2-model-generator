@@ -27,6 +27,7 @@ class Save implements HttpPostActionInterface
         $id = $this->request->getParam('{{ IndexField }}');
         $data = $this->request->getPostValue();
 
+        /** @var \{{ VendorName }}\{{ ModuleName }}\Model\Data\{{ ModelName }} $model */
         $model = $this->modelFactory->create();
         if ($id) {
             $model = $this->repository->get((int)$id);
@@ -35,7 +36,7 @@ class Save implements HttpPostActionInterface
         $model->setData($data);
 
         try {
-            $model = $this->repository->save($model);
+            $model = $this->repository->save($model->getDataModel());
             $this->messageManager->addSuccessMessage(__('You saved the item.'));
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
@@ -43,6 +44,6 @@ class Save implements HttpPostActionInterface
         }
 
         return $this->resultRedirectFactory->create()
-            ->setPath('*/*/edit', ['entity_id' => $model->getId()]);
+            ->setPath('*/*/edit', ['entity_id' => $model->{{ GetId }}()]);
     }
 }

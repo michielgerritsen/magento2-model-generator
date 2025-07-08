@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {enableAdminGrid, setValidData} from "~/tests/functions/general";
+import {enableAdminGrid, enableModuleRegistration, setValidData} from "~/tests/functions";
 
 test.describe('Test the input fields', () => {
   test.beforeEach(async ({ page }) => {
@@ -21,7 +21,7 @@ test.describe('Test the input fields', () => {
 
   test('Should include the registration.php and module.xml when selected', async ({ page }) => {
     await setValidData(page);
-    await page.locator('[name="includeModuleRegistration"]').check();
+    await enableModuleRegistration(page);
     await expect(page.locator('[aria-labelledby=top-sidebar]')).toContainText('registration.php');
     await expect(page.locator('[aria-labelledby=top-sidebar]')).toContainText('module.xml');
   });

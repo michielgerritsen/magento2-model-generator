@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {disableDataModels, enableDataModels, setValidData} from "~/tests/functions/general";
+import {disableDataModels, enableDataModels, setValidData} from "~/tests/functions";
 
 test.describe('Test that we get the right output when using the data models options', () => {
   test.beforeEach(async ({ page }) => {
