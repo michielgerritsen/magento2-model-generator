@@ -14,4 +14,9 @@ export default defineNuxtConfig({
   fathom: {
     siteId: "BKQYZZYA",
   },
+  vite: {
+    server: {
+      allowedHosts: ['magento2-model-generator.test']
+    }
+  }
 })

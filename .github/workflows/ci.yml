@@ -8,40 +8,28 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
-      - name: Setup node env 🏗
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          check-latest: true
-
-      - name: Get yarn cache directory path 🛠
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache node_modules 📦
-        uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      - uses: ddev/github-action-setup-ddev@v1
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn
+        run: ddev yarn install
 
       - name: Run linter 👀
         run: yarn lint
 
-      - name: Run Cypress 🌎
-        run: yarn cypress
+      - name: Generate output ⚙️
+        run: yarn generate
+
+      - name: Run Playwright 🌎
+        run: |
+          npx playwright install
+          BASE_URL=https://magento2-model-generator.test/ npx playwright test
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Cypress logs
+          name: Playwright report
           path: |
-            cypress/videos
+            playwright-report

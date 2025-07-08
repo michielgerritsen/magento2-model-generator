@@ -23,3 +23,9 @@ logs
 .env.*
 !.env.example
 cypress/videos
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
