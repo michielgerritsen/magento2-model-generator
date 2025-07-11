@@ -37,6 +37,6 @@
     "@playwright/test": "^1.53.2",
     "@types/node": "^24.0.13",
     "nuxt-fathom": "^0.0.2",
-    "playwright": "^1.53.2"
+    "playwright": "^1.54.0"
   }
 }
