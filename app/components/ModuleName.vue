@@ -91,12 +91,12 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useAdminGridStore } from '@/stores/admingridStore'
-import { useDownloadStore } from '@/stores/downloadStore'
-import { useFathomStore } from '@/stores/fathomStore'
-import { useModelStore } from '@/stores/modelStore'
-import { useModuleStore } from '@/stores/moduleStore'
-import { useTableStore } from '@/stores/tableStore'
+import { useAdminGridStore } from '~/stores/adminGridStore'
+import { useDownloadStore } from '~/stores/downloadStore'
+import { useFathomStore } from '~/stores/fathomStore'
+import { useModelStore } from '~/stores/modelStore'
+import { useModuleStore } from '~/stores/moduleStore'
+import { useTableStore } from '~/stores/tableStore'
 
 const adminGridStore = useAdminGridStore()
 const downloadStore = useDownloadStore()

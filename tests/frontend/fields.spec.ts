@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {enableAdminGrid, enableModuleRegistration, setValidData} from "~/tests/functions";
+import {enableAdminGrid, enableModuleRegistration, setValidData} from "@test/functions";
 
 test.describe('Test the input fields', () => {
   test.beforeEach(async ({ page }) => {

@@ -7,7 +7,7 @@ import {
     enableDataModels,
     enableModuleRegistration,
     setValidData
-} from "~/tests/functions";
+} from "@test/functions";
 
 test('Download the ZIP file with Data Models enabled', async ({ page }) => {
     await page.goto('/');
