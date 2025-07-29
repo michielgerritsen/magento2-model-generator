@@ -233,7 +233,7 @@ v-if="addToMenu" v-model="menuParent"
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useAdminGridStore } from '~/stores/admingridStore'
+import { useAdminGridStore } from '~/stores/adminGridStore'
 
 const useAdminGrid = useAdminGridStore()
 

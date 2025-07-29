@@ -62,4 +62,4 @@ export const useAdminGridStore = defineStore('admingrid', {
   persist: true,
 })
 
-export type AdminGridStore = ReturnType<typeof useAdminGridStore>;
+export type UseAdminGridStore = ReturnType<typeof useAdminGridStore>;

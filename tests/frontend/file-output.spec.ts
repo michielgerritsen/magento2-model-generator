@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import {addField, enableAdminGrid, enableSearch, openFileByPath, setValidData} from "~/tests/functions";
+import {addField, enableAdminGrid, enableSearch, openFileByPath, setValidData} from "@test/functions";
 
 test.describe('Check that the generated output files are correct', () => {
   test.beforeEach(async ({ page }) => {

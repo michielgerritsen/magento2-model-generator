@@ -3,14 +3,14 @@ import { useModuleStore } from '@/stores/moduleStore'
 import type { ModuleStore } from '@/stores/moduleStore'
 import { useModelStore } from '@/stores/modelStore'
 import type { ModelStore } from '@/stores/modelStore'
-import { useAdminGridStore} from "@/stores/admingridStore";
-import type { AdminGridStore} from "@/stores/admingridStore";
+import { useAdminGridStore} from "~/stores/adminGridStore";
+import type { UseAdminGridStore} from "~/stores/adminGridStore";
 import { useTableStore} from "@/stores/tableStore";
 import type { TableStore} from "@/stores/tableStore";
 
 export default class StateAware {
   protected moduleStore: ModuleStore
-  protected adminGridStore: AdminGridStore
+  protected adminGridStore: UseAdminGridStore
   protected modelStore: ModelStore
   protected tableStore: TableStore
 
