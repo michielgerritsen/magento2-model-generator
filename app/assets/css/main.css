@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand-main: #eadfb4;
+    --color-brand-secondary: #9BB0C1;
+    --color-brand-blue: #51829B;
+    --color-brand-orange: #F6995C;
+}
+
+body {
+    @apply bg-brand-main;
+    background: url(assets/images/background.svg);
+}

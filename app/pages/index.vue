@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen bg-gray-100">
-    <header class="pb-24 bg-green-400">
+  <div class="min-h-screen">
+    <header class="pb-24">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div
           class="relative py-5 flex items-center justify-center lg:justify-between"
         >
           <div class="absolute left-0 flex-shrink-0 lg:static">
-            <span class="inline-block float-left text-white text-2xl font-bold">
+            <span class="inline-block float-left text-black text-2xl font-bold">
               Magento 2 Model Generator
             </span>
           </div>

@@ -2,7 +2,7 @@
   <div class="mt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-12">
     <div class="flex flex-col sm:col-span-1">
       <svg
-        class="w-4 h-4 cursor-pointer"
+        class="w-4 h-4 cursor-pointer text-brand-blue"
         data-slot="icon"
         fill="none"
         stroke-width="1.5"
@@ -20,7 +20,7 @@
       </svg>
 
       <svg
-        class="w-4 h-4 cursor-pointer"
+        class="w-4 h-4 cursor-pointer text-brand-blue"
         data-slot="icon"
         fill="none"
         stroke-width="1.5"
@@ -95,7 +95,7 @@
     <div class="sm:col-span-2 relative">
       <svg
         data-action="addRow"
-        class="w-6 h-6 inline-block mt-1 cursor-pointer"
+        class="w-6 h-6 inline-block mt-1 cursor-pointer text-brand-orange"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@
 
       <svg
         data-action="deleteRow"
-        class="w-6 h-6 inline-block mt-1 cursor-pointer"
+        class="w-6 h-6 inline-block mt-1 cursor-pointer text-brand-orange"
         fill="currentColor"
         viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"

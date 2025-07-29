@@ -12,7 +12,7 @@
                 v-model="enabled"
                 name="enabled"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -33,7 +33,7 @@
                 v-model="bookmarks"
                 name="bookmarks"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -57,7 +57,7 @@
                 v-model="paging"
                 name="paging"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -81,7 +81,7 @@
                 v-model="sticky"
                 name="sticky"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -103,7 +103,7 @@
                 v-model="search"
                 name="search"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -125,7 +125,7 @@
                 v-model="massactions"
                 name="massactions"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -149,7 +149,7 @@
                 v-model="filters"
                 name="filters"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -173,7 +173,7 @@
                 v-model="newButton"
                 name="newButton"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">
@@ -197,7 +197,7 @@
                 v-model="addToMenu"
                 name="addToMenu"
                 type="checkbox"
-                class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+                class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
               >
             </div>
             <div class="ml-3 text-sm">

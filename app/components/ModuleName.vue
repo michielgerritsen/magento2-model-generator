@@ -2,7 +2,7 @@
   <div class="-mt-4">
     <button
       type="button"
-      class="float-right inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-400 hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+      class="float-right inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-brand-blue hover:bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue"
       @click="reset"
     >
       Reset
@@ -53,7 +53,7 @@
               v-model="includeModuleRegistration"
               name="includeModuleRegistration"
               type="checkbox"
-              class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+              class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
             >
           </div>
           <div class="ml-3 text-sm">
@@ -75,7 +75,7 @@
               v-model="includeDataModels"
               name="includeDataModels"
               type="checkbox"
-              class="focus:ring-green-500 h-4 w-4 text-green-400 border-gray-300 rounded"
+              class="focus:ring-brand-blue h-4 w-4 text-brand-blue border-gray-300 rounded"
             >
           </div>
           <div class="ml-3 text-sm">

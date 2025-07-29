@@ -18,7 +18,7 @@
   "dependencies": {
     "@nuxt/eslint": "^1.5.2",
     "@nuxt/eslint-config": "^1.7.1",
-    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/prismjs": "^1.26.5",
     "eslint": "^9.30.1",
     "file-saver": "^2.0.5",
@@ -38,7 +38,8 @@
     "@playwright/test": "^1.53.2",
     "@types/node": "^24.0.13",
     "nuxt-fathom": "^0.0.2",
-    "playwright": "^1.53.2"
+    "playwright": "^1.53.2",
+    "tailwindcss": "^4.1.11"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
