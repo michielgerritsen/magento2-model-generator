@@ -35,7 +35,7 @@
   "devDependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.5.5",
-    "@playwright/test": "^1.53.2",
+    "@playwright/test": "^1.54.2",
     "@types/node": "^24.0.13",
     "nuxt-fathom": "^0.0.2",
     "playwright": "^1.53.2",
