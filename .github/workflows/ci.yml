@@ -16,7 +16,7 @@ jobs:
               michielgerritsen/magento-project-community-edition:php83-fpm-magento2.4.8-p1 &
 
       - name: Checkout 🛎
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - uses: ddev/github-action-setup-ddev@v1
 
