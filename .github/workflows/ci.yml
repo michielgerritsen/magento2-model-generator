@@ -24,10 +24,10 @@ jobs:
         run: ddev yarn install
 
       - name: Run linter 👀
-        run: yarn lint
+        run: ddev yarn lint
 
       - name: Generate output ⚙️
-        run: yarn generate
+        run: ddev yarn generate
 
       - name: Install Playwright 🧪
         run: npx playwright install
@@ -40,6 +40,14 @@ jobs:
         run: |
           unzip -o tests/tmp/MageTested_DataModels_Blog.zip -d tests/tmp/DataModels
           unzip -o tests/tmp/MageTested_RegularModels_Blog.zip -d tests/tmp/RegularModels
+
+      - name: Run codesniffer
+        run:
+          docker run
+          --volume $(pwd)/tests/tmp/RegularModels:/app/workdir
+          michielgerritsen/magento-coding-standard:latest
+          --severity=10
+          -s
 
       - name: Upload modules to Docker container
         run: |
