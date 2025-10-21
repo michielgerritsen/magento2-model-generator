@@ -6692,10 +6692,15 @@ system-architecture@^0.1.0:
   resolved "https://registry.npmjs.org/system-architecture/-/system-architecture-0.1.0.tgz"
   integrity sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==
 
-tailwindcss@4.1.14, tailwindcss@^4.1.11:
+tailwindcss@4.1.14:
   version "4.1.14"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.14.tgz#a5907cc2202a2a1f5f15bac6f2031e53117e43a8"
   integrity sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==
+
+tailwindcss@^4.1.15:
+  version "4.1.15"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-4.1.15.tgz#1437ee75ed8f66d8d866da5e25daa38d06ce5cea"
+  integrity sha512-k2WLnWkYFkdpRv+Oby3EBXIyQC8/s1HOFMBUViwtAh6Z5uAozeUSMQlIsn/c6Q2iJzqG6aJT3wdPaRNj70iYxQ==
 
 tapable@^2.2.0:
   version "2.2.2"
