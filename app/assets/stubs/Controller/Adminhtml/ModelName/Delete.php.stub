@@ -31,7 +31,7 @@ class Delete extends Action implements HttpPostActionInterface
         $this->modelResource = $modelResource;
     }
 
-    /** @thows \Exception */
+    /** @throws \Exception */
     public function execute(): Redirect
     {
         try {
