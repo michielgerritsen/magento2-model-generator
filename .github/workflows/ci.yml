@@ -13,7 +13,7 @@ jobs:
               --name=magento \
               -p 8080:80 \
               -e URL=http://localhost:8080/ \
-              michielgerritsen/magento-project-community-edition:php83-fpm-magento2.4.8-p1 &
+              ghcr.io/controlaltdelete-nl/magento2-in-a-box/magento-project-community-edition:magento2.4.4-p4-sample-data:magento2.4.8-p3 &
 
       - name: Checkout 🛎
         uses: actions/checkout@v6
