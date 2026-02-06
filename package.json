@@ -36,7 +36,7 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.5.5",
     "@playwright/test": "^1.58.1",
-    "@types/node": "^25.2.0",
+    "@types/node": "^25.2.1",
     "nuxt-fathom": "^0.0.3",
     "playwright": "^1.53.2",
     "tailwindcss": "^4.1.16"
