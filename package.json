@@ -16,7 +16,7 @@
     "test": "BASE_URL=https://magento2-model-generator.test/ playwright test"
   },
   "dependencies": {
-    "@nuxt/eslint": "^1.13.0",
+    "@nuxt/eslint": "^1.14.0",
     "@nuxt/eslint-config": "^1.13.0",
     "@tailwindcss/vite": "^4.1.18",
     "@types/prismjs": "^1.26.5",
