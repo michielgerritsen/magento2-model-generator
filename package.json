@@ -19,7 +19,7 @@
     "@nuxt/eslint": "^1.13.0",
     "@nuxt/eslint-config": "^1.13.0",
     "@tailwindcss/vite": "^4.1.18",
-    "@types/prismjs": "^1.26.5",
+    "@types/prismjs": "^1.26.6",
     "eslint": "^9.39.2",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
