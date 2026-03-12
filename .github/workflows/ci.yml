@@ -63,7 +63,7 @@ jobs:
           MAGENTO_BASE_URL=http://localhost:8080/ npx playwright test --project=magento
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: Playwright report
