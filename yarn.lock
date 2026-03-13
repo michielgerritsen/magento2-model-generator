@@ -62,18 +62,7 @@
     json5 "^2.2.3"
     semver "^6.3.1"
 
-"@babel/generator@^7.28.0", "@babel/generator@^7.28.5", "@babel/generator@^7.28.6":
-  version "7.29.0"
-  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.29.0.tgz#4cba5a76b3c71d8be31761b03329d5dc7768447f"
-  integrity sha512-vSH118/wwM/pLR38g/Sgk05sNtro6TlTJKuiMXDaZqPUfjTFcudpCOt00IhOfj+1BFAX+UFAlzCU+6WXr3GLFQ==
-  dependencies:
-    "@babel/parser" "^7.29.0"
-    "@babel/types" "^7.29.0"
-    "@jridgewell/gen-mapping" "^0.3.12"
-    "@jridgewell/trace-mapping" "^0.3.28"
-    jsesc "^3.0.2"
-
-"@babel/generator@^7.29.0":
+"@babel/generator@^7.28.0", "@babel/generator@^7.28.5", "@babel/generator@^7.28.6", "@babel/generator@^7.29.0":
   version "7.29.1"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.29.1.tgz#d09876290111abbb00ef962a7b83a5307fba0d50"
   integrity sha512-qsaF+9Qcm2Qv8SRIMMscAvG4O3lJ0F1GuMo5HR/Bp02LopNgnZBC/EkbevHFeGs4ls/oPz9v+Bsmzbkbe+0dUw==
@@ -2667,12 +2656,12 @@
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz"
   integrity sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==
 
-"@vue/devtools-api@^8.0.0":
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-8.0.5.tgz#313c563954b06b8254100ebc0d0e3773b1a06e18"
-  integrity sha512-DgVcW8H/Nral7LgZEecYFFYXnAvGuN9C3L3DtWekAncFBedBczpNW8iHKExfaM559Zm8wQWrwtYZ9lXthEHtDw==
+"@vue/devtools-api@^8.0.6":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-8.0.7.tgz#1b3ea34572eaeadc9a6d3302604efcb15d77302d"
+  integrity sha512-tc1TXAxclsn55JblLkFVcIRG7MeSJC4fWsPjfM7qu/IcmPUYnQ5Q8vzWwBpyDY24ZjmZTUCCwjRSNbx58IhlAA==
   dependencies:
-    "@vue/devtools-kit" "^8.0.5"
+    "@vue/devtools-kit" "^8.0.7"
 
 "@vue/devtools-core@^8.0.5":
   version "8.0.5"
@@ -2699,12 +2688,27 @@
     speakingurl "^14.0.1"
     superjson "^2.2.2"
 
+"@vue/devtools-kit@^8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-8.0.7.tgz#bb8d4b838f10a25dec8eb728b4a3bd560bf05e55"
+  integrity sha512-H6esJGHGl5q0E9iV3m2EoBQHJ+V83WMW83A0/+Fn95eZ2iIvdsq4+UCS6yT/Fdd4cGZSchx/MdWDreM3WqMsDw==
+  dependencies:
+    "@vue/devtools-shared" "^8.0.7"
+    birpc "^2.6.1"
+    hookable "^5.5.3"
+    perfect-debounce "^2.0.0"
+
 "@vue/devtools-shared@^8.0.5":
   version "8.0.5"
   resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-8.0.5.tgz#d97e887640fb2cad1e9b9e40fb46010d69852103"
   integrity sha512-bRLn6/spxpmgLk+iwOrR29KrYnJjG9DGpHGkDFG82UM21ZpJ39ztUT9OXX3g+usW7/b2z+h46I9ZiYyB07XMXg==
   dependencies:
     rfdc "^1.4.1"
+
+"@vue/devtools-shared@^8.0.7":
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-8.0.7.tgz#a33086022ea28f04e22e0fd3083b256c205f9f2d"
+  integrity sha512-CgAb9oJH5NUmbQRdYDj/1zMiaICYSLtm+B1kxcP72LBrifGAjUmt8bx52dDH1gWRPlQgxGPqpAMKavzVirAEhA==
 
 "@vue/language-core@^3.2.1":
   version "3.2.2"
@@ -7561,14 +7565,14 @@ vue-router@^4.6.4:
   dependencies:
     "@vue/devtools-api" "^6.6.4"
 
-vue-router@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-5.0.2.tgz#34e4ebb10069fc44e15570eddd9baabba942e07b"
-  integrity sha512-YFhwaE5c5JcJpNB1arpkl4/GnO32wiUWRB+OEj1T0DlDxEZoOfbltl2xEwktNU/9o1sGcGburIXSpbLpPFe/6w==
+vue-router@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-5.0.3.tgz#de0fac20b25dfa36ab77476abe944b9f86840621"
+  integrity sha512-nG1c7aAFac7NYj8Hluo68WyWfc41xkEjaR0ViLHCa3oDvTQ/nIuLJlXJX1NUPw/DXzx/8+OKMng045HHQKQKWw==
   dependencies:
     "@babel/generator" "^7.28.6"
     "@vue-macros/common" "^3.1.1"
-    "@vue/devtools-api" "^8.0.0"
+    "@vue/devtools-api" "^8.0.6"
     ast-walker-scope "^0.8.3"
     chokidar "^5.0.0"
     json5 "^2.2.3"
