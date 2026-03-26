@@ -6620,9 +6620,9 @@ spdx-license-ids@^3.0.0:
   integrity sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg==
 
 srvx@^0.11.9:
-  version "0.11.9"
-  resolved "https://registry.yarnpkg.com/srvx/-/srvx-0.11.9.tgz#84a3fca4a9599e0ea3601dddc40e0b20adc35f33"
-  integrity sha512-97wWJS6F0KTKAhDlHVmBzMvlBOp5FiNp3XrLoodIgYJpXxgG5tE9rX4Pg7s46n2shI4wtEsMATTS1+rI3/ubzA==
+  version "0.11.13"
+  resolved "https://registry.yarnpkg.com/srvx/-/srvx-0.11.13.tgz#cc77a98cb9a459c34f75ee4345bd0eef9f613a54"
+  integrity sha512-oknN6qduuMPafxKtHucUeG32Q963pjriA5g3/Bl05cwEsUe5VVbIU4qR9LrALHbipSCyBe+VmfDGGydqazDRkw==
 
 stable-hash-x@^0.2.0:
   version "0.2.0"
