@@ -29,7 +29,7 @@
     "prismjs": "^1.30.0",
     "serve": "^14.2.6",
     "typescript": "^5.9.3",
-    "vue": "^3.5.32",
+    "vue": "^3.5.33",
     "vue-router": "^5.0.6"
   },
   "devDependencies": {
