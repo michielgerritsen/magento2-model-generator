@@ -34,7 +34,7 @@
   "devDependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.5.5",
-    "@playwright/test": "^1.62.0",
+    "@playwright/test": "^1.62.1",
     "@types/node": "^26.1.2",
     "nuxt-fathom": "^0.0.3",
     "tailwindcss": "^4.3.1"
