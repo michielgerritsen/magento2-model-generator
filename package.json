@@ -22,7 +22,7 @@
     "@types/prismjs": "^1.26.6",
     "eslint": "^10.10.0",
     "file-saver": "^2.0.5",
-    "jszip": "^3.10.1",
+    "jszip": "^3.10.2",
     "mustache": "^4.2.0",
     "nuxt": "^4.5.1",
     "prism-es6": "^1.2.0",
