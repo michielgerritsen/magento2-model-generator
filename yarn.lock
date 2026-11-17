@@ -2052,10 +2052,10 @@
   dependencies:
     "@rolldown/pluginutils" "^1.0.1"
 
-"@vue-macros/common@^3.1.3":
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/@vue-macros/common/-/common-3.1.3.tgz#76504322a0410bfbbda14edd999774d7990f3c7d"
-  integrity sha512-pphnexn8CDKugcA4TYSKlg1XanBYPbILST+eZK9ZGqG8sVbNR5L0kXEpRqs8+iSznosHt/Jo2k1FGl0tnWIpyg==
+"@vue-macros/common@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@vue-macros/common/-/common-3.1.4.tgz#cb56f0a84bdbfacbfa640ac34d9f805667adac8c"
+  integrity sha512-/5Fv+6DgIcM9ajY05ZmKBv+LMX1M9A0X+IUwDRVdt67ciw8OV9bvG2r34p3RiEadlsQybjhKPRKNXDC8Bp23cw==
   dependencies:
     "@vue/compiler-sfc" "^3.5.22"
     ast-kit "^2.1.2"
@@ -2141,12 +2141,12 @@
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz"
   integrity sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==
 
-"@vue/devtools-api@^8.1.5":
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-8.1.5.tgz#0d8a7614f5d4549da31fb5b66988efdebbfa8ed5"
-  integrity sha512-YJipMVAKe5wT5CWf5kTYCaNV7NMNjFVxJkIkJaJ4W/nCxEBzlZzrOsYKeCymdCrFZmBS/+wTWFoUs3Jf/Q6XSQ==
+"@vue/devtools-api@^8.2.1":
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-8.2.1.tgz#9d95de2b908aa80b9957d737ddca51790e70c3b5"
+  integrity sha512-6u4vXBlIBAC1wMplIZgpyPn7uh/s4Bf6F5bMzvLv+EdJ0aHs/+4B7Ygv864EStQSjRbsRzTko/kUG1A1IejQ3A==
   dependencies:
-    "@vue/devtools-kit" "^8.1.5"
+    "@vue/devtools-kit" "^8.2.1"
 
 "@vue/devtools-core@^8.2.1":
   version "8.2.1"
@@ -2155,16 +2155,6 @@
   dependencies:
     "@vue/devtools-kit" "^8.2.1"
     "@vue/devtools-shared" "^8.2.1"
-
-"@vue/devtools-kit@^8.1.5":
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-kit/-/devtools-kit-8.1.5.tgz#7a074d9aa4de5c95adca1be1d41a29745505c916"
-  integrity sha512-FcSAxsi4eWuXLCB7Rv9lj0aIVHHPNVQ2BazGf4RJTc2JCqb4BQg0hk87ZFhminCfl+mD5OUI0rX2cgyu4kJOGA==
-  dependencies:
-    "@vue/devtools-shared" "^8.1.5"
-    birpc "^2.6.1"
-    hookable "^5.5.3"
-    perfect-debounce "^2.0.0"
 
 "@vue/devtools-kit@^8.2.1":
   version "8.2.1"
@@ -2175,11 +2165,6 @@
     birpc "^2.6.1"
     hookable "^5.5.3"
     perfect-debounce "^2.0.0"
-
-"@vue/devtools-shared@^8.1.5":
-  version "8.1.5"
-  resolved "https://registry.yarnpkg.com/@vue/devtools-shared/-/devtools-shared-8.1.5.tgz#fc59c1483cb05557ca501699e61239c66599db1c"
-  integrity sha512-mhT4zcPFhF+Xk1O4BfhhrbXzpmfqY03fS6xGpcllbQG7lDjhQf8pQHcTIhqQIYx1hfwtHmk/6jM96ele0UxPqQ==
 
 "@vue/devtools-shared@^8.2.1":
   version "8.2.1"
@@ -2592,6 +2577,13 @@ chokidar@^5.0.0:
   dependencies:
     readdirp "^5.0.0"
 
+chokidar@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-6.0.0.tgz#66bb84678ab40b8d25679d71f3955bd206ab618b"
+  integrity sha512-Ec2Z7wpcKBiMpR7DxteoqS/sq5G5d2A4fpxzPv6+fD7xNNdrTghn7L11YwV5EN1B3i72Erc3XVT5FkWIDx90+A==
+  dependencies:
+    readdirp "^5.1.1"
+
 chownr@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/chownr/-/chownr-3.0.0.tgz"
@@ -2679,10 +2671,10 @@ confbox@^0.2.2, confbox@^0.2.4:
   resolved "https://registry.yarnpkg.com/confbox/-/confbox-0.2.4.tgz#592e7be71f882a4a874e3c88f0ac1ef6f7da1ce5"
   integrity sha512-ysOGlgTFbN2/Y6Cg3Iye8YKulHw+R2fNXHrgSmXISQdMnomY6eNDprVdW9R5xBguEqI954+S6709UyiO7B+6OQ==
 
-confbox@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/confbox/-/confbox-0.3.1.tgz#79aa91893791a202fb349fb367e7320423f7c76e"
-  integrity sha512-cKUSoKa8YxFZZSmraVi7onONx3amu77ngK3kGpsYHDH7drPwCRkQE1RYMPlLRrMtnciRj274XNRxcHxnKmDSnA==
+confbox@^0.3.1, confbox@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/confbox/-/confbox-0.3.2.tgz#47ad0467206bb636ca161e1ec46f9ae01999bc89"
+  integrity sha512-ZUAKhKlkCOrIGKc8cj7zek9s9z1mveHif/25nUshI2BzCRzF7KH7KHa+Lnh2ubq+e1tIlaFuP763mzW4qVoehg==
 
 consola@^3.2.3, consola@^3.4.0, consola@^3.4.2:
   version "3.4.2"
@@ -4153,6 +4145,15 @@ local-pkg@^1.1.2, local-pkg@^1.2.1:
     pkg-types "^2.3.0"
     quansync "^0.2.11"
 
+local-pkg@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/local-pkg/-/local-pkg-2.0.0.tgz#a3a16a9e5ee227d49a8045a98daed23e656415eb"
+  integrity sha512-xvTNwM27EpU+fkLSpo33Pq/nm8m5zNf0aU/hF4W4ZM9RHQjVZa5KTmmXIzEzVsdI09NOUqj0djHhTv96sUowSQ==
+  dependencies:
+    mlly "^1.8.2"
+    pkg-types "^2.3.1"
+    quansync "^1.0.0"
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz"
@@ -4203,7 +4204,7 @@ magic-string@^0.30.19, magic-string@^0.30.21, magic-string@^0.30.3:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.5"
 
-magic-string@^1.0.0, magic-string@^1.1.0, magic-string@^1.2.0, magic-string@^1.2.2, magic-string@^1.2.3, magic-string@^1.3.1, magic-string@^1.4.3, magic-string@^1.4.5:
+magic-string@^1.0.0, magic-string@^1.1.0, magic-string@^1.2.0, magic-string@^1.2.2, magic-string@^1.2.3, magic-string@^1.3.1, magic-string@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-1.4.5.tgz#201c852d51eb0664d6f66cf7ab93b20b416e48d9"
   integrity sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w==
@@ -4851,7 +4852,7 @@ pkg-types@^1.3.1:
     mlly "^1.7.4"
     pathe "^2.0.1"
 
-pkg-types@^2.3.0, pkg-types@^2.3.3, pkg-types@^2.4.0:
+pkg-types@^2.3.0, pkg-types@^2.3.1, pkg-types@^2.3.3, pkg-types@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/pkg-types/-/pkg-types-2.4.0.tgz#ee04a5b53e64a689e4c10a82404f8549a861e316"
   integrity sha512-07Fys7iVx0X6TcviMOgogM1Lk33ZyqOezMnU79S+kffWqwolG/5W9V8EgQSeYCIfFTYVgssRbnH630Oa2+soBA==
@@ -4967,6 +4968,11 @@ quansync@^0.2.11:
   resolved "https://registry.yarnpkg.com/quansync/-/quansync-0.2.11.tgz#f9c3adda2e1272e4f8cf3f1457b04cbdb4ee692a"
   integrity sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==
 
+quansync@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/quansync/-/quansync-1.0.0.tgz#1c29acccd544cd68d97a7350c5099e0a9bc7e5ee"
+  integrity sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
@@ -5046,6 +5052,11 @@ readdirp@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-5.0.0.tgz#fbf1f71a727891d685bb1786f9ba74084f6e2f91"
   integrity sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==
+
+readdirp@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-5.1.1.tgz#520bca06f9d1ae1b96cc0800dbe84b983d19422c"
+  integrity sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==
 
 redis-errors@1.2.0, redis-errors@^1.0.0:
   version "1.2.0"
@@ -5837,7 +5848,7 @@ unplugin@^2.3.11:
     picomatch "^4.0.3"
     webpack-virtual-modules "^0.6.2"
 
-unplugin@^3.0.0, unplugin@^3.3.0, unplugin@^3.4.0, unplugin@^3.7.0:
+unplugin@^3.0.0, unplugin@^3.3.0, unplugin@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/unplugin/-/unplugin-3.7.0.tgz#d3780c9c0f886fd84ea3a3ae961210cf8545f256"
   integrity sha512-GrM2uq3DQo3hvLU2FjeYhooJ8BY9N6j1Fbzgx7Pta3VVJevsD3VP4dPjZkZOS0mLvN8w9zzr9OlP+31bSMyuLw==
@@ -6086,18 +6097,18 @@ vue-eslint-parser@^10.4.1:
     esquery "^1.6.0"
     semver "^7.6.3"
 
-vue-router@^5.4.0, vue-router@^5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-5.5.0.tgz#cdc39ab40904ebcbed1c2e31a98dfd32aedaa4e6"
-  integrity sha512-nYhG+YzLcrO5Z7KbH1H/xvBeBzhCWhQG0z5DYNLuaJULhavZBmEgoQ5xVHGxwe65c5hnJQHZpBxWdQhnOBzHmw==
+vue-router@^5.4.0, vue-router@^5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-5.5.1.tgz#ced37e869519414f1d897656edd89657c309d697"
+  integrity sha512-lUENd/QIhKd2HWACnXID3us0GWBnuOi3BwkTUzce2+4nfM/b3seV5saNURM9+wt48/qUxviotpcm7yFxC0U4qA==
   dependencies:
-    "@vue-macros/common" "^3.1.3"
-    "@vue/devtools-api" "^8.1.5"
+    "@vue-macros/common" "^3.1.4"
+    "@vue/devtools-api" "^8.2.1"
     ast-walker-scope "^0.10.0"
-    chokidar "^5.0.0"
-    confbox "^0.3.1"
-    local-pkg "^1.2.1"
-    magic-string "^1.4.3"
+    chokidar "^6.0.0"
+    confbox "^0.3.2"
+    local-pkg "^2.0.0"
+    magic-string "^1.4.5"
     mlly "^1.8.2"
     muggle-string "^0.4.1"
     nostics "^1.3.0"
@@ -6105,7 +6116,7 @@ vue-router@^5.4.0, vue-router@^5.5.0:
     picomatch "^4.0.7"
     scule "^1.3.0"
     tinyglobby "^0.2.17"
-    unplugin "^3.4.0"
+    unplugin "^3.7.0"
     unplugin-utils "^0.3.2"
 
 vue@^3.5.44, vue@^3.5.45:
